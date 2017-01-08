@@ -10,7 +10,7 @@
   "repository" : { 
 	"type" : "git", 
 	"url" : "https://github.com/execfera/ruukoto.git"
-  }
+  },
   "author": "Frelia",
   "license": "MIT",
   "dependencies": {
