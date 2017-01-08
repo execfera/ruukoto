@@ -116,7 +116,7 @@ bot.on("message", (msg) => {
 						var wreport;
 						weather.setCity(msgcmd);
 						weather.getAllWeather(function(err, res){
-							wreport = getWeatherIcon(res.weather[0].icon) + "__**Weather** for " + res.name + ", " + res.sys.country + "__";
+							wreport = getWeatherIcon(res.weather[0].icon) + "__**Weather** for " + res.name + ", " + res.sys.country + "__ :flag_" + res.sys.country.toLowerCase() + ":";
 							wreport += "\n" + res.main.temp + "°C / " + (res.main.temp*1.8+32).toFixed(2) + "°F, " + res.weather[0].description;
 							wreport += "\n" + res.clouds.all + "% Clouds, Windspeed " + res.wind.speed + "m/s";
 							wreport += "\n" + "Barometric pressure: " + res.main.pressure + "hpa " + res.main.humidity + "% humidity";
