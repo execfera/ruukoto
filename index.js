@@ -133,8 +133,8 @@ bot.on("message", (msg) => {
 							if (pastaData[msg.guild.id][msga[1]]) { 
 								if (pastacmd === msgcmd) { 
 									delete pastaData[msg.guild.id][msga[1]];
-									msg.channel.sendMessage("`" + msga[1] + "` cleared."); 
-									jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2}); break;
+									jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2}); 
+									msg.channel.sendMessage("`" + msga[1] + "` cleared."); break;
 								}
 								msg.channel.sendMessage("`" + msga[1] + "` already exists!"); break; 
 							}
