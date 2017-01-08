@@ -1,16 +1,15 @@
 {
-  "name": "freliabot",
+  "name": "ruukoto",
   "version": "1.0.0",
-  "description": "",
+  "description": "Very messy personal Discord bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Frelia",
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "cleverbot": "^1.0.4",
     "cleverbot-node": "^0.2.4",
     "d20": "^1.4.1",
     "discord.js": "^11.0.0",
@@ -22,7 +21,5 @@
     "request": "^2.79.0",
     "uws": "^0.12.0"
   },
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  }
+  "devDependencies": {}
 }
