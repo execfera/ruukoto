@@ -64,7 +64,7 @@ bot.on("message", (msg) => {
 		} 
 
 		var msga = msgc.split(' '); 
-		if (msga[0].slice(0,1) === '-') { 
+		if (msga[0].slice(0,1) === '-' || (msga[0].slice(0,1) === '.' && msg.guild.id === '103851116512411648') { 
 			var msgcmd = msgc.slice(msgc.indexOf(' ')+1); 
 			if (msg.author.id === '91327883208843264') {
 				switch (msga[0].slice(1)){ 
