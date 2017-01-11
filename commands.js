@@ -1,4 +1,5 @@
 ﻿var Discord = require("discord.js");
+var request = require('request');
 var d20 = require('d20');
 var puppy = require('random-puppy');
 var jsonfile = require('jsonfile');
@@ -112,7 +113,17 @@ module.exports = {
 	desc: "Dog.\nUSAGE: -dog",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		puppy().then(url => { msg.channel.sendMessage('\u{1f415} ' + url); });
+		puppy().then(url => { msg.channel.sendMessage("\u{1f415} " + url); });
+	}
+},
+
+"cat": { 
+	desc: "Cat.\nUSAGE: -cat",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		request("http://random.cat/meow", function(err, res, body) { 
+			if (!err && res.statusCode == 200) msg.channel.sendMessage("\u{1f408} " + JSON.parse(body).file);
+		}); 
 	}
 },
 
