@@ -7,12 +7,17 @@ var	commands = require('./commands');
 var	auth = require('./auth.json');
 var pastaData = require("./pasta.json");
 
+var Cleverbot = require('cleverbot-node');
+var clever = new Cleverbot;
+Cleverbot.prepare(()=>{;});
+
 var msprog;
 
 bot.login(auth.token);
 
 bot.on("ready", () => {
-	console.log('freliabot.user online');
+	console.log("freliabot online");
+	bot.user.setGame("with Mr. Prog");
 	msprog = bot.guilds.get("208498945343750144").emojis.get("264615769285984256");
 });
 

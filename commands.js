@@ -3,6 +3,7 @@ var request = require('request');
 var d20 = require('d20');
 var puppy = require('random-puppy');
 var jsonfile = require('jsonfile');
+var eightball = require('8ball');
 var weather = require('openweather-apis');
 
 var authData = require('./auth.json');
@@ -126,6 +127,15 @@ module.exports = {
 		}); 
 	}
 },
+
+"8ball": { 
+	desc: "Asks the bot a question.\nUSAGE: -8ball QUESTION\nEXAMPLE: -8ball Will I ever become the little girl?",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		msg.channel.sendMessage("Question: " + cmd.code() + "\nAnswer: " + eightball().code());
+	}
+},
+
 
 "weather": { 
 	desc: "Shows current weather for the given area.\nUSAGE: -w [AREA], -weather [AREA]\nEXAMPLE: -w New York",
