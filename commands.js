@@ -17,20 +17,20 @@ weather.setUnits('metric');
 
 module.exports = {
 
-"eval": { 
+"eval": {
 	desc: "Evaluates raw JavaScript.\nUSAGE: -eval [COMMAND]",
 	lvl: "author",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "eval", bot);  }
-		else { 
-			try { var evalres = eval(cmd); } 
-			catch (e) { var evalres = e; } 
+		else {
+			try { var evalres = eval(cmd); }
+			catch (e) { var evalres = e; }
 			finally { msg.channel.sendMessage(evalres); }
 		}
 	}
 },
 
-"kys": { 
+"kys": {
 	desc: "Restarts the bot.\nUSAGE: -kys",
 	lvl: "author",
 	func: (msg, cmd, bot) => {
@@ -38,16 +38,16 @@ module.exports = {
 	}
 },
 
-"raw": { 
+"raw": {
 	desc: "Prints the given message in a code block.\nUSAGE: -raw [MESSAGE]",
 	lvl: "author",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "raw", bot);  }
-		msg.channel.sendMessage(cmd.codeblock()); 
+		msg.channel.sendMessage(cmd.codeblock());
 	}
 },
 
-"echo": { 
+"echo": {
 	desc: "Makes the bot say the given statement.\nUSAGE: -echo [MESSAGE]\nEXAMPLE: -echo I'm talking through the bot!",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
@@ -61,12 +61,12 @@ module.exports = {
 					case "debug": target = bot.channels.get("189911150001913856"); echo = cmd.slice(cmd.indexOf(' ')+1); break;
 				}
 			}
-			target.sendMessage(echo); 
+			target.sendMessage(echo);
 		}
 	}
 },
 
-"choose": { 
+"choose": {
 	desc: "Chooses one of any number of given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nEXAMPLE: -choose apple, banana, canteloupe",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
@@ -75,7 +75,7 @@ module.exports = {
 	}
 },
 
-"ping": { 
+"ping": {
 	desc: "Prints out the bot's gateway heartbeat ping.\nUSAGE: -ping",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
@@ -83,34 +83,88 @@ module.exports = {
 	}
 },
 
-"roll": { 
+"roll": {
 	desc: "Rolls the dice.\nUSAGE: -roll [NUMBER], -roll [STANDARD_DICE], -roll[STANDARD_DICE]+[MODIFIER1]+[MODIFIER..]\nEXAMPLE: -roll 20, -roll 1d20, -roll 1d20 +0",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "roll", bot);  }
-		else msg.channel.sendMessage('\u{1f3b2} ' + d20.roll(msgcmd));
+		else msg.channel.sendMessage('\u{1f3b2} ' + d20.roll(cmd));
 	}
 },
 
-"roll+": { 
+"roll+": {
 	desc: "Rolls the dice, and prints out all dice rolled separately.\nUSAGE/EXAMPLE: See -roll.",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "roll+", bot);  }
-		else msg.channel.sendMessage('\u{1f3b2} ' + d20.roll(msgcmd, true).join(', '));
+		else msg.channel.sendMessage('\u{1f3b2} ' + d20.roll(cmd, true).join(', '));
 	}
 },
 
-"avatar": { 
+"avatar": {
 	desc: "Prints out the high-quality version of user given. If none given, prints out command user's avatar.\nUSAGE: -avatar, -avatar [@USER_MENTION]\nEXAMPLE: -avatar @Ms. Prog#1162",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		if (cmd) msg.channel.sendMessage(bot.users.get(mention2id(cmd)).displayAvatarURL); 
+		if (cmd) msg.channel.sendMessage(bot.users.get(mention2id(cmd)).displayAvatarURL);
 		else msg.channel.sendMessage(bot.users.get(msg.author.id).displayAvatarURL);
 	}
 },
 
-"dog": { 
+"userinfo": {
+	desc: "Returns info about the requested user. If no user is provided, returns info about the requester.\nUSAGE: -userinfo, -userinfo [@USER_MENTION]\nEXAMPLE: -userinfo @Ms. Prog#1162",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		var content = '';
+		var userid = cmd ? mention2id(cmd) : msg.author.id;
+		bot.fetchUser(userid).then(usr => {
+			var creatediff = (new Date().getTime() - usr.createdTimestamp)/1000;
+			content += "User: `" + usr.username + "#" + usr.discriminator;
+			if (msg.guild.members.get(userid)) {
+				var guildusr = msg.guild.members.get(userid);
+				var joinstamp = guildusr.joinedTimestamp;
+				var joindiff = (new Date().getTime() - joinstamp)/1000;
+				content += guildusr.nickname ? ' (' + guildusr.nickname + ')`\n' : '`\n';
+				content += "User ID: " + userid.code() +'\n';
+				content += "Account joined: " + (new Date(joinstamp).toUTCString() + " (" + timeCounter(joindiff) + " ago)").code() + "\n";
+			} else { content += "`\nUser ID: " + userid.code() + "\n"; }
+			content += "Account created: " + (new Date(usr.createdTimestamp).toUTCString() + " (" + timeCounter(creatediff) + " ago)").code() + "\n";
+			content += "Current status: " + usr.presence.status.code() + "\n";
+			content += usr.displayAvatarURL;
+			msg.channel.sendMessage(content);
+		});
+	}
+},
+
+"serverinfo": {
+	desc: "Returns info about the current server.\nUSAGE: -serverinfo",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		var content = "", roles = [], txtchn = [], vchn = [], online = 0;
+		var createstamp = msg.guild.createdTimestamp;
+		var creatediff = (new Date().getTime() - createstamp)/1000;
+		for (var i = 0; i < msg.guild.roles.array().length; i++) {
+			if (msg.guild.roles.array()[i].name !== "@everyone") roles.push(msg.guild.roles.array()[i].name.code());
+		}
+		for (var i = 0; i < msg.guild.channels.array().length; i++) {
+			if (msg.guild.channels.array()[i].type === "text") txtchn.push(msg.guild.channels.array()[i].name.code());
+			else vchn.push(msg.guild.channels.array()[i].name.code());
+		}
+		for (var i = 0; i < msg.guild.presences.array().length; i++) { if (msg.guild.presences.array()[i].status === "online") online++; }
+		content += "Name: " + (msg.guild.name + " (ID: " + msg.guild.id + ")").code() + "\n";
+		content += "Owner: `" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator;
+		content += (msg.guild.owner.nickname ? " (" + msg.guild.owner.nickname + ")`\n" : "`\n");
+		content += "Region: " + msg.guild.region + "\n";
+		content += "Created: " + (new Date(createstamp).toUTCString() + " (" + timeCounter(creatediff) + " ago)").code() + "\n";
+		content += "User Count: "	+ (msg.guild.memberCount.toString() + " (" + online.toString() + " online)").code() + "\n";
+		content += "Roles (" + roles.length + "): " + roles.join(', ') + "\n";
+		content += "Text Channels (" + txtchn.length + "): " + txtchn.join(', ') + "\n";
+		content += "Voice Channels (" + vchn.length + "): " + vchn.join(', ') + "\n";
+		content += msg.guild.iconURL;
+		msg.channel.sendMessage(content);
+	}
+},
+
+"dog": {
 	desc: "Dog.\nUSAGE: -dog",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
@@ -118,17 +172,17 @@ module.exports = {
 	}
 },
 
-"cat": { 
+"cat": {
 	desc: "Cat.\nUSAGE: -cat",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		request("http://random.cat/meow", function(err, res, body) { 
+		request("http://random.cat/meow", function(err, res, body) {
 			if (!err && res.statusCode == 200) msg.channel.sendMessage("\u{1f408} " + JSON.parse(body).file);
-		}); 
+		});
 	}
 },
 
-"8ball": { 
+"8ball": {
 	desc: "Asks the bot a question.\nUSAGE: -8ball QUESTION\nEXAMPLE: -8ball Will I ever become the little girl?",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
@@ -137,12 +191,12 @@ module.exports = {
 },
 
 
-"weather": { 
+"weather": {
 	desc: "Shows current weather for the given area.\nUSAGE: -w [AREA], -weather [AREA]\nEXAMPLE: -w New York",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "weather", bot);  }
-		else try { 
+		else try {
 			var wreport;
 			weather.setCity(cmd);
 			weather.getAllWeather(function(err, res){
@@ -156,7 +210,7 @@ module.exports = {
 	}
 },
 
-"meme": { 
+"meme": {
 	desc: "Custom command creation.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n~[COMMAND]: Use custom command.",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
@@ -164,18 +218,18 @@ module.exports = {
 		if (!cmd) { module.exports["help"].func(msg, "meme", bot);  }
 		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendFile(Buffer.from(Object.keys(pastaData[msg.guild.id]).join(', '), 'utf8'), 'commands.txt'); }
 		else if (cmd[0] === '~' || cmd[0] === '-') { msg.channel.sendMessage("Invalid command format."); }
-		else {	
+		else {
 			if (!(msg.guild.id in pastaData)) pastaData[msg.guild.id] = { "echo": "echo" };
 			var pastacmd = cmd.slice(cmd.indexOf(' ')+1);
-			if (pastaData[msg.guild.id][msga[0]]) { 
-				if (pastacmd === cmd) { 
+			if (pastaData[msg.guild.id][msga[0]]) {
+				if (pastacmd === cmd) {
 					delete pastaData[msg.guild.id][msga[0]];
-					jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2}); 
+					jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2});
 					msg.channel.sendMessage(msga[0].code() + " cleared.");
 				}
-				else msg.channel.sendMessage(msga[0].code() + " already exists!"); 
+				else msg.channel.sendMessage(msga[0].code() + " already exists!");
 			}
-			else { 
+			else {
 				pastaData[msg.guild.id][msga[0]] = pastacmd;
 				jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2});
 				msg.channel.sendMessage(msga[0].code() + " added as custom command. Type `~" + msga[0] + "` to use it.");
@@ -184,7 +238,7 @@ module.exports = {
 	}
 },
 
-"chip": { 
+"chip": {
 	desc: "Returns RE:RN Battlechip data.\nUSAGE: -chip [BATTLECHIP]\nEXAMPLE: -chip Cannon",
 	lvl: "rern",
 	func: (msg, cmd, bot) => {
@@ -199,7 +253,7 @@ module.exports = {
 	}
 },
 
-"trader": { 
+"trader": {
 	desc: "Sacrifices a chip into the chip trader and prints out the result.\nUSAGE: -trader [BATTLECHIP]\nEXAMPLE: -trader Cannon",
 	lvl: "rern",
 	func: (msg, cmd, bot) => {
@@ -213,7 +267,7 @@ module.exports = {
 	desc: "Provides help on bot commands.\n-help: Lists all available commands.\nUSAGE: -help [COMMAND]: Prints information on specific command.",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		if (!cmd) { 
+		if (!cmd) {
 			var cmdlist = Object.keys(module.exports).filter(e => {
 				switch (module.exports[e].lvl) {
 					case "author": return msg.author.id === "91327883208843264";
@@ -221,13 +275,13 @@ module.exports = {
 					default: return true;
 				}
 			}).map(e => e.code());
-			cmdlist.sort(); msg.channel.sendMessage("Available commands: " + cmdlist.join(", ") + ".\n\nUse `-help COMMAND` for more information."); 
+			cmdlist.sort(); msg.channel.sendMessage("Available commands: " + cmdlist.join(", ") + ".\n\nUse `-help COMMAND` for more information.");
 		}
 		else msg.channel.sendMessage((cmd + ": " + module.exports[cmd].desc).codeblock());
 	}
 }
 
-} 
+}
 
 /* Miscellaneous Utility Functions */
 
@@ -280,7 +334,7 @@ function traderoll (chip) {
 	var tier = '';
 	var restier = '';
 	var resroll = 0;
-	for (var key in traderData) { 
+	for (var key in traderData) {
 		if (traderData[key].indexOf(chip) > -1) { tier = key; break; }
 	}
 	if (tier === '') { return 'Chip input invalid.'; }
@@ -292,17 +346,39 @@ function traderoll (chip) {
 			else if (resroll >= 17) return traderData.C[d20.roll(traderData.C.length)-1] + " (" + resroll + ")";
 			else return traderData.D[d20.roll(traderData.D.length)-1] + " (" + resroll + ")";
 		}
-		case 'C': { 
+		case 'C': {
 			if (resroll <= 7) return traderData.D[d20.roll(traderData.D.length)-1] + " (" + resroll + ")";
 			else if (resroll >= 17) return traderData.B[d20.roll(traderData.B.length)-1] + " (" + resroll + ")";
 			else return traderData.C[d20.roll(traderData.C.length)-1] + " (" + resroll + ")";
 		}
-		case 'B': 
+		case 'B':
 		case 'A':
-		case 'S': { 
+		case 'S': {
 			if (resroll <= 7) return traderData.C[d20.roll(traderData.C.length)-1] + " (" + resroll + ")";
 			else if (resroll >= 17) return traderData.A[d20.roll(traderData.A.length)-1] + " (" + resroll + ")";
 			else return traderData.B[d20.roll(traderData.B.length)-1] + " (" + resroll + ")";
 		}
 	}
+}
+
+function timeCounter(tval) {
+    var t = parseInt(tval);
+    var years = parseInt(t / 31536000);
+    t = t - (years * 31536000);
+    var months = parseInt(t / 2592000);
+    t = t - (months * 2592000);
+    var days = parseInt(t / 86400);
+    t = t - (days * 86400);
+    var hours = parseInt(t / 3600);
+    t = t - (hours * 3600);
+    var minutes = parseInt(t / 60);
+    t = t - (minutes * 60);
+    var content = [];
+		if (years) content.push(years + " year" + (years > 1 ? "s" : ""));
+		if (months) content.push(months + " month" + (months > 1 ? "s" : ""));
+		if (days) content.push(days + " day" + (days > 1 ? "s" : ""));
+		if (hours) content.push(hours + " hour"  + (hours > 1 ? "s" : ""));
+		if (minutes) content.push(minutes + " minute" + (minutes > 1 ? "s" : ""));
+		if (t) content.push(t + " second" + (t > 1 ? "s" : ""));
+		return content.slice(0,3).join(', ');
 }
