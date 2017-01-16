@@ -139,7 +139,7 @@ module.exports = {
 	desc: "Returns info about the current server.\nUSAGE: -serverinfo",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		var content = "", roles = [], txtchn = [], vchn = [], online = 0;
+		var content = "", roles = [], txtchn = [], vchn = [], online = 0, idle = 0, dnd = 0, presencearr = [];
 		var createstamp = msg.guild.createdTimestamp;
 		var creatediff = (new Date().getTime() - createstamp)/1000;
 		for (var i = 0; i < msg.guild.roles.array().length; i++) {
@@ -149,18 +149,41 @@ module.exports = {
 			if (msg.guild.channels.array()[i].type === "text") txtchn.push(msg.guild.channels.array()[i].name.code());
 			else vchn.push(msg.guild.channels.array()[i].name.code());
 		}
-		for (var i = 0; i < msg.guild.presences.array().length; i++) { if (msg.guild.presences.array()[i].status === "online") online++; }
+		for (var i = 0; i < msg.guild.presences.array().length; i++) {
+			switch (msg.guild.presences.array()[i].status) {
+				case "online": online++; break;
+				case "idle": idle++; break;
+				case "dnd": dnd++; break;
+			}
+		}
+		if (online) presencearr.push(online + " online");
+		if (idle) presencearr.push(idle + " idle");
+		if (dnd) presencearr.push(dnd + " silenced");
 		content += "Name: " + (msg.guild.name + " (ID: " + msg.guild.id + ")").code() + "\n";
 		content += "Owner: `" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator;
 		content += (msg.guild.owner.nickname ? " (" + msg.guild.owner.nickname + ")`\n" : "`\n");
-		content += "Region: " + msg.guild.region + "\n";
+		content += "Region: " + msg.guild.region.code() + "\n";
 		content += "Created: " + (new Date(createstamp).toUTCString() + " (" + timeCounter(creatediff) + " ago)").code() + "\n";
-		content += "User Count: "	+ (msg.guild.memberCount.toString() + " (" + online.toString() + " online)").code() + "\n";
+		content += "User Count: " + (msg.guild.memberCount.toString() + " (" + presencearr.join(', ') + ")").code() + "\n";
 		content += "Roles (" + roles.length + "): " + roles.join(', ') + "\n";
 		content += "Text Channels (" + txtchn.length + "): " + txtchn.join(', ') + "\n";
 		content += "Voice Channels (" + vchn.length + "): " + vchn.join(', ') + "\n";
 		content += msg.guild.iconURL;
 		msg.channel.sendMessage(content);
+	}
+},
+
+"prune": {
+	desc: "Prunes the bot's last X messages. If no number is given, deletes all of the bot's messages in the last 50 messages.\nUSAGE: -prune, -prune [NUMBER]\nEXAMPLE: -prune, -prune 20",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		var limit = cmd || 50, count = 0;
+		msg.channel.fetchMessages({limit: limit}).then(messages => {
+			for (var i = 0; i < messages.array().length; i++) {
+				if (messages.array()[i].author.id === bot.user.id) { messages.array()[i].delete(); count++; }
+			}
+			msg.channel.sendMessage("Deleted " + count + " message" + (count > 1 ? "s" : "")).then(m => m.delete(5000));
+		});
 	}
 },
 
@@ -183,7 +206,7 @@ module.exports = {
 },
 
 "8ball": {
-	desc: "Asks the bot a question.\nUSAGE: -8ball QUESTION\nEXAMPLE: -8ball Will I ever become the little girl?",
+	desc: "Asks the bot a question.\nUSAGE: -8ball [QUESTION]\nEXAMPLE: -8ball Will I ever become the little girl?",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		msg.channel.sendMessage("Question: " + cmd.code() + "\nAnswer: " + eightball().code());
