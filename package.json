@@ -7,15 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
 	"start": "node index.js"
   },
-  "repository" : { 
-	"type" : "git", 
+  "repository" : {
+	"type" : "git",
 	"url" : "https://github.com/execfera/ruukoto.git"
   },
   "author": "Frelia",
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "cleverbot-node": "^0.2.4",
+    "cleverbot-node": "^0.2.6",
     "d20": "^1.4.1",
     "discord.js": "^11.0.0",
     "erlpack": "github:hammerandchisel/erlpack",

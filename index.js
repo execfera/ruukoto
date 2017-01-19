@@ -9,6 +9,7 @@ var pastaData = require("./pasta.json");
 
 var Cleverbot = require('cleverbot-node');
 var clever = new Cleverbot;
+clever.configure({botapi: "RUUKOTO_DISCBOT"});
 Cleverbot.prepare(()=>{;});
 
 var msprog;
