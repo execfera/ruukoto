@@ -1,4 +1,4 @@
-﻿var Discord = require("discord.js");
+var Discord = require("discord.js");
 var request = require('request');
 var d20 = require('d20');
 var puppy = require('random-puppy');
@@ -44,6 +44,23 @@ module.exports = {
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "raw", bot);  }
 		msg.channel.sendMessage(cmd.codeblock());
+	}
+},
+
+"botinfo": {
+	desc: "Returns info about the current bot instance.\nUSAGE: -botinfo",
+	lvl: "author",
+	func: (msg, cmd, bot) => {
+		var pack = require("./package.json");
+		var content = "__**Ruukoto** (discord.js v" + pack.dependencies["discord.js"].slice(1) + ")__\n\n";
+		content += "**Author: **" + msg.author.username + "#" + msg.author.discriminator + "\n";
+		content += "**Guilds: **" + bot.guilds.size + "\n";
+		content += "**Channels: **" + bot.channels.size + "\n";
+		content += "**Users: **" + bot.users.size + "\n\n";
+		content += "**Startup: **" + bot.readyAt.toUTCString() + "\n";
+		content += "**Uptime: **" + timeCounter(bot.uptime/1000) + "\n";
+		content += "**Ping: **" + Math.trunc(bot.ping) + "ms"
+		msg.channel.sendMessage(content);
 	}
 },
 
@@ -385,16 +402,16 @@ function traderoll (chip) {
 }
 
 function timeCounter(tval) {
-    var t = parseInt(tval);
-    var years = parseInt(t / 31536000);
+    var t = Math.floor(tval);
+    var years = Math.floor(t / 31536000);
     t = t - (years * 31536000);
-    var months = parseInt(t / 2592000);
+    var months = Math.floor(t / 2592000);
     t = t - (months * 2592000);
-    var days = parseInt(t / 86400);
+    var days = Math.floor(t / 86400);
     t = t - (days * 86400);
-    var hours = parseInt(t / 3600);
+    var hours = Math.floor(t / 3600);
     t = t - (hours * 3600);
-    var minutes = parseInt(t / 60);
+    var minutes = Math.floor(t / 60);
     t = t - (minutes * 60);
     var content = [];
 		if (years) content.push(years + " year" + (years > 1 ? "s" : ""));
