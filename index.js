@@ -1,5 +1,6 @@
 ﻿var Discord = require('discord.js');
 var request = require('request');
+var express = require('express');
 var cheerio = require('cheerio');
 var bot = new Discord.Client();
 
@@ -118,3 +119,18 @@ bot.on("voiceStateUpdate", (oldUser, newUser) => {
 		}
 	}
 });
+
+/* HTTP for hosting custom commands
+--
+*/
+var app = express();
+
+app.get('/', function (req, res) {
+	res.send("Ruukoto online. Discord Heartbeat: " + Math.trunc(bot.ping) + "ms.");
+});
+
+app.get('/meme/:servid', function (req, res) {
+	if (req.params.servid in pastaData) res.send("Custom commands for server ID " + req.params.servid + ":<br>" + Object.keys(pastaData[req.params.servid]).join(', '));
+});
+
+app.listen(80, function () {;})

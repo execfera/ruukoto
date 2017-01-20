@@ -239,7 +239,7 @@ module.exports = {
 	func: (msg, cmd, bot) => {
 		var msga = cmd.split(' ');
 		if (!cmd) { module.exports["help"].func(msg, "meme", bot);  }
-		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendFile(Buffer.from(Object.keys(pastaData[msg.guild.id]).join(', '), 'utf8'), 'commands.txt'); }
+		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendMessage("Custom command list for this server: http://ruukoto.frelia.my/meme/" + msg.guild.id); }
 		else if (cmd[0] === '~' || cmd[0] === '-') { msg.channel.sendMessage("Invalid command format."); }
 		else {
 			if (!(msg.guild.id in pastaData)) pastaData[msg.guild.id] = { "echo": "echo" };
