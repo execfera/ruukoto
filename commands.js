@@ -34,7 +34,7 @@ module.exports = {
 	desc: "Restarts the bot.\nUSAGE: -kys",
 	lvl: "author",
 	func: (msg, cmd, bot) => {
-		msg.channel.sendMessage("\u{1f503} Restarting."); bot.destroy();
+		msg.channel.sendMessage("\u{1f503} Restarting."); bot.destroy(); bot.login(authData.token);
 	}
 },
 
@@ -226,7 +226,8 @@ module.exports = {
 	desc: "Asks the bot a question.\nUSAGE: -8ball [QUESTION]\nEXAMPLE: -8ball Will I ever become the little girl?",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		msg.channel.sendMessage("Question: " + cmd.code() + "\nAnswer: " + eightball().code());
+		if (!cmd) { module.exports["help"].func(msg, "8ball", bot);  }
+		else msg.channel.sendMessage("Question: " + cmd.code() + "\nAnswer: " + eightball().code());
 	}
 },
 
@@ -242,7 +243,7 @@ module.exports = {
 			weather.getAllWeather(function(err, res){
 				wreport = getWeatherIcon(res.weather[0].icon) + "__**Weather** for " + res.name + ", " + res.sys.country + "__ :flag_" + res.sys.country.toLowerCase() + ":";
 				wreport += "\n" + res.main.temp + "°C / " + (res.main.temp*1.8+32).toFixed(2) + "°F, " + res.weather[0].description;
-				wreport += "\n" + res.clouds.all + "% Clouds, Wind Speed " + res.wind.speed + "m/s";
+				wreport += "\n" + res.clouds.all + "% Clouds, Wind Speed " + (res.wind.speed*3.6).toFixed(2) + "km/h / " + (res.wind.speed*2.2369).toFixed(2) + "mph";
 				wreport += "\n" + "Barometric Pressure: " + res.main.pressure + "hPa " + res.main.humidity + "% humidity";
 				msg.channel.sendMessage(wreport);
 			});
@@ -315,7 +316,7 @@ module.exports = {
 					default: return true;
 				}
 			}).map(e => e.code());
-			cmdlist.sort(); msg.channel.sendMessage("Available commands: " + cmdlist.join(", ") + ".\n\nUse `-help COMMAND` for more information.");
+			msg.channel.sendMessage("Available commands: " + cmdlist.sort().join(", ") + ".\n\nUse `-help COMMAND` for more information.");
 		}
 		else msg.channel.sendMessage((cmd + ": " + module.exports[cmd].desc).codeblock());
 	}
