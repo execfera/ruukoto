@@ -5,6 +5,7 @@ var puppy = require('random-puppy');
 var jsonfile = require('jsonfile');
 var eightball = require('8ball');
 var weather = require('openweather-apis');
+var urban = require('urban');
 
 var authData = require('./auth.json');
 var chipData = require("./chip.json");
@@ -231,6 +232,19 @@ module.exports = {
 	}
 },
 
+"urban": {
+	desc: "Searches a term on Urban Dictionary.\nUSAGE: -urban [TERM]\nEXAMPLE: -urban headass",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		if (!cmd) { module.exports["help"].func(msg, "urban", bot);  }
+		else {
+			urban(cmd).first((res) => {
+				if (res) msg.channel.sendMessage("\u{1f4ac} " + res.definition + " (" + res.permalink + ")");
+				else msg.channel.sendMessage("\u{1f4ac} No definition found.");
+			});
+		}
+	}
+},
 
 "weather": {
 	desc: "Shows current weather for the given area.\nUSAGE: -w [AREA], -weather [AREA]\nEXAMPLE: -w New York",
