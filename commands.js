@@ -6,6 +6,7 @@ var jsonfile = require('jsonfile');
 var eightball = require('8ball');
 var weather = require('openweather-apis');
 var urban = require('urban');
+var fx = require('money');
 
 var authData = require('./auth.json');
 var chipData = require("./chip.json");
@@ -241,6 +242,28 @@ module.exports = {
 			urban(cmd).first((res) => {
 				if (res) msg.channel.sendMessage("\u{1f4ac} " + res.definition + " (" + res.permalink + ")");
 				else msg.channel.sendMessage("\u{1f4ac} No definition found.");
+			});
+		}
+	}
+},
+
+"fx": {
+	desc: "Converts a specified currency from one currency to another. If no second currency is provided, converts given currency to USD. If no amount is provided, converts 1USD to the given currency.\nUSAGE: -fx [AMOUNT] [INITIAL_CURRENCY] [RESULT_CURRENCY], -fx [AMOUNT] [CURRENCY], -fx [CURRENCY]\nEXAMPLE: -fx 1 eur usd, -fx 1 eur, -fx eur",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		if (!cmd) { module.exports["help"].func(msg, "fx", bot);  }
+		else {
+			var args = cmd.split(' ');
+			if (isNaN(args[0])) args = [1, "USD", args[0]];
+			if (!(args[2])) args[2] = "USD";
+			request("http://api.fixer.io/latest", function(err, res, body) {
+				if (!err && res.statusCode == 200) {
+					fx.rates = JSON.parse(body).rates;
+					fx.rates["EUR"] = 1;
+					try { var rate = fx(args[0]).from(args[1].toUpperCase()).to(args[2].toUpperCase());
+					msg.channel.sendMessage("\u{1f4b5} " + args[1].toUpperCase() + args[0] + " = " + args[2].toUpperCase() + rate.toFixed(4)); }
+					catch (e) { msg.channel.sendMessage("\u{1f4b5} Invalid exchange query."); }
+				}
 			});
 		}
 	}
