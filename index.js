@@ -52,6 +52,7 @@ bot.on("message", (msg) => {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype === "w") msgtype = "weather";
+			if (msgtype === "choice") msgtype = "choose";
 			if (msgtype in commands && (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264")) commands[msgtype].func(msg, msgcmd, bot);
 		}
 		/* Custom Command Parser

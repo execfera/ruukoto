@@ -51,18 +51,20 @@ module.exports = {
 
 "botinfo": {
 	desc: "Returns info about the current bot instance.\nUSAGE: -botinfo",
-	lvl: "author",
+	lvl: "all",
 	func: (msg, cmd, bot) => {
 		var pack = require("./package.json");
-		var content = "__**Ruukoto** (discord.js v" + pack.dependencies["discord.js"].slice(1) + ")__\n\n";
-		content += "**Author: **" + msg.author.username + "#" + msg.author.discriminator + "\n";
-		content += "**Guilds: **" + bot.guilds.size + "\n";
-		content += "**Channels: **" + bot.channels.size + "\n";
-		content += "**Users: **" + bot.users.size + "\n\n";
-		content += "**Startup: **" + bot.readyAt.toUTCString() + "\n";
-		content += "**Uptime: **" + timeCounter(bot.uptime/1000) + "\n";
-		content += "**Ping: **" + Math.trunc(bot.ping) + "ms"
-		msg.channel.sendMessage(content);
+		bot.fetchUser("91327883208843264").then(usr => {
+			var content = "__**Ruukoto** (discord.js v" + pack.dependencies["discord.js"].slice(1) + ")__\n\n";
+			content += "**Author: **" + usr.username + "#" + usr.discriminator + "\n";
+			content += "**Guilds: **" + bot.guilds.size + "\n";
+			content += "**Channels: **" + bot.channels.size + "\n";
+			content += "**Users: **" + bot.users.size + "\n\n";
+			content += "**Startup: **" + bot.readyAt.toUTCString() + "\n";
+			content += "**Uptime: **" + timeCounter(bot.uptime/1000) + "\n";
+			content += "**Ping: **" + Math.trunc(bot.ping) + "ms"
+			msg.channel.sendMessage(content);
+		});
 	}
 },
 
@@ -86,11 +88,14 @@ module.exports = {
 },
 
 "choose": {
-	desc: "Chooses one of any number of given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nEXAMPLE: -choose apple, banana, canteloupe",
+	desc: "Chooses one of two or more given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nEXAMPLE: -choose apple, banana, canteloupe",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "choose", bot);  }
-		else msg.channel.sendMessage('\u{1f5f3} I choose ' + cmd.split(',')[Math.floor(Math.random() * cmd.split(',').length)].trim() + '!');
+		else {
+			if (cmd.split(',').length < 2) msg.channel.sendMessage('\u{1f5f3} Please provide more than one choice, separated by comma.');
+			else msg.channel.sendMessage('\u{1f5f3} I choose ' + cmd.split(',')[Math.floor(Math.random() * cmd.split(',').length)].trim() + '!');
+		}
 	}
 },
 
@@ -124,8 +129,8 @@ module.exports = {
 	desc: "Prints out the high-quality version of user given. If none given, prints out command user's avatar.\nUSAGE: -avatar, -avatar [@USER_MENTION]\nEXAMPLE: -avatar @Ms. Prog#1162",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		if (cmd) msg.channel.sendMessage(bot.users.get(mention2id(cmd)).displayAvatarURL);
-		else msg.channel.sendMessage(bot.users.get(msg.author.id).displayAvatarURL);
+		if (cmd) msg.channel.sendMessage(bot.users.get(mention2id(cmd)).displayAvatarURL.replace(/\.jpg/,".png"));
+		else msg.channel.sendMessage(bot.users.get(msg.author.id).displayAvatarURL.replace(/\.jpg/,".png"));
 	}
 },
 
