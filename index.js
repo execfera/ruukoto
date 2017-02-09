@@ -36,7 +36,7 @@ bot.on("message", (msg) => {
 				request(exurl[0], function(err, res, body) {
 					if (!err && res.statusCode == 200) {
 						var $ = cheerio.load(body); var match = $('li','#nav').eq(-3).text();
-						if($('title').text()){
+						if($('title').text() && $('title').text() !== "Error"){
 							if (msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " Thread: " + $('title').text() + " (" + match + ")");
 							else msg.channel.sendMessage("Thread: " + $('title').text() + " (" + match + ")");
 						}

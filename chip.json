@@ -613,6 +613,195 @@
     "img": "http://i814.photobucket.com/albums/zz69/PA_Chiplists/dblbeam3.png",
     "type": "Virus"
   },
+  "Metool": {
+    "dmg": 10,
+    "summ": "40HP Virus: 10 + Pierce + Ground / 1 Action",
+    "desc": "HP: 40<br>Damage: 10 + Piercing + Ground Attack<br>Accuracy: C<br>Description: Creates a Metool virus to aid you. In addition to creating ShockWaves, it can also hide underneath its helmet to negate damage.<br>Duration: Until defeated<br>Element: Null<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "C",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Metool2": {
+    "dmg": 50,
+    "summ": "100HP Virus: 50 + Pierce + Ground / 2 Action",
+    "desc": "HP: 100<br>Damage: 50 + Piercing + Ground Attack<br>Accuracy: C<br>Description: Creates a Metool2 virus to aid you. In addition to creating SonicWaves, it can also hide underneath its helmet to negate damage.<br>Duration: Until defeated<br>Element: Null<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "C",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Metool3": {
+    "dmg": 90,
+    "summ": "160HP Virus: 90 + Pierce + Ground / 2 Action",
+    "desc": "HP: 160<br>Damage: 90 + Piercing + Ground Attack<br>Accuracy: C<br>Description: Creates a Metool3 virus to aid you. In addition to creating DynaWaves, it can also hide underneath its helmet to negate damage.<br>Duration: Until defeated<br>Element: Null<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "C",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Bunny": {
+    "dmg": 10,
+    "summ": "50HP Virus: 10 + Stun 1 / 1 Action",
+    "desc": "HP: 50<br>Damage: 10 Elec + Stun 1<br>Accuracy: A<br>Description: Creates a Bunny virus to aid you. Attacks with ZapRing, and has Auto-Haste (+10% to dodge rate).<br>Duration: Until defeated<br>Element: Elec<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Elec",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "TuffBunny": {
+    "dmg": 30,
+    "summ": "100HP Virus: 30 + Stun 1 / 2 Action",
+    "desc": "HP: 100<br>Damage: 30 Elec + Stun 1<br>Accuracy: A<br>Description: Creates a TuffBunny virus to aid you. Attacks with ZapRing, and has Auto-Haste (+10% to dodge rate).<br>Duration: Until defeated<br>Element: Elec<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Elec",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "MegaBunny": {
+    "dmg": 50,
+    "summ": "200HP Virus: 50 + Stun 1 / 3 Action",
+    "desc": "HP: 200<br>Damage: 50 Elec + Stun 1<br>Accuracy: A<br>Description: Creates a MegaBunny virus to aid you. Attacks with ZapRing, and has Auto-Haste (+10% to dodge rate).<br>Duration: Until defeated<br>Element: Elec<br>Special: Allied Virus: This virus has three actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Elec",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Spikey": {
+    "dmg": 15,
+    "summ": "90HP Virus: 15 + Spread 1 / 1 Action",
+    "desc": "HP: 90<br>Damage: 15 Fire + Spread 1<br>Accuracy: A<br>Description: Creates a Spikey virus to aid you. Attacks by firing a HeatShot.<br>Duration: Until defeated<br>Element: Fire<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Fire",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Spikey2": {
+    "dmg": 45,
+    "summ": "190HP Virus: 45 + Spread 1 / 2 Action",
+    "desc": "HP: 190<br>Damage: 45 Fire + Spread 2 (V-shape)<br>Accuracy: A<br>Description: Creates a Spikey2 virus to aid you. Attacks by firing a Heat-V.<br>Duration: Until defeated<br>Element: Fire<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Fire",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Spikey3": {
+    "dmg": 75,
+    "summ": "280HP Virus: 75 + Spread 1 / 3 Action",
+    "desc": "HP: 280<br>Damage: 75 Fire + Spread 2 (Line shape)<br>Accuracy: A<br>Description: Creates a Spikey3 virus to aid you. Attacks by firing a HeatSide.<br>Duration: Until defeated<br>Element: Fire<br>Special: Allied Virus: This virus has three actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Fire",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Swordy": {
+    "dmg": 20,
+    "summ": "60HP Virus: 20 + Long + Slash, 15 + Wide + Slash / 1 Action",
+    "desc": "HP: 60<br>Damage: 20 + Long Attack + Slashing / 15 + Wide Attack + Slashing<br>Accuracy: B<br>Description: Creates a Swordy-N virus to aid you. Can attack with either LongSword or WideSword, is immune to Sleep status, and can Teleport as a free action once per turn.<br>Element: Null<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "B",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Swordy2": {
+    "dmg": 60,
+    "summ": "120HP Virus: 60 + Long + Slash, 45 + Wide + Slash / 2 Action",
+    "desc": "HP: 120<br>Damage: 60 + Long Attack + Slashing / 45 + Wide Attack + Slashing<br>Accuracy: B<br>Description: Creates a Swordy-N2 virus to aid you. Can attack with either LongSword or WideSword, is immune to Sleep status, and can Teleport as a free action once per turn.<br>Element: Null<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "B",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Swordy3": {
+    "dmg": 100,
+    "summ": "180HP Virus: 100 + Long + Slash, 75 + Wide + Slash / 3 Action",
+    "desc": "HP: 180<br>Damage: 100 + Long Attack + Slashing / 75 + Wide Attack + Slashing<br>Accuracy: B<br>Description: Creates a Swordy-N3 virus to aid you. Can attack with either LongSword or WideSword, is immune to Sleep status, and can Teleport as a free action once per turn.<br>Element: Null<br>Special: Allied Virus: This virus has three actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "B",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Shrimpy": {
+    "dmg": 15,
+    "summ": "100HP Virus: 15 + Spread 1 / 1 Action",
+    "desc": "HP: 100<br>Damage: 15 Aqua + Spread 1<br>Accuracy: A<br>Description: Creates a Shrimpy virus to aid you. Attacks with Bubbler, and possesses ShadowShoes.<br>Element: Aqua<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Aqua",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Shrimpy2": {
+    "dmg": 45,
+    "summ": "180HP Virus: 45 + Spread 1 / 2 Action",
+    "desc": "HP: 180<br>Damage: 45 Aqua + Spread 2 (V-shape)<br>Accuracy: A<br>Description: Creates a Shrimpy2 virus to aid you. Attacks with Bubble-V, and possesses ShadowShoes.<br>Element: Aqua<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Aqua",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Shrimpy3": {
+    "dmg": 75,
+    "summ": "280HP Virus: 75 + Spread 1 / 3 Action",
+    "desc": "HP: 280<br>Damage: 75 Aqua + Spread 2 (Line shape)<br>Accuracy: A<br>Description: Creates a Shrimpy3 virus to aid you. Attacks with BubbleSide, and possesses ShadowShoes.<br>Element: Aqua<br>Special: Allied Virus: This virus has three actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Aqua",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Mushy": {
+    "dmg": 15,
+    "summ": "80HP Virus: 15 + Confusion + Nova 2 / 1 Action",
+    "desc": "HP: 80<br>Damage: 15 Wood + Confusion + Nova 2<br>Accuracy: A<br>Description: Creates a Mushy virus to aid you. Attacks with BadSpice, and unlike normal Mushy, can move over non-Wood elemental terrain at a penalty of halving movement distance/dodge rate.<br>Element: Wood<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Wood",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Mashy": {
+    "dmg": 45,
+    "summ": "140HP Virus: 45 + Confusion + Nova 2 / 2 Action",
+    "desc": "HP: 140<br>Damage: 45 Wood + Confusion + Nova 2<br>Accuracy: A<br>Description: Creates a Mashy virus to aid you. Attacks with BadSpice, and unlike normal Mashy, can move over non-Wood elemental terrain at a penalty of halving movement distance/dodge rate.<br>Element: Wood<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Wood",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Moshy": {
+    "dmg": 75,
+    "summ": "200HP Virus: 75 + Confusion + Nova 2 / 3 Action",
+    "desc": "HP: 200<br>Damage: 75 Wood + Confusion + Nova 2<br>Accuracy: A<br>Description: Creates a Moshy virus to aid you. Attacks with BadSpice, and unlike normal Mushy, can move over non-Wood elemental terrain at a penalty of halving movement distance/dodge rate.<br>Element: Wood<br>Special: Allied Virus: This virus has three actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Wood",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Momogra": {
+    "dmg": 15,
+    "summ": "60HP Virus: 15 + Backstab / 1 Action",
+    "desc": "HP: 60<br>Damage: 15 + Backstab<br>Accuracy: B<br>Description: Creats a Momogra virus to aid you. Attacks with a shovel from behind, and has a constant Mole status that ignores terrain solidness when not attacking (unless the panel currently does not exist). Still affected by other effects of panels.<br>Element: Null<br>Special: Allied Virus: This virus has one action per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Momogro": {
+    "dmg": 45,
+    "summ": "130HP Virus: 45 + Backstab / 2 Action",
+    "desc": "HP: 130<br>Damage: 45 + Backstab<br>Accuracy: B<br>Description: Creats a Momogro virus to aid you. Attacks with a shovel from behind, and has a constant Mole status that ignores terrain solidness when not attacking (unless the panel currently does not exist). Still affected by other effects of panels.<br>Element: Null<br>Special: Allied Virus: This virus has two actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side.",
+    "acc": "A",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
+  "Momogre": {
+    "dmg": 75,
+    "summ": "130HP Virus: 75 + Backstab / 3 Action",
+    "desc": "HP: 180<br>Damage: 75 + Backstab<br>Accuracy: B<br>Description: Creats a Momogre virus to aid you. Attacks with a shovel from behind, and has a constant Mole status that ignores terrain solidness when not attacking (unless the panel currently does not exist). Still affected by other effects of panels.<br>Element: Null<br>Special: Allied Virus: This virus has three actions per turn, and is fully controllable by the summoner. If no orders are given, it will perform actions at random, but will never intentionally interfere with or damage the summoner or their allies. Deleting this virus will grant no additional rewards to either side. ",
+    "acc": "A",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Virus"
+  },
   "Recover10": {
     "summ": "Recover 10 HP",
     "desc": "Recovery: 10 HP<br>Accuracy: S<br>Description: Heals 10 HP.<br>Duration: Once<br>Element: Null",
@@ -2760,8 +2949,8 @@
   },
   "Needler1": {
     "dmg": 30,
-    "summ": "60HP Mobile Floating Object: 30 x 3 Targets",
-    "desc": "HP: 60<br>Properties: Normal, FloatShoes, Mobile<br>Object Damage: 60 Null + Impact + Break<br>Damage Method: Ramming attack, Telekinesis, Throw<br>Attack Damage: 30 Null x 3 Targets<br>Accuracy: A<br>Description: Summons a hovering gun platform that attacks up to 3 separate targets each turn with it's trio of double spike guns.<br>Duration: Until destroyed.<br>Element: Null<br>Special: RP quality does not boost or reduce this chip's accuracy. - This chip's accuracy cannot be boosted or reduced by any means. - This object can dodge once instead of attacking. - This object may ram a target, but is instantly destroyed in exchange.",
+    "summ": "60HP Mobile Floating Object: 30 x 2 Hits x 3 Targets",
+    "desc": "HP: 60<br>Properties: Normal, Mobile<br>Object Damage: 60 Null + Impact + Break<br>Damage Method: Ramming attack, Telekinesis, Throw<br>Attack Damage: 30 Null x 2 hits x 3 Targets<br>Accuracy: A<br>Description: Summons a gun platform that attacks up to 3 separate targets each turn with its trio of double spike cannons. It can also perform a defense piercing kamikaze attack.<br>Duration: Until destroyed.<br>Element: Null<br>Special: This chip's accuracy cannot be boosted or reduced by any means, including RP quality.<br>- This object may ram a target instead of firing needles, but is instantly destroyed in exchange.<br>- This object may dodge by trying to ram nothing, but if it hits something in this way, it is still destroyed and deals object damage.",
     "acc": "A",
     "elem": "Null",
     "img": "http://i814.photobucket.com/albums/zz69/PA_Chiplists/Needler1.jpg",
@@ -2769,8 +2958,8 @@
   },
   "Needler2": {
     "dmg": 40,
-    "summ": "60HP Mobile Floating Object: 40 x 3 Targets",
-    "desc": "HP: 80<br>Properties: Normal, FloatShoes, Mobile<br>Object Damage: 80 Null + Impact + Break<br>Damage Method: Ramming attack, Telekinesis, Throw<br>Attack Damage: 40 Null x 3 Targets<br>Accuracy: A<br>Description: Summons a hovering gun platform that attacks up to 3 separate targets each turn with it's trio of double spike guns.<br>Duration: Until destroyed.<br>Element: Null<br>Special: RP quality does not boost or reduce this chip's accuracy. - This chip's accuracy cannot be boosted or reduced by any means. - This object can dodge once instead of attacking. - This object may ram a target, but is instantly destroyed in exchange.",
+    "summ": "80HP Mobile Floating Object: 40 x 2 Hits x 3 Targets",
+    "desc": "HP: 80<br>Properties: Normal, Mobile<br>Object Damage: 80 Null + Impact + Break<br>Damage Method: Ramming attack, Telekinesis, Throw<br>Attack Damage: 40 Null x 2 hits x 3 Targets<br>Accuracy: A<br>Description: Summons a gun platform that attacks up to 3 separate targets each turn with its trio of double spike cannons. It can also perform a defense piercing kamikaze attack.<br>Duration: Until destroyed.<br>Element: Null<br>Special: This chip's accuracy cannot be boosted or reduced by any means, including RP quality.<br>- This object may ram a target instead of firing needles, but is instantly destroyed in exchange.<br>- This object may dodge by trying to ram nothing, but if it hits something in this way, it is still destroyed and deals object damage.",
     "acc": "A",
     "elem": "Null",
     "img": "http://i814.photobucket.com/albums/zz69/PA_Chiplists/Needler2.jpg",
@@ -2778,8 +2967,8 @@
   },
   "Needler3": {
     "dmg": 50,
-    "summ": "60HP Mobile Floating Object: 50 x 3 Targets",
-    "desc": "HP: 100<br>Properties: Normal, FloatShoes, Mobile<br>Object Damage: 100 Null + Impact + Break<br>Damage Method: Ramming attack, Telekinesis, Throw<br>Attack Damage: 50 Null x 3 Targets<br>Accuracy: A<br>Description: Summons a hovering gun platform that attacks up to 3 separate targets each turn with it's trio of double spike guns.<br>Duration: Until destroyed.<br>Element: Null<br>Special: RP quality does not boost or reduce this chip's accuracy. - This chip's accuracy cannot be boosted or reduced by any means. - This object can dodge once instead of attacking. - This object may ram a target, but is instantly destroyed in exchange.",
+    "summ": "100HP Mobile Floating Object: 50 x 2 Hits x 3 Targets",
+    "desc": "HP: 100<br>Properties: Normal, Mobile<br>Object Damage: 100 Null + Impact + Break<br>Damage Method: Ramming attack, Telekinesis, Throw<br>Attack Damage: 50 Null x 2 hits x 3 Targets<br>Accuracy: A<br>Description: Summons a gun platform that attacks up to 3 separate targets each turn with its trio of double spike cannons. It can also perform a defense piercing kamikaze attack.<br>Duration: Until destroyed.<br>Element: Null<br>Special: This chip's accuracy cannot be boosted or reduced by any means, including RP quality.<br>- This object may ram a target instead of firing needles, but is instantly destroyed in exchange.<br>- This object may dodge by trying to ram nothing, but if it hits something in this way, it is still destroyed and deals object damage. ",
     "acc": "A",
     "elem": "Null",
     "img": "http://i814.photobucket.com/albums/zz69/PA_Chiplists/Needler3.jpg",

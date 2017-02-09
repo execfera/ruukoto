@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node index.js"
+    "start": "node index.js"
   },
-  "repository" : {
-	"type" : "git",
-	"url" : "https://github.com/execfera/ruukoto.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/execfera/ruukoto.git"
   },
   "author": "Frelia",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "d20": "^1.4.1",
     "discord.js": "^11.0.0",
     "erlpack": "github:hammerandchisel/erlpack",
+    "express": "^4.14.1",
     "jsonfile": "^2.4.0",
     "local-ip": "^1.0.1",
     "openweather-apis": "^3.0.2",

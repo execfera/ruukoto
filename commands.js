@@ -12,6 +12,7 @@ var authData = require('./auth.json');
 var chipData = require("./chip.json");
 var traderData = require("./trader.json");
 var pastaData = require("./pasta.json");
+var virusData = Object.assign(require("./virus1.json"), require("./virus2.json"));
 
 weather.setAPPID(authData.openweatherkey);
 weather.setLang('en');
@@ -253,20 +254,23 @@ module.exports = {
 },
 
 "fx": {
-	desc: "Converts a specified currency from one currency to another. If no second currency is provided, converts given currency to USD. If no amount is provided, converts 1USD to the given currency.\nUSAGE: -fx [AMOUNT] [INITIAL_CURRENCY] [RESULT_CURRENCY], -fx [AMOUNT] [CURRENCY], -fx [CURRENCY]\nEXAMPLE: -fx 1 eur usd, -fx 1 eur, -fx eur",
+	desc: "Converts one denomination of currency to another.\nUSAGE:\n-fx [AMOUNT] [INITIAL_CURRENCY] [RESULT_CURRENCY]: Converts given amount of first currency into the second.\n-fx [AMOUNT] [CURRENCY]: Converts given amount of currency into US Dollars.\n-fx [INITIAL_CURRENCY] [RESULT_CURRENCY]: Converts 1 unit of first currency into the second.\n-fx [CURRENCY]: Converts 1 US Dollar into the given currency.\nEXAMPLE: -fx 1 eur usd, -fx 1 eur, -fx eur usd, -fx eur",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "fx", bot);  }
 		else {
 			var args = cmd.split(' ');
-			if (isNaN(args[0])) args = [1, "USD", args[0]];
+			if (isNaN(args[0])) {
+				if (args[1]) args = [1, args[0], args[1]];
+				else args = [1, "USD", args[0]];
+			}
 			if (!(args[2])) args[2] = "USD";
 			request("http://api.fixer.io/latest", function(err, res, body) {
 				if (!err && res.statusCode == 200) {
 					fx.rates = JSON.parse(body).rates;
 					fx.rates["EUR"] = 1;
 					try { var rate = fx(args[0]).from(args[1].toUpperCase()).to(args[2].toUpperCase());
-					msg.channel.sendMessage("\u{1f4b5} " + args[1].toUpperCase() + args[0] + " = " + args[2].toUpperCase() + rate.toFixed(4)); }
+					msg.channel.sendMessage("\u{1f4b5} " + args[1].toUpperCase() + args[0] + " = " + args[2].toUpperCase() + rate.toLocaleString(undefined, { minimumFractionDigits: 2 })); }
 					catch (e) { msg.channel.sendMessage("\u{1f4b5} Invalid exchange query."); }
 				}
 			});
@@ -336,6 +340,29 @@ module.exports = {
 	}
 },
 
+"virus": {
+	desc: "Returns RE:RN virus data.\nUSAGE: -virus [VIRUSNAME]\nEXAMPLE: -virus CannonGuard2 EX",
+	lvl: "rern",
+	func: (msg, cmd, bot) => {
+		if (msg.channel.id === "208746890932649995" || msg.channel.id === "268383263599493122") {
+			var metool = bot.guilds.get("208498945343750144").emojis.get("278711463500316673");
+			if (!cmd) { module.exports["help"].func(msg, "virus", bot);  }
+			else {
+				var found = false, foundkey = "", foundidx = 0;
+				for (var key in virusData) {
+					for (var i = 0; i <= 6; i++) {
+						if (virusData[key].virus[i].name === cmd) {
+							found = true; foundkey = key;	foundidx = i;
+							break;
+						}
+					}
+				}
+				if (found) msg.channel.sendMessage(metool + " " + cmd.markbold() + "\n" + virusData[foundkey].virus[foundidx].desc.replace(/<br>/g,'\n').codeblock());
+			}
+		}
+	}
+},
+
 "trader": {
 	desc: "Sacrifices a chip into the chip trader and prints out the result.\nUSAGE: -trader [BATTLECHIP]\nEXAMPLE: -trader Cannon",
 	lvl: "rern",
@@ -344,7 +371,6 @@ module.exports = {
 		else msg.channel.sendMessage('\u{1f5f3} Result: ' + traderoll(cmd));
 	}
 },
-
 
 "help": {
 	desc: "Provides help on bot commands.\n-help: Lists all available commands.\nUSAGE: -help [COMMAND]: Prints information on specific command.",
