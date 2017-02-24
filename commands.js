@@ -37,7 +37,7 @@ module.exports = {
 	desc: "Restarts the bot.\nUSAGE: -kys",
 	lvl: "author",
 	func: (msg, cmd, bot) => {
-		msg.channel.sendMessage("\u{1f503} Restarting."); bot.destroy(); bot.login(authData.token);
+		msg.channel.sendMessage("\u{1f503} Restarting.").then(m => process.exit());
 	}
 },
 
@@ -154,7 +154,7 @@ module.exports = {
 			} else { content += "`\nUser ID: " + userid.code() + "\n"; }
 			content += "Account created: " + (new Date(usr.createdTimestamp).toUTCString() + " (" + timeCounter(creatediff) + " ago)").code() + "\n";
 			content += "Current status: " + usr.presence.status.code() + "\n";
-			content += usr.displayAvatarURL;
+			content += usr.displayAvatarURL.replace(/\.jpg/,".png");
 			msg.channel.sendMessage(content);
 		});
 	}
@@ -270,7 +270,7 @@ module.exports = {
 					fx.rates = JSON.parse(body).rates;
 					fx.rates["EUR"] = 1;
 					try { var rate = fx(args[0]).from(args[1].toUpperCase()).to(args[2].toUpperCase());
-					msg.channel.sendMessage("\u{1f4b5} " + args[1].toUpperCase() + args[0] + " = " + args[2].toUpperCase() + rate.toLocaleString(undefined, { minimumFractionDigits: 2 })); }
+					msg.channel.sendMessage("\u{1f4b5} " + args[1].toUpperCase() + args[0] + " = " + args[2].toUpperCase() + rate.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })); }
 					catch (e) { msg.channel.sendMessage("\u{1f4b5} Invalid exchange query."); }
 				}
 			});
@@ -317,9 +317,12 @@ module.exports = {
 				else msg.channel.sendMessage(msga[0].code() + " already exists!");
 			}
 			else {
-				pastaData[msg.guild.id][msga[0]] = pastacmd;
-				jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2});
-				msg.channel.sendMessage(msga[0].code() + " added as custom command. Type `~" + msga[0] + "` to use it.");
+				if (pastacmd === cmd) msg.channel.sendMessage(msga[0].code() + " does not exist!");
+				else {
+					pastaData[msg.guild.id][msga[0]] = pastacmd;
+					jsonfile.writeFileSync('./pasta.json', pastaData, {spaces: 2});
+					msg.channel.sendMessage(msga[0].code() + " added as custom command. Type `~" + msga[0] + "` to use it.");
+				}
 			}
 		}
 	}

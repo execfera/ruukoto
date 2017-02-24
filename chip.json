@@ -906,12 +906,28 @@
     "img": "http://i759.photobucket.com/albums/xx231/MagicCereal/Chips/BusterBooster.png",
     "type": "Buster"
   },
+  "Navi+10": {
+    "summ": "Buster Attack +10 (18 Use)",
+    "desc": "Status: Buster Attack +10<br>Accuracy: S<br>Description: Adds 10 Damage to all Buster Shots for 1 use, and 40 to all Charged Shots for 3 uses.<br>Duration: 18 Uses or until overridden.<br>Element: Null",
+    "acc": "S",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Buster"
+  },
   "Navi+20": {
     "summ": "Buster Attack +20 (18 Use)",
     "desc": "Status: Buster Attack +20<br>Accuracy: S<br>Description: Adds 20 Damage to all Buster Shots for 1 use, and 80 to all Charged Shots for 3 uses.<br>Duration: 18 Uses or until overridden.<br>Element: Null",
     "acc": "S",
     "elem": "Null",
     "img": "http://i814.photobucket.com/albums/zz69/PA_Chiplists/20navi.png",
+    "type": "Buster"
+  },
+  "Navi+30": {
+    "summ": "Buster Attack +30 (18 Use)",
+    "desc": "Status: Buster Attack +30<br>Accuracy: S<br>Description: Adds 30 Damage to all Buster Shots for 1 use, and 120 to all Charged Shots for 3 uses.<br>Duration: 18 Uses or until overridden.<br>Element: Null",
+    "acc": "S",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
     "type": "Buster"
   },
   "Navi+40": {
@@ -4160,6 +4176,33 @@
     "img": "http://i759.photobucket.com/albums/xx231/MagicCereal/Chips/IceBall3.png",
     "type": "Bomb"
   },
+  "PoisonBall1": {
+    "dmg": 50,
+    "summ": "50 + Break + Poison Panel Change + Poison(10)",
+    "desc": "Damage: 50 + Break + Poison Panel Change + Poison(10)<br>Accuracy: C<br>Description: A bomb that poisons all it touches, including the ground and other Navis.<br>Duration: Once<br>Element: Null<br>Special: Poison(10): Deals 10 poison damage per action to the victim starting the turn after this attack hits. This effect stacks with other timed damage effects, including other Poison effects. Can be cured with Status Cure.",
+    "acc": "C",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Bomb"
+  },
+  "PoisonBall2": {
+    "dmg": 100,
+    "summ": "100 + Break + Poison Panel Change + Poison(15)",
+    "desc": "Damage: 100 + Break + Poison Panel Change + Poison(15)<br>Accuracy: C<br>Description: A bomb that poisons all it touches, including the ground and other Navis.<br>Duration: Once<br>Element: Null<br>Special: Poison(15): Deals 15 poison damage per action to the victim starting the turn after this attack hits. This effect stacks with other timed damage effects, including other Poison effects. Can be cured with Status Cure.",
+    "acc": "C",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Bomb"
+  },
+  "PoisonBall3": {
+    "dmg": 150,
+    "summ": "150 + Break + Poison Panel Change + Poison(20)",
+    "desc": "Damage: 150 + Break + Poison Panel Change + Poison(20)<br>Accuracy: C<br>Description: A bomb that poisons all it touches, including the ground and other Navis.<br>Duration: Once<br>Element: Null<br>Special: Poison(20): Deals 20 poison damage per action to the victim starting the turn after this attack hits. This effect stacks with other timed damage effects, including other Poison effects. Can be cured with Status Cure.",
+    "acc": "C",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
+    "type": "Bomb"
+  },
   "FreezeBomb": {
     "dmg": 130,
     "summ": "130 + Hold + Blast 3",
@@ -5730,6 +5773,15 @@
     "acc": "A",
     "elem": "Null",
     "img": "http://i814.photobucket.com/albums/zz69/PA_Chiplists/cannon-m.png",
+    "type": "Gun"
+  },
+  "SuperCannon": {
+    "dmg": 240,
+    "summ": "240 + Knockback",
+    "desc": "Damage: 240 + Knockback<br>Accuracy: A<br>Description: A decent sized cannon with a single shot. Rare<br>Duration: Once<br>Element: Null",
+    "acc": "A",
+    "elem": "Null",
+    "img": "http://i.imgur.com/72CxxOF.png",
     "type": "Gun"
   },
   "AirShot1": {

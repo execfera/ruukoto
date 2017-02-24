@@ -58,13 +58,13 @@ bot.on("message", (msg) => {
 		/* Custom Command Parser
 		-- Ensure that strikethroughs aren't parsed.
 		*/
-		else if (msgc[0] === '~' && msgc[1] !== '~') {
+		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
 			if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id]) { msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]); }
 			else msg.channel.sendMessage("`" + msga[0].slice(1) + "` does not exist!");
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
-		*/
+		/
 		else if (msg.isMentioned(bot.user) || msg.channel.type == 'dm') {
 			try { clever.write(msgc, function(res){
 				if (msg.channel.type != 'dm' && msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " " + res.message);
@@ -75,6 +75,7 @@ bot.on("message", (msg) => {
 			});
 			} catch (e) { console.log(e); }
 		}
+		*/
 	}
 
 });
@@ -97,13 +98,13 @@ bot.on("presenceUpdate", (oldUser, newUser) => {
 bot.on("guildMemberAdd", (newUser) => {
 	if (newUser.guild.id === "208498945343750144") {
 		if (newUser.user.username === "Bomber") newUser.addRole('265271322832142336');
-		else rernmain.sendMessage(msprog + " Welcome to the RE:RN chat, " + newUser.user.username + "!");
+		else newUser.guild.defaultChannel.sendMessage(msprog + " Welcome to the RE:RN chat, " + newUser.user.username + "!");
 	}
 	if (newUser.guild.id === "103851116512411648") newUser.guild.defaultChannel.sendMessage("Welcome to the Cheesebox, " + newUser.user.username + "!");
 });
 
 bot.on("guildMemberRemove", (oldUser) => {
-	if (oldUser.guild.id === "103851116512411648") oldUser.guild.defaultChannel.sendMessage(oldUser.user.username + " didn't fly so good. Who wants to try next?");
+	if (oldUser.guild.id === "103851116512411648") oldUser.guild.defaultChannel.sendMessage(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}"));
 });
 
 /* Voice Channel Tracker
