@@ -7,12 +7,14 @@ var eightball = require('8ball');
 var weather = require('openweather-apis');
 var urban = require('urban');
 var fx = require('money');
+var math = require('mathjs');
 
 var authData = require('./auth.json');
 var chipData = require("./chip.json");
 var traderData = require("./trader.json");
 var pastaData = require("./pasta.json");
 var virusData = Object.assign(require("./virus1.json"), require("./virus2.json"));
+var youData = require("./you.json");
 
 weather.setAPPID(authData.openweatherkey);
 weather.setLang('en');
@@ -328,6 +330,17 @@ module.exports = {
 	}
 },
 
+"math": {
+	desc: "Evaluates a mathematical expression. Refer to http://mathjs.org/docs/expressions/index.html for more details.\nUSAGE: -math [EXPRESSION]\nEXAMPLE: -math 1.2 * (2 + 4.5), -math 5.08 cm to inch, -math sin(45 deg) ^ 2, -math 9 / 3 + 2i, -math det([-1, 2; 3, 1])",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		if (!cmd) { module.exports["help"].func(msg, "math", bot);  }
+		else {
+			msg.channel.sendMessage(math.eval(cmd));
+		}
+	}
+},
+
 "chip": {
 	desc: "Returns RE:RN Battlechip data.\nUSAGE: -chip [BATTLECHIP]\nEXAMPLE: -chip Cannon",
 	lvl: "rern",
@@ -375,6 +388,55 @@ module.exports = {
 	}
 },
 
+"you": {
+	desc: "Provides a (You). Usable every 24 hours, resetting at 00:00:00 UTC. Use the -rank option to display up to 10 top (You) collectors and -count option to display a single person's amount.\nUSAGE: -you, -you rank, -you count, -you count @Ms. Prog#1162",
+	lvl: "cheese",
+	func: (msg, cmd, bot) => {
+		if (msg.guild.id === "103851116512411648") {
+			var youji = bot.guilds.get("103851116512411648").emojis.get("248962540837535745");
+			if (cmd.split(' ')[0] === 'rank') {
+				var youRank = [], youRankDisp = [];
+				for (var rankid in youData) youRank.push([youData[rankid][0], youData[rankid][1], rankid]);
+				youRank.sort(function(a, b) { return a[1] - b[1];	});
+				youRank = youRank.slice(0,9);
+				for (let i = 0; i < youRank.length; i++){
+					var rankname = msg.guild.members.get(youRank[i][2]).nickname ? msg.guild.members.get(youRank[i][2]).nickname : msg.guild.members.get(youRank[i][2]).user.username;
+					youRankDisp.push(`[${i+1}] ${rankname}: ${youRank[i][1]}`);
+				}
+				msg.channel.sendMessage(youji + "conomy Rankings: \n```css\n" + youRankDisp.join("\n") + "\n```");
+			}
+			else if (cmd.split(' ')[0] === 'count') {
+				if (cmd.split(' ')[1]) {
+					var queryid = mention2id(cmd.split(' ')[1]);
+					if (queryid in youData)	msg.channel.sendMessage(`${id2mention(queryid)} has ${youData[queryid][1].toString().code()} ${youji}s.`);
+					else msg.channel.sendMessage(`Invalid ${youji} query.`);
+				}
+				else {
+					if (msg.author.id in youData)	msg.channel.sendMessage(`${msg.author} has ${youData[msg.author.id][1].toString().code()} ${youji}s.`);
+					else msg.channel.sendMessage(`${msg.author} has no ${youji}s.`);
+				}
+			}
+			else {
+				if (msg.channel.id === "284733446029312000") {
+					if (msg.author.id in youData) {
+						if (youData[msg.author.id][0] <= (new Date().getTime() - new Date().getTime() % 86400000)) {
+							youData[msg.author.id] = [new Date().getTime(), youData[msg.author.id][1]++];
+							jsonfile.writeFileSync('./you.json', youData, {spaces: 2});
+							msg.channel.sendMessage(`${msg.author} now has ${youData[msg.author.id][1].toString().code()} ${youji}s.`);
+						}
+						else msg.channel.sendMessage(`${msg.author}, please wait until midnight UTC for your next ${youji}.`);
+					}
+					else {
+						youData[msg.author.id] = [new Date().getTime(), 1];
+						jsonfile.writeFileSync('./you.json', youData, {spaces: 2});
+						msg.channel.sendMessage(`${msg.author} now has 1 ${youji}.`);
+					}
+				}
+			}
+		}
+	}
+},
+
 "help": {
 	desc: "Provides help on bot commands.\n-help: Lists all available commands.\nUSAGE: -help [COMMAND]: Prints information on specific command.",
 	lvl: "all",
@@ -384,6 +446,7 @@ module.exports = {
 				switch (module.exports[e].lvl) {
 					case "author": return msg.author.id === "91327883208843264";
 					case "rern": return msg.guild.id === "208498945343750144";
+					case "cheese": return msg.guild.id === "103851116512411648";
 					default: return true;
 				}
 			}).map(e => e.code());
@@ -404,6 +467,9 @@ String.prototype.codeblock = function () { return "```\n" + this + "\n```"; }
 
 function mention2id (str) {
 	return str.slice(2,3) === '!' ? str.slice(3,-1) : str.slice(2,-1);
+}
+function id2mention (str) {
+	return "<@" + str + ">";
 }
 
 function getWeatherIcon (iconid) {
