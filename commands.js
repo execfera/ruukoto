@@ -8,6 +8,7 @@ var weather = require('openweather-apis');
 var urban = require('urban');
 var fx = require('money');
 var math = require('mathjs');
+var google = require('googleapis');
 
 var authData = require('./auth.json');
 var chipData = require("./chip.json");
@@ -132,7 +133,7 @@ module.exports = {
 	desc: "Prints out the high-quality version of user given. If none given, prints out command user's avatar.\nUSAGE: -avatar, -avatar [@USER_MENTION]\nEXAMPLE: -avatar @Ms. Prog#1162",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
-		if (cmd) msg.channel.sendMessage(bot.users.get(mention2id(cmd)).displayAvatarURL.replace(/\.jpg/,".png"));
+		if (cmd) bot.fetchUser(mention2id(cmd)).then(usr => {msg.channel.sendMessage(usr.displayAvatarURL.replace(/\.jpg/,".png"))});
 		else msg.channel.sendMessage(bot.users.get(msg.author.id).displayAvatarURL.replace(/\.jpg/,".png"));
 	}
 },
@@ -341,6 +342,25 @@ module.exports = {
 	}
 },
 
+"google": {
+	desc: "Performs a Google search. Warning: Limited to 100 queries per day; please do not abuse.\nUSAGE: -google [SEARCH_TERM]\nEXAMPLE: -google Yahoo",
+	lvl: "all",
+	func: (msg, cmd, bot) => {
+		if (!cmd) { module.exports["help"].func(msg, "google", bot);  }
+		else {
+			var cs = google.customsearch('v1'), srcres = [];
+			cs.cse.list({cx: authData.google_cx, auth: authData.google_apikey, q: cmd}, function (err, res) {
+				if (err) msg.channel.sendMessage (err);
+				else if (res.items && res.items.length > 0) {
+					var srcres = new Discord.RichEmbed({title: "Google Search", url: `https://www.google.com/search?q=${cmd}`, color: 0x2196f3});
+					for (let i = 0; i < 3; i++) srcres.addField(res.items[i].title, `[${res.items[i].snippet}](${res.items[i].formattedUrl})`);
+					msg.channel.sendMessage("", {embed: srcres});
+				}
+			});
+		}
+	}
+},
+
 "chip": {
 	desc: "Returns RE:RN Battlechip data.\nUSAGE: -chip [BATTLECHIP]\nEXAMPLE: -chip Cannon",
 	lvl: "rern",
@@ -397,13 +417,13 @@ module.exports = {
 			if (cmd.split(' ')[0] === 'rank') {
 				var youRank = [], youRankDisp = [];
 				for (var rankid in youData) youRank.push([youData[rankid][0], youData[rankid][1], rankid]);
-				youRank.sort(function(a, b) { return a[1] - b[1];	});
+				youRank.sort(function(a, b) { return b[1] - a[1];	});
 				youRank = youRank.slice(0,9);
 				for (let i = 0; i < youRank.length; i++){
 					var rankname = msg.guild.members.get(youRank[i][2]).nickname ? msg.guild.members.get(youRank[i][2]).nickname : msg.guild.members.get(youRank[i][2]).user.username;
 					youRankDisp.push(`[${i+1}] ${rankname}: ${youRank[i][1]}`);
 				}
-				msg.channel.sendMessage(youji + "conomy Rankings: \n```css\n" + youRankDisp.join("\n") + "\n```");
+				msg.channel.sendMessage(`${youji}conomy Rankings: \n${youRankDisp.join("\n").codeblock("css")}`);
 			}
 			else if (cmd.split(' ')[0] === 'count') {
 				if (cmd.split(' ')[1]) {
@@ -420,7 +440,7 @@ module.exports = {
 				if (msg.channel.id === "284733446029312000") {
 					if (msg.author.id in youData) {
 						if (youData[msg.author.id][0] <= (new Date().getTime() - new Date().getTime() % 86400000)) {
-							youData[msg.author.id] = [new Date().getTime(), youData[msg.author.id][1]++];
+							youData[msg.author.id] = [new Date().getTime(), youData[msg.author.id][1]+1];
 							jsonfile.writeFileSync('./you.json', youData, {spaces: 2});
 							msg.channel.sendMessage(`${msg.author} now has ${youData[msg.author.id][1].toString().code()} ${youji}s.`);
 						}
@@ -463,7 +483,7 @@ module.exports = {
 String.prototype.markbold = function () { return "**" + this + "**"; }
 String.prototype.markline = function () { return "__" + this + "__"; }
 String.prototype.code = function () { return "`" + this + "`"; }
-String.prototype.codeblock = function () { return "```\n" + this + "\n```"; }
+String.prototype.codeblock = function (lang="") { return "```" + lang + "\n" + this + "\n```"; }
 
 function mention2id (str) {
 	return str.slice(2,3) === '!' ? str.slice(3,-1) : str.slice(2,-1);
