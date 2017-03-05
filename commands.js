@@ -66,7 +66,7 @@ module.exports = {
 			content += "**Users: **" + bot.users.size + "\n\n";
 			content += "**Startup: **" + bot.readyAt.toUTCString() + "\n";
 			content += "**Uptime: **" + timeCounter(bot.uptime/1000) + "\n";
-			content += "**Ping: **" + Math.trunc(bot.ping) + "ms"
+			content += "**Ping: **" + Math.trunc(bot.ping) + "ms";
 			msg.channel.sendMessage(content);
 		});
 	}
@@ -286,17 +286,20 @@ module.exports = {
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "weather", bot);  }
-		else try {
+		else {
 			var wreport;
 			weather.setCity(cmd);
 			weather.getAllWeather(function(err, res){
-				wreport = getWeatherIcon(res.weather[0].icon) + "__**Weather** for " + res.name + ", " + res.sys.country + "__ :flag_" + res.sys.country.toLowerCase() + ":";
-				wreport += "\n" + res.main.temp + "°C / " + (res.main.temp*1.8+32).toFixed(2) + "°F, " + res.weather[0].description;
-				wreport += "\n" + res.clouds.all + "% Clouds, Wind Speed " + (res.wind.speed*3.6).toFixed(2) + "km/h / " + (res.wind.speed*2.2369).toFixed(2) + "mph";
-				wreport += "\n" + "Barometric Pressure: " + res.main.pressure + "hPa " + res.main.humidity + "% humidity";
-				msg.channel.sendMessage(wreport);
+				if (res) {
+					wreport = getWeatherIcon(res.weather[0].icon) + "__**Weather** for " + res.name + ", " + res.sys.country + "__ :flag_" + res.sys.country.toLowerCase() + ":";
+					wreport += "\n" + res.main.temp + "°C / " + (res.main.temp*1.8+32).toFixed(2) + "°F, " + res.weather[0].description;
+					wreport += "\n" + res.clouds.all + "% Clouds, Wind Speed " + (res.wind.speed*3.6).toFixed(2) + "km/h / " + (res.wind.speed*2.2369).toFixed(2) + "mph";
+					wreport += "\n" + "Barometric Pressure: " + res.main.pressure + "hPa " + res.main.humidity + "% humidity";
+					msg.channel.sendMessage(wreport);
+				}
+				else msg.channel.sendMessage(err);
 			});
-		} catch (e) { msg.channel.sendMessage("Weather Error: " + e); }
+		}
 	}
 },
 
@@ -352,8 +355,9 @@ module.exports = {
 			cs.cse.list({cx: authData.google_cx, auth: authData.google_apikey, q: cmd}, function (err, res) {
 				if (err) msg.channel.sendMessage (err);
 				else if (res.items && res.items.length > 0) {
-					var srcres = new Discord.RichEmbed({title: "Google Search", url: `https://www.google.com/search?q=${cmd}`, color: 0x2196f3});
-					for (let i = 0; i < 3; i++) srcres.addField(res.items[i].title, `[${res.items[i].snippet}](${res.items[i].formattedUrl})`);
+					var reslen = res.items.length < 3 ? res.items.length : 3;
+					var srcres = new Discord.RichEmbed({title: `Google Search for ${cmd}`, url: `https://www.google.com/search?q=${encodeURIComponent(cmd)}`, color: 0x2196f3});
+					for (let i = 0; i < reslen; i++) { srcres.addField(res.items[i].title, `[${res.items[i].snippet}](${res.items[i].formattedUrl})`); }
 					msg.channel.sendMessage("", {embed: srcres});
 				}
 			});
@@ -486,7 +490,7 @@ String.prototype.code = function () { return "`" + this + "`"; }
 String.prototype.codeblock = function (lang="") { return "```" + lang + "\n" + this + "\n```"; }
 
 function mention2id (str) {
-	return str.slice(2,3) === '!' ? str.slice(3,-1) : str.slice(2,-1);
+	return str[2] === '!' ? str.slice(3,-1) : str.slice(2,-1);
 }
 function id2mention (str) {
 	return "<@" + str + ">";
