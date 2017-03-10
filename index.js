@@ -8,10 +8,10 @@ var	commands = require('./commands');
 var	auth = require('./auth.json');
 var pastaData = require("./pasta.json");
 
-var Cleverbot = require('cleverbot-node');
-var clever = new Cleverbot;
-clever.configure({botapi: "RUUKOTO_DISCBOT"});
-Cleverbot.prepare(()=>{;});
+var cleverbot = require("cleverbot.io")
+var clever = new cleverbot('Fy7r3QD2iTQW1uXw','4XptdRQhabgpSA6wFpzBpNIv3FDTDuiB');
+clever.setNick("RUUKOTO_DISCBOT");
+clever.create(function (err, session) {});
 
 var msprog;
 
@@ -65,18 +65,19 @@ bot.on("message", (msg) => {
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
-		/
-		else if (msg.isMentioned(bot.user) || msg.channel.type == 'dm') {
-			try { clever.write(msgc, function(res){
-				if (msg.channel.type != 'dm' && msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " " + res.message);
-				else {
-					if (res.message[0] === '*') msg.channel.sendMessage('*' + res.message[1] + '-' + res.message.slice(1));
-					else msg.channel.sendMessage(res.message[0] + '-' + res.message);
-				}
-			});
-			} catch (e) { console.log(e); }
-		}
 		*/
+		else if (msg.isMentioned(bot.user) || msg.channel.type == 'dm') {
+			clever.ask(msgc, function(err, res){
+				if (!err){
+					if (msg.channel.type != 'dm' && msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " " + res);
+					else {
+						if (res[0] === '*') msg.channel.sendMessage('*' + res[1] + '-' + res.slice(1));
+						else msg.channel.sendMessage(res[0] + '-' + res);
+					}
+				}
+				else msg.channel.sendMessage(err);
+			});
+		}
 	}
 
 });
