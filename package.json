@@ -16,6 +16,7 @@
   "dependencies": {
     "8ball": "^1.0.6",
     "cheerio": "^0.22.0",
+    "cleverbot": "^1.0.1",
     "cleverbot.io": "^1.0.4",
     "d20": "^1.4.1",
     "discord.js": "^11.0.0",
