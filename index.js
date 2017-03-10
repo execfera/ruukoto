@@ -8,10 +8,10 @@ var	commands = require('./commands');
 var	auth = require('./auth.json');
 var pastaData = require("./pasta.json");
 
-var cleverbot = require("cleverbot.io")
-var clever = new cleverbot('Fy7r3QD2iTQW1uXw','4XptdRQhabgpSA6wFpzBpNIv3FDTDuiB');
-clever.setNick("RUUKOTO_DISCBOT");
-clever.create(function (err, session) {});
+var cleverbot = require("cleverbot"), clever = new cleverbot({key: auth.clever_key}), cleverstate;
+var cleverbot2 = require("cleverbot.io"), clever2 = new cleverbot2(auth.clever2_user,auth.clever2_key);
+clever2.setNick("RUUKOTO_DISCBOT");
+clever2.create(function (err, session) {});
 
 var msprog;
 
@@ -65,18 +65,28 @@ bot.on("message", (msg) => {
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
+		-- Use Cleverbot.com with Cleverbot.io fallback.
 		*/
 		else if (msg.isMentioned(bot.user) || msg.channel.type == 'dm') {
-			clever.ask(msgc, function(err, res){
-				if (!err){
-					if (msg.channel.type != 'dm' && msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " " + res);
-					else {
-						if (res[0] === '*') msg.channel.sendMessage('*' + res[1] + '-' + res.slice(1));
-						else msg.channel.sendMessage(res[0] + '-' + res);
-					}
-				}
-				else msg.channel.sendMessage(err);
-			});
+			var clrern = msg.channel.type != 'dm' && msg.guild.id === "208498945343750144";
+			if (cleverstate) {
+				clever.query(msgc, {cs: cleverstate})
+				.then(res => {msg.channel.sendMessage(stutter(res.output, clrern));})
+				.catch(e => {
+					clever2.ask(msgc, function (err, res) {
+  					msg.channel.sendMessage(stutter(res, clrern));
+					});
+				});
+			}
+			else {
+				clever.query(msgc)
+				.then(res => {msg.channel.sendMessage(stutter(res.output, clrern)); cleverstate = res.cs;})
+				.catch(e => {
+					clever2.ask(msgc, function (err, res) {
+  					msg.channel.sendMessage(stutter(res, clrern));
+					});
+				});
+			}
 		}
 	}
 
@@ -138,3 +148,8 @@ app.get('/meme/:servid', function (req, res) {
 });
 
 app.listen(80, function () {;})
+
+function stutter(res, clrern){
+	var result = res[0] === '*' ? '*' + res[1] + '-' + res.slice(1) : res[0] + '-' + res;
+	return clrern ? msprog + " " + result : result;
+}
