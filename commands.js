@@ -53,6 +53,16 @@ module.exports = {
 	}
 },
 
+"invite": {
+	desc: "Prints the bot's invite link.\nUSAGE: -invite",
+	lvl: "author",
+	func: (msg, cmd, bot) => {
+		bot.generateInvite().then(link =>{
+			msg.channel.sendMessage(link);
+		});
+	}
+},
+
 "botinfo": {
 	desc: "Returns info about the current bot instance.\nUSAGE: -botinfo",
 	lvl: "all",
@@ -268,7 +278,7 @@ module.exports = {
 				else args = [1, "USD", args[0]];
 			}
 			if (!(args[2])) args[2] = "USD";
-			request("http://api.fixer.io/latest", function(err, res, body) {
+			request(`http://api.fixer.io/latest?symbols=${args[1].toUpperCase()},${args[2].toUpperCase()}`, function(err, res, body) {
 				if (!err && res.statusCode == 200) {
 					fx.rates = JSON.parse(body).rates;
 					fx.rates["EUR"] = 1;
@@ -461,8 +471,25 @@ module.exports = {
 	}
 },
 
+"declare": {
+	desc: "Declares your intent to see some booty, or otherwise. Type in the next message exactly.\nUSAGE: -declare I am over the age of 18 and want to see some booty.: Adds 18+ role.\n-declare I don't want to see the booty anymore.: Removes 18+ role.",
+	lvl: "zed",
+	func: (msg, cmd, bot) => {
+		if (msg.guild.id === "206956124237332480") {
+			if (!cmd) { module.exports["help"].func(msg, "declare", bot);  }
+			else switch (cmd){
+				case "I am over the age of 18 and want to see some booty":
+				case "I am over the age of 18 and want to see some booty.": msg.member.addRole("289910636199280640"); msg.channel.sendMessage("Please enjoy the booty."); break;
+				case "I don't want to see the booty anymore":
+				case "I don't want to see the booty anymore.": msg.member.removeRole("289910636199280640"); msg.channel.sendMessage("What a pure soul!"); break;
+				default: msg.channel.sendMessage("Invalid declaration. Refer to `-help declare` for the appropriate ones.");
+			}
+		}
+	}
+},
+
 "help": {
-	desc: "Provides help on bot commands.\n-help: Lists all available commands.\nUSAGE: -help [COMMAND]: Prints information on specific command.",
+	desc: "Provides help on bot commands.\nUSAGE: -help: Lists all available commands to this user.\n-help [COMMAND]: Prints information on specific command.",
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) {
@@ -471,6 +498,7 @@ module.exports = {
 					case "author": return msg.author.id === "91327883208843264";
 					case "rern": return msg.guild.id === "208498945343750144";
 					case "cheese": return msg.guild.id === "103851116512411648";
+					case "zed": return msg.guild.id === "206956124237332480";
 					default: return true;
 				}
 			}).map(e => e.code());

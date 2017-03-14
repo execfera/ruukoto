@@ -61,7 +61,7 @@ bot.on("message", (msg) => {
 		*/
 		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
 			if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id]) { msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]); }
-			else msg.channel.sendMessage("`" + msga[0].slice(1) + "` does not exist!");
+			else msg.channel.sendMessage("`" + msga[0].slice(1) + "` does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
@@ -113,6 +113,10 @@ bot.on("guildMemberAdd", (newUser) => {
 		else newUser.guild.defaultChannel.sendMessage(msprog + " Welcome to the RE:RN chat, " + newUser.user.username + "!");
 	}
 	if (newUser.guild.id === "103851116512411648") newUser.guild.defaultChannel.sendMessage("Welcome to the Cheesebox, " + newUser.user.username + "!");
+	if (newUser.guild.id === "206956124237332480") {
+		newUser.guild.defaultChannel.sendMessage("Welcome to Zedart, " + newUser.user.username + "!");
+		newUser.addRole('276871780352917504');
+	}
 });
 
 bot.on("guildMemberRemove", (oldUser) => {
