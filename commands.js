@@ -24,7 +24,8 @@ weather.setUnits('metric');
 module.exports = {
 
 "eval": {
-	desc: "Evaluates raw JavaScript.\nUSAGE: -eval [COMMAND]",
+	desc: "Evaluates raw JavaScript.\nUSAGE: -eval [COMMAND]\nALIAS: e",
+	alias: ["e"],
 	lvl: "author",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "eval", bot);  }
@@ -84,6 +85,7 @@ module.exports = {
 
 "echo": {
 	desc: "Makes the bot say the given statement.\nUSAGE: -echo [MESSAGE]\nEXAMPLE: -echo I'm talking through the bot!",
+	alias: ["say"],
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "echo", bot);  }
@@ -102,7 +104,8 @@ module.exports = {
 },
 
 "choose": {
-	desc: "Chooses one of two or more given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nEXAMPLE: -choose apple, banana, canteloupe",
+	desc: "Chooses one of two or more given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nALIAS: choice, c\nEXAMPLE: -choose apple, banana, canteloupe",
+	alias: ["choice", "c"],
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "choose", bot);  }
@@ -278,21 +281,33 @@ module.exports = {
 				else args = [1, "USD", args[0]];
 			}
 			if (!(args[2])) args[2] = "USD";
-			request(`http://api.fixer.io/latest?symbols=${args[1].toUpperCase()},${args[2].toUpperCase()}`, function(err, res, body) {
+			args = [args[0], args[1].toUpperCase(), args[2].toUpperCase()];
+			request(`http://www.apilayer.net/api/live?access_key=${authData.currencylayer_key}&currencies=${args[1]},${args[2]}`, function(err, res, body) {
 				if (!err && res.statusCode == 200) {
-					fx.rates = JSON.parse(body).rates;
-					fx.rates["EUR"] = 1;
-					try { var rate = fx(args[0]).from(args[1].toUpperCase()).to(args[2].toUpperCase());
-					msg.channel.sendMessage("\u{1f4b5} " + args[1].toUpperCase() + args[0] + " = " + args[2].toUpperCase() + rate.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })); }
+					fx.rates["USD"] = 1;
+					fx.rates[args[1]] = JSON.parse(body).quotes["USD"+args[1]];
+					fx.rates[args[2]] = JSON.parse(body).quotes["USD"+args[2]];
+					try { var rate = fx(args[0]).from(args[1]).to(args[2]);
+					msg.channel.sendMessage("\u{1f4b5} " + args[1] + args[0] + " = " + args[2] + rate.toLocaleString(undefined, { minimumFractionDigits: rate<0.01?4:2, maximumFractionDigits: rate<0.01?4:2 })); }
 					catch (e) { msg.channel.sendMessage("\u{1f4b5} Invalid exchange query."); }
 				}
+				else request(`http://api.fixer.io/latest?symbols=${args[1]},${args[2]}`, function(err, res, body) {
+					if (!err && res.statusCode == 200) {
+						fx.rates["EUR"] = 1;
+						fx.rates = JSON.parse(body).rates;
+						try { var rate = fx(args[0]).from(args[1]).to(args[2]);
+						msg.channel.sendMessage("\u{1f4b5} " + args[1] + args[0] + " = " + args[2] + rate.toLocaleString(undefined, { minimumFractionDigits: rate<0.01?4:2, maximumFractionDigits: rate<0.01?4:2 })); }
+						catch (e) { msg.channel.sendMessage("\u{1f4b5} Invalid exchange query."); }
+					}
+				});
 			});
 		}
 	}
 },
 
 "weather": {
-	desc: "Shows current weather for the given area.\nUSAGE: -w [AREA], -weather [AREA]\nEXAMPLE: -w New York",
+	desc: "Shows current weather for the given area.\nUSAGE: -weather [AREA]\nALIAS: w\nEXAMPLE: -weather New York",
+	alias: ["w"],
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "weather", bot);  }
@@ -319,7 +334,7 @@ module.exports = {
 	func: (msg, cmd, bot) => {
 		var msga = cmd.split(' ');
 		if (!cmd) { module.exports["help"].func(msg, "meme", bot);  }
-		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendMessage("Custom command list for this server: http://ruukoto.frelia.my/meme/" + msg.guild.id); }
+		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendFile(Buffer.from(Object.keys(pastaData[msg.guild.id]).join(', '), 'utf8'), 'commands.txt'); }
 		else if (cmd[0] === '~' || cmd[0] === '-') { msg.channel.sendMessage("Invalid command format."); }
 		else {
 			if (!(msg.guild.id in pastaData)) pastaData[msg.guild.id] = { "echo": "echo" };
@@ -356,7 +371,8 @@ module.exports = {
 },
 
 "google": {
-	desc: "Performs a Google search. Warning: Limited to 100 queries per day; please do not abuse.\nUSAGE: -google [SEARCH_TERM]\nEXAMPLE: -google Yahoo",
+	desc: "Performs a Google search. Warning: Limited to 100 queries per day; please do not abuse.\nUSAGE: -google [SEARCH_TERM]\nALIAS: g\nEXAMPLE: -google Yahoo",
+	alias: ["g"],
 	lvl: "all",
 	func: (msg, cmd, bot) => {
 		if (!cmd) { module.exports["help"].func(msg, "google", bot);  }
@@ -455,7 +471,7 @@ module.exports = {
 				    if (new Date().getTime() - youData[msg.author.id][2] > 1800000) {
 				      if (bet === "all") bet = youData[msg.author.id][1];
 				      if (youData[msg.author.id][1] > 0 && bet > 0 && youData[msg.author.id][1] >= bet) {
-				        if (d20.roll(10) > 4) {
+				        if (d20.roll(10) > 6) {
 				          youData[msg.author.id][1] += Number(bet);
 									youData[msg.author.id][2] = new Date().getTime();
 				          jsonfile.writeFileSync('./you.json', youData, {spaces: 2});

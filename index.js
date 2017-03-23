@@ -1,6 +1,5 @@
 ﻿var Discord = require('discord.js');
 var request = require('request');
-var express = require('express');
 var cheerio = require('cheerio');
 var bot = new Discord.Client();
 
@@ -51,10 +50,17 @@ bot.on("message", (msg) => {
 		if (msgc[0] === '-' || (msgc[0] === '.' && msg.guild.id === "103851116512411648")) {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(1);
-			if (msgtype === "w") msgtype = "weather";
-			if (msgtype === "g") msgtype = "google";
-			if (msgtype === "choice") msgtype = "choose";
-			if (msgtype in commands && (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264")) commands[msgtype].func(msg, msgcmd, bot);
+			if (msgtype in commands) {
+				if (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264") commands[msgtype].func(msg, msgcmd, bot);
+			} else {
+				for (cmd in commands) {
+					if ("alias" in commands[cmd]) {
+						for (let i = 0; i < commands[cmd].alias.length; i++) {
+							if (msgtype === commands[cmd].alias[i] && (commands[cmd].lvl !== "author" || msg.author.id === "91327883208843264")) commands[cmd].func(msg, msgcmd, bot);
+						}
+					}
+				}
+			}
 		}
 		/* Custom Command Parser
 		-- Ensure that strikethroughs aren't parsed.
@@ -77,8 +83,7 @@ bot.on("message", (msg) => {
   					msg.channel.sendMessage(stutter(res, clrern));
 					});
 				});
-			}
-			else {
+			}	else {
 				clever.query(msgc)
 				.then(res => {msg.channel.sendMessage(stutter(res.output, clrern)); cleverstate = res.cs;})
 				.catch(e => {
@@ -99,7 +104,7 @@ bot.on("message", (msg) => {
 bot.on("presenceUpdate", (oldUser, newUser) => {
 	if (oldUser.guild.id === "208498945343750144" && oldUser.user.username === "Bomber" && newUser.user.presence.status === "offline") {
 		newUser.kick();
-		newUser.guild.defaultChannel.sendMessage(msprog + " Good night, Bomber!");
+		newUser.guild.defaultChannel.sendMessage(msprog + " See you later, Bomber!");
 	}
 });
 
@@ -137,21 +142,6 @@ bot.on("voiceStateUpdate", (oldUser, newUser) => {
 		}
 	}
 });
-
-/* HTTP for hosting custom commands
---
-*/
-var app = express();
-
-app.get('/', function (req, res) {
-	res.send("Ruukoto online. Discord Heartbeat: " + Math.trunc(bot.ping) + "ms.");
-});
-
-app.get('/meme/:servid', function (req, res) {
-	if (req.params.servid in pastaData) res.send("Custom commands for server ID " + req.params.servid + ":<br>" + Object.keys(pastaData[req.params.servid]).join(', '));
-});
-
-app.listen(80, function () {;})
 
 function stutter(res, clrern){
 	var result = res[0] === '*' ? '*' + res[1] + '-' + res.slice(1) : res[0] + '-' + res;
