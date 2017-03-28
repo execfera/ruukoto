@@ -1,20 +1,23 @@
 ﻿var Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
+require("./strutil");
 var bot = new Discord.Client();
 
-var	commands = require('./commands');
-var	auth = require('./auth.json');
-var pastaData = require("./pasta.json");
+global.__root = require('path').resolve(__dirname);
 
-var cleverbot = require("cleverbot"), clever = new cleverbot({key: auth.clever_key}), cleverstate;
-var cleverbot2 = require("cleverbot.io"), clever2 = new cleverbot2(auth.clever2_user,auth.clever2_key);
+var	commands = require("./commands");
+var	authData = require("./storage/auth.json");
+var pastaData = require("./storage/user/pasta.json");
+
+var cleverbot = require("cleverbot"), clever = new cleverbot({key: authData.clever_key}), cleverstate;
+var cleverbot2 = require("cleverbot.io"), clever2 = new cleverbot2(authData.clever2_user,authData.clever2_key);
 clever2.setNick("RUUKOTO_DISCBOT");
 clever2.create(function (err, session) {});
 
 var msprog;
 
-bot.login(auth.token);
+bot.login(authData.token);
 
 bot.on("ready", () => {
 	console.log("freliabot online");
@@ -51,7 +54,10 @@ bot.on("message", (msg) => {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype in commands) {
-				if (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264") commands[msgtype].func(msg, msgcmd, bot);
+				if (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264") 
+				{ 
+					commands[msgtype].func(msg, msgcmd, bot);
+				}
 			} else {
 				for (cmd in commands) {
 					if ("alias" in commands[cmd]) {
@@ -67,7 +73,7 @@ bot.on("message", (msg) => {
 		*/
 		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
 			if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id]) { msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]); }
-			else msg.channel.sendMessage("`" + msga[0].slice(1) + "` does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
+			else msg.channel.sendMessage(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.

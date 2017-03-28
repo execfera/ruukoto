@@ -5,4 +5,4 @@ clean it up a bit more.
 
 ## License
 
-¯\_(ツ)_/¯
+¯\\\_(ツ)\_/¯
