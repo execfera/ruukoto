@@ -1,4 +1,3 @@
-String.prototype.code = function () { return "`" + this + "`"; }
 String.prototype.markbold = function () { return "**" + this + "**"; }
 String.prototype.markline = function () { return "__" + this + "__"; }
 String.prototype.code = function () { return "`" + this + "`"; }

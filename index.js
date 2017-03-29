@@ -1,9 +1,9 @@
 ﻿var Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
-require("./strutil");
 var bot = new Discord.Client();
 
+require("./strutil");
 global.__root = require('path').resolve(__dirname);
 
 var	commands = require("./commands");
@@ -54,10 +54,7 @@ bot.on("message", (msg) => {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype in commands) {
-				if (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264") 
-				{ 
-					commands[msgtype].func(msg, msgcmd, bot);
-				}
+				if (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264") { commands[msgtype].func(msg, msgcmd, bot); }
 			} else {
 				for (cmd in commands) {
 					if ("alias" in commands[cmd]) {
@@ -89,7 +86,7 @@ bot.on("message", (msg) => {
   					msg.channel.sendMessage(stutter(res, clrern));
 					});
 				});
-			}	else {
+			} else {
 				clever.query(msgc)
 				.then(res => {msg.channel.sendMessage(stutter(res.output, clrern)); cleverstate = res.cs;})
 				.catch(e => {
@@ -147,6 +144,14 @@ bot.on("voiceStateUpdate", (oldUser, newUser) => {
 			cheesedebug.sendMessage((oldUser.nickname || oldUser.user.username) + ' has moved from ' + oldUser.voiceChannel.name + " to " + newUser.voiceChannel.name + ".");
 		}
 	}
+});
+
+/* Temporary Random Disconnect Workaround 
+-- Track https://github.com/hydrabolt/discord.js/issues/1233 for issue resolution.
+*/
+
+bot.on("disconnect", (ev) => {
+	if (ev.code === 1000) bot.destroy().then(() => bot.login(authData.token));
 });
 
 function stutter(res, clrern){
