@@ -9,7 +9,7 @@ module.exports = {
 		else {
 			var tier = '', restier = '', resroll = 0, reschip;
 			for (var key in traderData) {
-				if (traderData[key].indexOf(chip) > -1) { tier = key; break; }
+				if (traderData[key].indexOf(cmd) > -1) { tier = key; break; }
 			}
 			if (tier === '') { reschip = 'Chip input invalid.'; }
 			var resroll = d20.roll(20);
