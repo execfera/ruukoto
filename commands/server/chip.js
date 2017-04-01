@@ -4,7 +4,7 @@ module.exports = {
 	desc: "Returns RE:RN Battlechip data.\nUSAGE: -chip [BATTLECHIP]\nEXAMPLE: -chip Cannon",
 	lvl: "rern",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendMessage(("chip: " + this.desc).codeblock());   }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 		else if (!(cmd in chipData)) { msg.channel.sendMessage("Chip not found."); }
 		else {
 			var chipmoji = bot.guilds.get("208498945343750144").emojis.get("265842020298391552");

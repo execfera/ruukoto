@@ -6,7 +6,7 @@ module.exports = {
 	desc: "Converts one denomination of currency to another.\nUSAGE:\n-fx [AMOUNT] [INITIAL_CURRENCY] [RESULT_CURRENCY]: Converts given amount of first currency into the second.\n-fx [AMOUNT] [CURRENCY]: Converts given amount of currency into US Dollars.\n-fx [INITIAL_CURRENCY] [RESULT_CURRENCY]: Converts 1 unit of first currency into the second.\n-fx [CURRENCY]: Converts 1 US Dollar into the given currency.\nEXAMPLE: -fx 1 eur usd, -fx 1 eur, -fx eur usd, -fx eur",
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendMessage(("fx: " + this.desc).codeblock());  }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 		else {
 			var args = cmd.split(' ');
 			if (isNaN(args[0])) {

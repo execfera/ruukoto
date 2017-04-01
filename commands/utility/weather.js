@@ -10,7 +10,7 @@ module.exports = {
 	alias: ["w"],
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendMessage(("weather: " + this.desc).codeblock());  }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 		else {
 			var wreport;
 			weather.setCity(cmd);

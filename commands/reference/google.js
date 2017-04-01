@@ -7,7 +7,7 @@ module.exports = {
 	alias: ["g"],
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendMessage(("google: " + this.desc).codeblock());   }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 		else {
 			var cs = google.customsearch('v1'), srcres = [];
 			cs.cse.list({cx: authData.google_cx, auth: authData.google_apikey, q: cmd}, function (err, res) {

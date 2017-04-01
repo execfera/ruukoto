@@ -3,7 +3,7 @@ module.exports = {
 	alias: ["say"],
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendMessage(("echo: " + this.desc).codeblock());  }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc);  }
 		else {
 			var echo = cmd, target = msg.channel;
 			if (msg.author.id === "91327883208843264" && cmd[0] === '-') {

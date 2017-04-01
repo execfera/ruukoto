@@ -6,7 +6,7 @@ module.exports = {
 	func (msg, cmd, bot) {
 		if (msg.channel.id === "208746890932649995" || msg.channel.id === "268383263599493122") {
 			var metool = bot.guilds.get("208498945343750144").emojis.get("278711463500316673");
-			if (!cmd) { msg.channel.sendMessage(("virus: " + this.desc).codeblock());   }
+			if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 			else {
 				var found = false, foundkey = "", foundidx = 0;
 				for (var key in virusData) {

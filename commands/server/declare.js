@@ -3,7 +3,7 @@ module.exports = {
 	lvl: "zed",
 	func (msg, cmd, bot) {
 		if (msg.guild.id === "206956124237332480") {
-			if (!cmd) { msg.channel.sendMessage(("declare: " + this.desc).codeblock());   }
+			if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 			else switch (cmd){
 				case "I am over the age of 18 and want to see some booty":
 				case "I am over the age of 18 and want to see some booty.": msg.member.addRole("289910636199280640"); msg.channel.sendMessage("Please enjoy the booty."); break;

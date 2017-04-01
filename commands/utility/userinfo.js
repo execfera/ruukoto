@@ -1,5 +1,5 @@
 module.exports = {
-	desc: "Returns info about the requested user. If no user is provided, returns info about the requester.\nUSAGE: -userinfo, -userinfo [@USER_MENTION]\nEXAMPLE: -userinfo @Ms. Prog#1162",
+	desc: "Returns info about the requested user. If no user is provided, returns info about the requester.\nUSAGE: -userinfo, -userinfo [@USER_MENTION]",
 	lvl: "all",
 	func (msg, cmd, bot) {
 		var userid = cmd ? cmd.mention2id() : msg.author.id;

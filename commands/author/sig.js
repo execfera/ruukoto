@@ -7,7 +7,7 @@ module.exports = {
 	desc: "Generates RE:RN signature.\nUSAGE: -sig [CHAR_ID:0-3] [ZENNY] [BUGFRAG]",
 	lvl: "author",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendMessage(("sig: " + this.desc).codeblock()); }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 		else {
             var args = cmd.split(' ');
             var color = ["283c7d", "46712d", "512d71", "4b3024"]; // Eternalis, Terra, Scourge, Slice

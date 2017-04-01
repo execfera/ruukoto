@@ -6,7 +6,7 @@ module.exports = {
 	lvl: "all",
 	func (msg, cmd, bot) {
 		var msga = cmd.split(' ');
-		if (!cmd) { msg.channel.sendMessage(("meme: " + this.desc).codeblock()); }
+		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
 		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendFile(Buffer.from(JSON.stringify(pastaData[msg.guild.id], null, '\t'), 'utf8'), 'commands.txt'); }
 		else if (msga[0] === '-random' && msg.guild.id in pastaData) { 
 			let target = Object.keys(pastaData[msg.guild.id]), key = target[ target.length * Math.random() << 0];

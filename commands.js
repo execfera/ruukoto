@@ -1,8 +1,7 @@
 var autoload = require('auto-load');
-
 var commands = Object.assign(autoload("./commands/author"), autoload("./commands/fun"), autoload("./commands/reference"), autoload("./commands/server"), autoload("./commands/utility"));
 
-commands.help = {
+commands.help = {	
 	desc: "Provides help on bot commands.\nUSAGE: -help: Lists all available commands to this user.\n-help [COMMAND]: Prints information on specific command.",
 	lvl: "all",
 	func (msg, cmd, bot) {
