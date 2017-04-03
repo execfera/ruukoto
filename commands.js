@@ -10,9 +10,6 @@ commands.help = {
 			var cmdlist = Object.keys(commands).filter(e => {
 				switch (commands[e].lvl) {
 					case "author": return msg.author.id === "91327883208843264";
-					case "rern": return msg.guild.id === "208498945343750144";
-					case "cheese": return msg.guild.id === "103851116512411648";
-					case "zed": return msg.guild.id === "206956124237332480";
 					default: return true;
 				}
 			}).map(e => e.code());
