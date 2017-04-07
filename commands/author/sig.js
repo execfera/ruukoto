@@ -19,7 +19,7 @@ module.exports = {
                 .draw("color 4,1 replace")
                 .transparent("#ffffff")
                 .rotate("#000", 180)
-                .write('./numbersout1.png', e => {});var nrarray = args[1].toString().split('').map(x => __root + '/storage/sig/number' + x + '.png').reverse();
+                .write('./numbersout1.png', e => {});
             nrarray = args[2].toString().split('').map(x => __root + '/storage/sig/number' + x + '.png').reverse();
             gms = gm(nrarray[0]);
             for (let i = 1; i < nrarray.length; i++) gms.append(nrarray[i], true);
@@ -38,6 +38,8 @@ module.exports = {
                 .toBuffer('PNG',function (err, buf) {
                     if (err) msg.channel.sendMessage(err);
                     else {
+                        fs.unlink(__root + "/numbersout1.png"); 
+                        fs.unlink(__root + "/numbersout2.png"); 
                         request({
                             method: "POST",
                             url: 'https://api.imgur.com/3/image',
@@ -50,7 +52,9 @@ module.exports = {
                             }
                         }, (err, res, body) => {
                             if (err) msg.channel.sendMessage(err);
-                            else msg.channel.sendMessage("Success: " + body.data.link + "\nBBCode: " + ("[imgur=" + body.data.id + "]").code());
+                            else { 
+                                msg.channel.sendMessage("Success: " + body.data.link + "\nBBCode: " + ("[imgur=" + body.data.id + "]").code()); 
+                            }
                         });
                     }
                 });
