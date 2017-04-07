@@ -1,5 +1,5 @@
 ﻿var Discord = require('discord.js');
-var bot = new Discord.Client();
+var bot = new Discord.Client({sync: true, messageCacheMaxSize: 500});
 
 require("./strutil");
 global.__root = require('path').resolve(__dirname);
@@ -44,4 +44,8 @@ bot.on("message", (msg) => {
 
 bot.on("disconnect", (ev) => {
 	if (ev.code === 1000) bot.destroy().then(() => bot.login(authData.token));
+});
+
+process.on("unhandledRejection", err => {
+  console.error("Uncaught Promise Error: \n" + err.stack);
 });
