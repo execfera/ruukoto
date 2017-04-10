@@ -6,8 +6,10 @@ var bot = new Discord.Client();
 require("./strutil");
 global.__root = require('path').resolve(__dirname);
 
-var	commands = require("./commands");
+var	commands = require("./commands").commands;
+var checkLevel = require("./commands").checkLevel;
 var	authData = require("./storage/auth.json");
+var blacklist = require("./storage/blist.json");
 var pastaData = require("./storage/user/pasta.json");
 
 var cleverbot = require("cleverbot"), clever = new cleverbot({key: authData.clever_key}), cleverstate;
@@ -38,7 +40,7 @@ bot.on("message", (msg) => {
 				request(exurl[0], function(err, res, body) {
 					if (!err && res.statusCode == 200) {
 						var $ = cheerio.load(body); var match = $('li','#nav').eq(-3).text();
-						if($('title').text() && $('title').text() !== "Error"){
+						if($('title').text() && $('title').text() !== "Error") {
 							if (msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " Thread: " + $('title').text() + " (" + match + ")");
 							else msg.channel.sendMessage("Thread: " + $('title').text() + " (" + match + ")");
 						}
@@ -47,19 +49,18 @@ bot.on("message", (msg) => {
 			}
 		}
 		/* Main Command Parser
-		-- Backwards compatibility prefix for Cheesebox.
-		-- Weather alias.
+		-- Backwards compatibility prefix for Cheesebox. TODO: Implement prefix configs.
 		*/
 		if (msgc[0] === '-' || (msgc[0] === '.' && msg.guild.id === "103851116512411648")) {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype in commands) {
-				if (commands[msgtype].lvl !== "author" || msg.author.id === "91327883208843264") { commands[msgtype].func(msg, msgcmd, bot); }
+				if (checkLevel(msgtype, msg, bot)) commands[msgtype].func(msg, msgcmd, bot);
 			} else {
 				for (cmd in commands) {
 					if ("alias" in commands[cmd]) {
 						for (let i = 0; i < commands[cmd].alias.length; i++) {
-							if (msgtype === commands[cmd].alias[i] && (commands[cmd].lvl !== "author" || msg.author.id === "91327883208843264")) commands[cmd].func(msg, msgcmd, bot);
+							if (msgtype === commands[cmd].alias[i] && (checkLevel(cmd, msg, bot))) commands[cmd].func(msg, msgcmd, bot);
 						}
 					}
 				}
@@ -69,14 +70,16 @@ bot.on("message", (msg) => {
 		-- Ensure that strikethroughs aren't parsed.
 		*/
 		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
-			if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id]) { msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]); }
+			if (msg.guild.id in pastaData && 
+			msga[0].slice(1) in pastaData[msg.guild.id] &&
+			checkLevel("meme", msg, bot)) msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]);
 			else msg.channel.sendMessage(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
 		-- Use Cleverbot.com with Cleverbot.io fallback.
 		*/
-		else if (msg.isMentioned(bot.user) || msg.channel.type == 'dm') {
+		else if ((msg.isMentioned(bot.user) || msg.channel.type == 'dm') && blacklist.indexOf(msg.author.id) === -1) {
 			var clrern = msg.channel.type != 'dm' && msg.guild.id === "208498945343750144";
 			if (cleverstate) {
 				clever.query(msgc, {cs: cleverstate})
@@ -125,6 +128,7 @@ bot.on("guildMemberAdd", (newUser) => {
 		newUser.guild.defaultChannel.sendMessage("Welcome to Zedart, " + newUser.user.username + "!");
 		newUser.addRole('276871780352917504');
 	}
+	if (newUser.guild.id === "167209063480950785") newUser.guild.defaultChannel.sendMessage("Welcome to Eientei, " + newUser.user.username + "!");
 });
 
 bot.on("guildMemberRemove", (oldUser) => {
