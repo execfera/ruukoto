@@ -1,6 +1,6 @@
 module.exports = {
-	desc: "Chooses one of two or more given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nALIAS: choice, c\nEXAMPLE: -choose apple, banana, canteloupe",
-	alias: ["choice", "c"],
+	desc: "Chooses one of two or more given choices, separated by comma.\nUSAGE: -choose [CHOICE_A],[CHOICE_B],[...]\nALIAS: choice\nEXAMPLE: -choose apple, banana, canteloupe",
+	alias: ["choice"],
 	lvl: "all",
 	func (msg, cmd, bot) {
 		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc);  }
