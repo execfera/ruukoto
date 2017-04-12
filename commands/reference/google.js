@@ -16,12 +16,13 @@ module.exports = {
 				else if (res.items && res.items.length > 0) {
 					var reslen = res.items.length < srclen ? res.items.length : srclen;
 					var srcres = new Discord.RichEmbed()
-						.setAuthor(`Google Search for ${cmd}`, "https://cdn.discordapp.com/emojis/300609922155151362.png", `https://www.google.com/search?q=${encodeURIComponent(cmd)}`)
-						.setColor(0x2196f3);
+						.setAuthor(`Google Search for ${cmd}`, "http://i.imgur.com/sxmXlBh.png", `https://www.google.com/search?q=${encodeURIComponent(cmd)}`)
+						.setColor(0x2196f3)
+						.setThumbnail(res.items[0].pagemap.cse_thumbnail[0].src || "");
 					for (let i = 0; i < reslen; i++) { 
-						link = res.items[i].formattedUrl.replace(" ", "");
+						link = res.items[i].link;
 						link = link[link.length -1] === ")" ? link.slice(0,-1) + "%29" : link;
-						srcres.addField(res.items[i].title, `[${res.items[i].snippet}](${link})`); 
+						srcres.addField(res.items[i].title, `[${res.items[i].snippet.replace(/\n/g,"")}](${link})`); 
 					}
 					msg.channel.sendMessage("", {embed: srcres});
 				}
