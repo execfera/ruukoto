@@ -9,7 +9,7 @@ module.exports = {
 	func (msg, cmd, bot) {
         var uplink;
 		if (!cmd) { 
-            if (msg.attachments.size === 0) { msg.channel.sendCode('', path.parse(__filename).name + ": " + this.desc); }
+            if (msg.attachments.size === 0) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
             else {
                 switch(path.extname(msg.attachments.first().filename)) {
                     case ".gif": case ".jpeg": case ".jpg": case ".png": uplink = msg.attachments.first().url;
@@ -34,8 +34,8 @@ module.exports = {
                     "image": uplink
                 }
             }, (err, res, body) => {
-                if (err) msg.channel.sendMessage(err);
-                else msg.channel.sendMessage("Upload Success: <" + body.data.link + ">");
+                if (err) msg.channel.send(err);
+                else msg.channel.send("Upload Success: <" + body.data.link + ">");
             });
         }
 	}

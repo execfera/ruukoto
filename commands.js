@@ -23,9 +23,9 @@ commands.help = {
 			helpText += "**Reference:** " + populateHelp(cmdsRef, msg, bot).sort().join(", ") + ".\n";
 			helpText += "**Utility:** " + populateHelp(cmdsUtl, msg, bot).sort().join(", ") + ".\n";
 			if (populateHelp(cmdsSrv, msg, bot).length > 0) helpText += "**Special:** " + populateHelp(cmdsSrv, msg, bot).sort().join(", ") + ".\n";
-			msg.channel.sendMessage(helpText + "\nUse `-help COMMAND` for more information.");
+			msg.channel.send(helpText + "\nUse `-help COMMAND` for more information.");
 		}
-		else msg.channel.sendMessage((cmd + ": " + commands[cmd].desc).codeblock());
+		else msg.channel.send((cmd + ": " + commands[cmd].desc).codeblock());
 	}
 }
 

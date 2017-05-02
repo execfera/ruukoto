@@ -6,15 +6,15 @@ module.exports = {
 	alias: ["c"],
 	lvl: "all",
     func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
 			var args = cmd.split(' ');
 			if (isNaN(args[0])) {
 				args = [1, args[0], args[1]];
 			}
 			var final = c.convert(args[0], args[1]).to(args[2]);
-            if (isNaN(final)) msg.channel.sendMessage(`Invalid conversion.`);
-            else msg.channel.sendMessage(`\u{1F500} ${args[0]}${args[1]} = ${final}${args[2]}`);
+            if (isNaN(final)) msg.channel.send(`Invalid conversion.`);
+            else msg.channel.send(`\u{1F500} ${args[0]}${args[1]} = ${final}${args[2]}`);
 		}
 	}
 }

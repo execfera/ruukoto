@@ -49,8 +49,8 @@ bot.on("message", (msg) => {
 		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
 			if (msg.guild.id in pastaData && 
 			msga[0].slice(1) in pastaData[msg.guild.id] &&
-			checkLevel("meme", msg, bot)) msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]);
-			else msg.channel.sendMessage(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
+			checkLevel("meme", msg, bot)) msg.channel.send(pastaData[msg.guild.id][msga[0].slice(1)]);
+			else msg.channel.send(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
@@ -59,18 +59,18 @@ bot.on("message", (msg) => {
 		else if ((msg.isMentioned(bot.user) || msg.channel.type == 'dm') && blacklist.indexOf(msg.author.id) === -1) {
 			if (cleverstate) {
 				clever.query(msgc, {cs: cleverstate})
-				.then(res => {msg.channel.sendMessage(stutter(res.output));})
+				.then(res => {msg.channel.send(stutter(res.output));})
 				.catch(e => {
 					clever2.ask(msgc, function (err, res) {
-  					msg.channel.sendMessage(stutter(res));
+  					msg.channel.send(stutter(res));
 					});
 				});
 			} else {
 				clever.query(msgc)
-				.then(res => {msg.channel.sendMessage(stutter(res.output)); cleverstate = res.cs;})
+				.then(res => {msg.channel.send(stutter(res.output)); cleverstate = res.cs;})
 				.catch(e => {
 					clever2.ask(msgc, function (err, res) {
-  					msg.channel.sendMessage(stutter(res));
+  					msg.channel.send(stutter(res));
 					});
 				});
 			}
@@ -83,16 +83,16 @@ bot.on("message", (msg) => {
 */
 
 bot.on("guildMemberAdd", (newUser) => {
-	if (newUser.guild.id === "103851116512411648") newUser.guild.defaultChannel.sendMessage("Welcome to the Cheesebox, " + newUser.user.username + "!");
+	if (newUser.guild.id === "103851116512411648") newUser.guild.defaultChannel.send("Welcome to the Cheesebox, " + newUser.user.username + "!");
 	if (newUser.guild.id === "206956124237332480") {
-		newUser.guild.defaultChannel.sendMessage("Welcome to Zedart, " + newUser.user.username + "!");
+		newUser.guild.defaultChannel.send("Welcome to Zedart, " + newUser.user.username + "!");
 		newUser.addRole('276871780352917504');
 	}
-	if (newUser.guild.id === "167209063480950785") newUser.guild.defaultChannel.sendMessage("Welcome to Eientei, " + newUser.user.username + "!");
+	if (newUser.guild.id === "167209063480950785") newUser.guild.defaultChannel.send("Welcome to Eientei, " + newUser.user.username + "!");
 });
 
 bot.on("guildMemberRemove", (oldUser) => {
-	if (oldUser.guild.id === "103851116512411648") oldUser.guild.defaultChannel.sendMessage(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}"));
+	if (oldUser.guild.id === "103851116512411648") oldUser.guild.defaultChannel.send(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}"));
 });
 
 /* Voice Channel Tracker
@@ -102,10 +102,10 @@ bot.on("guildMemberRemove", (oldUser) => {
 bot.on("voiceStateUpdate", (oldUser, newUser) => {
 	if (oldUser.guild.id === "103851116512411648") {
 		var cheesedebug = bot.channels.get("211941895729971200");
-		if (!(oldUser.voiceChannel) && newUser.voiceChannel) cheesedebug.sendMessage((newUser.nickname || newUser.user.username) + ' has joined ' + newUser.voiceChannel.name + ".");
-		else if (!(newUser.voiceChannel) && oldUser.voiceChannel) cheesedebug.sendMessage((oldUser.nickname || oldUser.user.username) + ' has left ' + oldUser.voiceChannel.name + ".");
+		if (!(oldUser.voiceChannel) && newUser.voiceChannel) cheesedebug.send((newUser.nickname || newUser.user.username) + ' has joined ' + newUser.voiceChannel.name + ".");
+		else if (!(newUser.voiceChannel) && oldUser.voiceChannel) cheesedebug.send((oldUser.nickname || oldUser.user.username) + ' has left ' + oldUser.voiceChannel.name + ".");
 		else if (oldUser.voiceChannel.name !== newUser.voiceChannel.name) {
-			cheesedebug.sendMessage((oldUser.nickname || oldUser.user.username) + ' has moved from ' + oldUser.voiceChannel.name + " to " + newUser.voiceChannel.name + ".");
+			cheesedebug.send((oldUser.nickname || oldUser.user.username) + ' has moved from ' + oldUser.voiceChannel.name + " to " + newUser.voiceChannel.name + ".");
 		}
 	}
 });

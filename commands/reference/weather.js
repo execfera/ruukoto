@@ -10,7 +10,7 @@ module.exports = {
 	alias: ["w"],
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
 			var wreport;
 			weather.setCity(cmd);
@@ -20,9 +20,9 @@ module.exports = {
 					wreport += "\n" + res.main.temp + "°C / " + (res.main.temp*1.8+32).toFixed(2) + "°F, " + res.weather[0].description;
 					wreport += "\n" + res.clouds.all + "% Clouds, Wind Speed " + (res.wind.speed*3.6).toFixed(2) + "km/h / " + (res.wind.speed*2.2369).toFixed(2) + "mph";
 					wreport += "\n" + "Barometric Pressure: " + res.main.pressure + "hPa " + res.main.humidity + "% humidity";
-					msg.channel.sendMessage(wreport);
+					msg.channel.send(wreport);
 				}
-				else msg.channel.sendMessage(err);
+				else msg.channel.send(err);
 			});
 		}
 	}

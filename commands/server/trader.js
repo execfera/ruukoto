@@ -5,7 +5,7 @@ module.exports = {
 	desc: "Sacrifices a chip into the chip trader and prints out the result.\nUSAGE: -trader [BATTLECHIP]\nEXAMPLE: -trader Cannon",
 	lvl: "rern",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
 			var tier = '', restier = '', resroll = 0, reschip;
 			for (var key in traderData) {
@@ -33,7 +33,7 @@ module.exports = {
 					else reschip = traderData.B[d20.roll(traderData.B.length)-1] + " (" + resroll + ")";
 				}
 			}
-			msg.channel.sendMessage('\u{1f5f3} Result: ' + reschip);
+			msg.channel.send('\u{1f5f3} Result: ' + reschip);
 		} 
 	}
 }

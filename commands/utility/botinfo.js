@@ -12,7 +12,7 @@ module.exports = {
 			content += "**Startup: **" + bot.readyAt.toUTCString() + "\n";
 			content += "**Uptime: **" + bot.uptime.timeCounter() + "\n";
 			content += "**Ping: **" + Math.trunc(bot.ping) + "ms";
-			msg.channel.sendMessage(content);
+			msg.channel.send(content);
 		});
 	}
 }

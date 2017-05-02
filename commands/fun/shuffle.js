@@ -3,10 +3,10 @@ module.exports = {
 	alias: ["order"],
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc);  }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
             var args = cmd.split(',');
-			if (args.length < 2) msg.channel.sendMessage('\u{1f500} Please provide more than one choice, separated by comma.');
+			if (args.length < 2) msg.channel.send('\u{1f500} Please provide more than one choice, separated by comma.');
 			else {
                 var currentIndex = args.length, temporaryValue, randomIndex;
                 while (0 !== currentIndex) {
@@ -16,7 +16,7 @@ module.exports = {
                     args[currentIndex] = args[randomIndex];
                     args[randomIndex] = temporaryValue;
                 }
-            msg.channel.sendMessage(`\u{1f500} ${args.join(', ')}`);
+            msg.channel.send(`\u{1f500} ${args.join(', ')}`);
             }
 		}
 	}

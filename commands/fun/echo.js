@@ -3,7 +3,7 @@ module.exports = {
 	alias: ["say"],
 	lvl: "all",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc);  }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true});  }
 		else {
 			var echo = cmd, target = msg.channel;
 			if (msg.author.id === "91327883208843264" && cmd[0] === '-') {
@@ -13,7 +13,7 @@ module.exports = {
 					case "debug": target = bot.channels.get("189911150001913856"); echo = cmd.slice(cmd.indexOf(' ')+1); break;
 				}
 			}
-			target.sendMessage(echo);
+			target.send(echo);
 		}
 	}
 }

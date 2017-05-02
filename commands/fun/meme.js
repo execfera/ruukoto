@@ -6,13 +6,17 @@ module.exports = {
 	lvl: "all",
 	func (msg, cmd, bot) {
 		var msga = cmd.split(' ');
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
-		else if (msga[0] === '-list' && msg.guild.id in pastaData) { msg.channel.sendFile(Buffer.from(JSON.stringify(pastaData[msg.guild.id], null, '\t'), 'utf8'), 'commands.txt'); }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
+		else if (msga[0] === '-list' && msg.guild.id in pastaData) { 
+			msg.channel.send(
+				{ file: {attachment: Buffer.from(JSON.stringify(pastaData[msg.guild.id], null, '\t'), 'utf8'), name: 'commands.txt'} }
+			); 
+		}
 		else if (msga[0] === '-random' && msg.guild.id in pastaData) { 
 			let target = Object.keys(pastaData[msg.guild.id]), key = target[ target.length * Math.random() << 0];
-    		msg.channel.sendMessage("~`" + key + "`\n" + pastaData[msg.guild.id][key]);
+    		msg.channel.send("~`" + key + "`\n" + pastaData[msg.guild.id][key]);
 		}
-		else if (cmd[0] === '~' || cmd[0] === '-') { msg.channel.sendMessage("Invalid command format."); }
+		else if (cmd[0] === '~' || cmd[0] === '-') { msg.channel.send("Invalid command format."); }
 		else {
 			if (!(msg.guild.id in pastaData)) pastaData[msg.guild.id] = { "echo": "echo" };
 			var pastacmd = cmd.slice(cmd.indexOf(' ')+1);
@@ -20,16 +24,16 @@ module.exports = {
 				if (pastacmd === cmd) {
 					delete pastaData[msg.guild.id][msga[0]];
 					jsonfile.writeFileSync(__root + "/storage/user/pasta.json", pastaData, {spaces: 2});
-					msg.channel.sendMessage(msga[0].code() + " cleared.");
+					msg.channel.send(msga[0].code() + " cleared.");
 				}
-				else msg.channel.sendMessage(msga[0].code() + " already exists!");
+				else msg.channel.send(msga[0].code() + " already exists!");
 			}
 			else {
-				if (pastacmd === cmd) msg.channel.sendMessage(msga[0].code() + " does not exist!");
+				if (pastacmd === cmd) msg.channel.send(msga[0].code() + " does not exist!");
 				else {
 					pastaData[msg.guild.id][msga[0]] = pastacmd;
 					jsonfile.writeFileSync(__root + "/storage/user/pasta.json", pastaData, {spaces: 2});
-					msg.channel.sendMessage(msga[0].code() + " added as custom command. Type `~" + msga[0] + "` to use it.");
+					msg.channel.send(msga[0].code() + " added as custom command. Type `~" + msga[0] + "` to use it.");
 				}
 			}
 		}

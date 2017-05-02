@@ -32,6 +32,6 @@ module.exports = {
 		content += "Text Channels (" + txtchn.length + "): " + txtchn.join(', ') + "\n";
 		content += "Voice Channels (" + vchn.length + "): " + vchn.join(', ') + "\n";
 		content += msg.guild.iconURL;
-		msg.channel.sendMessage(content);
+		msg.channel.send(content);
 	}
 }

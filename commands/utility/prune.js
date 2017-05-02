@@ -7,7 +7,7 @@ module.exports = {
 			for (var i = 0; i < messages.array().length; i++) {
 				if (messages.array()[i].author.id === bot.user.id) { messages.array()[i].delete(); count++; }
 			}
-			msg.channel.sendMessage("Deleted " + count + " message" + (count > 1 ? "s" : "")).then(m => m.delete(5000));
+			msg.channel.send("Deleted " + count + " message" + (count > 1 ? "s" : "")).then(m => m.delete(5000));
 		});
 	}
 }

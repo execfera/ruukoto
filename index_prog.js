@@ -41,8 +41,8 @@ bot.on("message", (msg) => {
 					if (!err && res.statusCode == 200) {
 						var $ = cheerio.load(body); var match = $('li','#nav').eq(-3).text();
 						if($('title').text() && $('title').text() !== "Error") {
-							if (msg.guild.id === "208498945343750144") msg.channel.sendMessage(msprog + " Thread: " + $('title').text() + " (" + match + ")");
-							else msg.channel.sendMessage("Thread: " + $('title').text() + " (" + match + ")");
+							if (msg.guild.id === "208498945343750144") msg.channel.send(msprog + " Thread: " + $('title').text() + " (" + match + ")");
+							else msg.channel.send("Thread: " + $('title').text() + " (" + match + ")");
 						}
 					}
 				});
@@ -72,8 +72,8 @@ bot.on("message", (msg) => {
 		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
 			if (msg.guild.id in pastaData && 
 			msga[0].slice(1) in pastaData[msg.guild.id] &&
-			checkLevel("meme", msg, bot)) msg.channel.sendMessage(pastaData[msg.guild.id][msga[0].slice(1)]);
-			else msg.channel.sendMessage(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
+			checkLevel("meme", msg, bot)) msg.channel.send(pastaData[msg.guild.id][msga[0].slice(1)]);
+			else msg.channel.send(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
@@ -83,18 +83,18 @@ bot.on("message", (msg) => {
 			var clrern = msg.channel.type != 'dm' && msg.guild.id === "208498945343750144";
 			if (cleverstate) {
 				clever.query(msgc, {cs: cleverstate})
-				.then(res => {msg.channel.sendMessage(stutter(res.output, clrern));})
+				.then(res => {msg.channel.send(stutter(res.output, clrern));})
 				.catch(e => {
 					clever2.ask(msgc, function (err, res) {
-  					msg.channel.sendMessage(stutter(res, clrern));
+  					msg.channel.send(stutter(res, clrern));
 					});
 				});
 			} else {
 				clever.query(msgc)
-				.then(res => {msg.channel.sendMessage(stutter(res.output, clrern)); cleverstate = res.cs;})
+				.then(res => {msg.channel.send(stutter(res.output, clrern)); cleverstate = res.cs;})
 				.catch(e => {
 					clever2.ask(msgc, function (err, res) {
-  					msg.channel.sendMessage(stutter(res, clrern));
+  					msg.channel.send(stutter(res, clrern));
 					});
 				});
 			}
@@ -110,7 +110,7 @@ bot.on("message", (msg) => {
 bot.on("presenceUpdate", (oldUser, newUser) => {
 	if (oldUser.guild.id === "208498945343750144" && oldUser.user.username === "Bomber" && newUser.user.presence.status === "offline") {
 		newUser.kick();
-		newUser.guild.defaultChannel.sendMessage(msprog + " See you later, Bomber!");
+		newUser.guild.defaultChannel.send(msprog + " See you later, Bomber!");
 	}
 });
 
@@ -121,7 +121,7 @@ bot.on("presenceUpdate", (oldUser, newUser) => {
 bot.on("guildMemberAdd", (newUser) => {
 	if (newUser.guild.id === "208498945343750144") {
 		if (newUser.user.username === "Bomber") newUser.addRole('265271322832142336');
-		else newUser.guild.defaultChannel.sendMessage(msprog + " Welcome to the RE:RN chat, " + newUser.user.username + "!");
+		else newUser.guild.defaultChannel.send(msprog + " Welcome to the RE:RN chat, " + newUser.user.username + "!");
 	}
 });
 

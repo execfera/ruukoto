@@ -17,7 +17,7 @@ module.exports = {
 			content += "Account created: " + (new Date(usr.createdTimestamp).toUTCString() + " (" + creatediff.timeCounter() + " ago)").code() + "\n";
 			content += "Current status: " + usr.presence.status.code() + "\n";
 			content += usr.displayAvatarURL.replace(/\.jpg/,".png");
-			msg.channel.sendMessage(content);
+			msg.channel.send(content);
 		});
 	}
 }

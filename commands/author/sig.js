@@ -7,7 +7,7 @@ module.exports = {
 	desc: "Generates RE:RN signature.\nUSAGE: -sig [CHAR_ID:0-3] [ZENNY] [BUGFRAG]",
 	lvl: "author",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc); }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
             var args = cmd.split(' ');
             var color = ["283c7d", "46712d", "512d71", "4b3024"]; // Eternalis, Terra, Scourge, Slice
@@ -36,7 +36,7 @@ module.exports = {
                 .draw("image Over 130,6 0,0 numbersout2.png")
                 .rotate("#000", 90)
                 .toBuffer('PNG',function (err, buf) {
-                    if (err) msg.channel.sendMessage(err);
+                    if (err) msg.channel.send(err);
                     else {
                         fs.unlink(__root + "/numbersout1.png"); 
                         fs.unlink(__root + "/numbersout2.png"); 
@@ -51,9 +51,9 @@ module.exports = {
                                 "image": buf.toString('base64')
                             }
                         }, (err, res, body) => {
-                            if (err) msg.channel.sendMessage(err);
+                            if (err) msg.channel.send(err);
                             else { 
-                                msg.channel.sendMessage("Success: " + body.data.link + "\nBBCode: " + ("[imgur=" + body.data.id + "]").code()); 
+                                msg.channel.send("Success: " + body.data.link + "\nBBCode: " + ("[imgur=" + body.data.id + "]").code()); 
                             }
                         });
                     }
