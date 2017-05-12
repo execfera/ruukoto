@@ -2,7 +2,7 @@ var jsonfile = require('jsonfile');
 var pastaData = require(__root + "/storage/user/pasta.json");
 
 module.exports = {
-	desc: "Custom command creation.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n-meme -random: Uses a random custom command.\n~[COMMAND]: Use custom command.",
+	desc: "Custom command creation.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n-meme -random: Uses a random custom command.\n-[COMMAND]: Use custom command.",
 	lvl: "all",
 	func (msg, cmd, bot) {
 		var msga = cmd.split(' ');
@@ -33,7 +33,7 @@ module.exports = {
 				else {
 					pastaData[msg.guild.id][msga[0]] = pastacmd;
 					jsonfile.writeFileSync(__root + "/storage/user/pasta.json", pastaData, {spaces: 2});
-					msg.channel.send(msga[0].code() + " added as custom command. Type `~" + msga[0] + "` to use it.");
+					msg.channel.send(msga[0].code() + " added as custom command. Type `-" + msga[0] + "` to use it.");
 				}
 			}
 		}

@@ -33,6 +33,8 @@ bot.on("message", (msg) => {
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype in commands) {
 				if (checkLevel(msgtype, msg, bot)) commands[msgtype].func(msg, msgcmd, bot);
+			} else if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id] && checkLevel("meme", msg, bot)) { 
+				msg.channel.send(pastaData[msg.guild.id][msga[0].slice(1)]); 
 			} else {
 				for (cmd in commands) {
 					if ("alias" in commands[cmd]) {
@@ -42,15 +44,6 @@ bot.on("message", (msg) => {
 					}
 				}
 			}
-		}
-		/* Custom Command Parser
-		-- Ensure that strikethroughs aren't parsed.
-		*/
-		else if (msgc[0] === '~' && msgc[1] && msgc[1] !== '~') {
-			if (msg.guild.id in pastaData && 
-			msga[0].slice(1) in pastaData[msg.guild.id] &&
-			checkLevel("meme", msg, bot)) msg.channel.send(pastaData[msg.guild.id][msga[0].slice(1)]);
-			else msg.channel.send(msga[0].slice(1).code() + " does not exist! If you were trying to use a command, use a hyphen `-` instead.").then(m => m.delete(5000));
 		}
 		/* Cleverbot Module
 		-- Stuttering text with asterisk fix.
