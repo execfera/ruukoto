@@ -103,14 +103,6 @@ bot.on("voiceStateUpdate", (oldUser, newUser) => {
 	}
 });
 
-/* Temporary Random Disconnect Workaround 
--- Track https://github.com/hydrabolt/discord.js/issues/1233 for issue resolution.
-*/
-
-bot.on("disconnect", (ev) => {
-	if (ev.code === 1000) bot.destroy().then(() => bot.login(authData.token));
-});
-
 function stutter(res){
 	return res[0] === '*' ? '*' + res[1] + '-' + res.slice(1) : res[0] + '-' + res;
 }

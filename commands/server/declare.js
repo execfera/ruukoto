@@ -1,6 +1,6 @@
 module.exports = {
 	desc: "Declares your intent to see some booty, or otherwise. Type in the next message exactly.\nUSAGE: -declare I am over the age of 18 and want to see some booty.: Adds 18+ role.\n-declare I don't want to see the booty anymore.: Removes 18+ role.",
-	lvl: "zed",
+	lvl: "stub",
 	func (msg, cmd, bot) {
 		if (msg.guild.id === "206956124237332480") {
 			if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }

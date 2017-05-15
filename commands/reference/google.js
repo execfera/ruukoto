@@ -18,7 +18,7 @@ module.exports = {
 					var srcres = new Discord.RichEmbed()
 						.setAuthor(`Google Search for ${cmd}`, "http://i.imgur.com/sxmXlBh.png", `https://www.google.com/search?q=${encodeURIComponent(cmd)}`)
 						.setColor(0x2196f3)
-						.setThumbnail(res.items[0].pagemap.cse_thumbnail[0].src || "");
+						.setThumbnail(res.items[0].pagemap.cse_thumbnail ? res.items[0].pagemap.cse_thumbnail[0].src : "");
 					for (let i = 0; i < reslen; i++) { 
 						link = res.items[i].link;
 						link = link[link.length -1] === ")" ? link.slice(0,-1) + "%29" : link;

@@ -47,6 +47,7 @@ function checkLevel (cmd, msg, bot) {
 		case "zed": return msg.guild.id === "206956124237332480";
 
 		case "author": return msg.author.id === "91327883208843264";
+		case "stub": return false;
 		case "all": default: return true;
 	}
 }
