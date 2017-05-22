@@ -33,8 +33,22 @@ bot.on("message", (msg) => {
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype in commands) {
 				if (checkLevel(msgtype, msg, bot)) commands[msgtype].func(msg, msgcmd, bot);
-			} else if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id] && checkLevel("meme", msg, bot)) { 
-				msg.channel.send(pastaData[msg.guild.id][msga[0].slice(1)]); 
+			} 
+			else if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id]) {
+				var pastacmd = pastaData[msg.guild.id][msga[0].slice(1)];
+				msgcmd = pastacmd.indexOf(' ') > -1 ? pastacmd.slice(pastacmd.indexOf(' ')+1) : '';
+				msgtype = pastacmd.split(' ')[0];
+				if (msgtype in commands) {
+					if (checkLevel(msgtype, msg, bot)) commands[msgtype].func(msg, msgcmd, bot);
+				} else {
+					for (cmd in commands) {
+						if ("alias" in commands[cmd]) {
+							for (let i = 0; i < commands[cmd].alias.length; i++) {
+								if (msgtype === commands[cmd].alias[i] && (checkLevel(cmd, msg, bot))) commands[cmd].func(msg, msgcmd, bot);
+							}
+						}
+					}
+				}
 			} else {
 				for (cmd in commands) {
 					if ("alias" in commands[cmd]) {
