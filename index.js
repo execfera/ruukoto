@@ -34,7 +34,7 @@ bot.on("message", (msg) => {
 			if (msgtype in commands) {
 				if (checkLevel(msgtype, msg, bot)) commands[msgtype].func(msg, msgcmd, bot);
 			} else {
-				var aliascmd;
+				var aliascmd = "";
 				for (cmd in commands) {
 					if ("alias" in commands[cmd]) {
 						for (let i = 0; i < commands[cmd].alias.length; i++) {
@@ -42,7 +42,7 @@ bot.on("message", (msg) => {
 						}
 					}
 				}
-				if (aliascmd !== "") commands[cmd].func(msg, msgcmd, bot);
+				if (aliascmd) commands[aliascmd].func(msg, msgcmd, bot);
 				else if (msg.guild.id in pastaData && msga[0].slice(1) in pastaData[msg.guild.id]) {
 					var pastacmd = pastaData[msg.guild.id][msga[0].slice(1)];
 					msgcmd = pastacmd.indexOf(' ') > -1 ? pastacmd.slice(pastacmd.indexOf(' ')+1) : '';
