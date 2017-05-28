@@ -98,10 +98,13 @@ bot.on("guildMemberAdd", (newUser) => {
 		newUser.addRole('276871780352917504');
 	}
 	if (newUser.guild.id === "167209063480950785") newUser.guild.defaultChannel.send("Welcome to Eientei, " + newUser.user.username + "!");
+	if (newUser.guild.id === "91330381625696256") newUser.addRole('210769404705636352');
 });
 
 bot.on("guildMemberRemove", (oldUser) => {
 	if (oldUser.guild.id === "103851116512411648") oldUser.guild.defaultChannel.send(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}"));
+	if (oldUser.guild.id === "206956124237332480" || 
+	oldUser.guild.id === "167209063480950785") oldUser.guild.defaultChannel.send("Sorry to see you go, " + oldUser.user.username + ", come back soon!").then(m => m.react("\u{1f1eb}"));
 });
 
 /* Voice Channel Tracker
