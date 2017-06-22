@@ -14,7 +14,8 @@ module.exports = {
                     for (let i = 0; i < defelem.length; i++){
                         defs.push((defelem.eq(i).prev().text() + ":\n- " + defelem.eq(i).text().replace(/\s+/g, " ").replace(/\./g, "\n- ")).slice(0,-2));
                     }
-                    msg.channel.send(`Definition of **${cmd}**:\n${defs.join('\n').codeblock("diff")}`);
+                    if (defs.join('\n')) msg.channel.send(`Definition of **${cmd}**:\n${defs.join('\n').codeblock("diff")}`);
+                    else msg.channel.send(`No definitions found for **${cmd}**.`);
                 } else {
                     msg.channel.send(error);
                 }
