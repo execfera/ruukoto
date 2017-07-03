@@ -25,25 +25,18 @@ bot.on("message", (msg) => {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(2);
 			if (msgtype in commands) {
-				commands[msgtype].func(msg, msgcmd, bot); }
-		} else {
-			for (cmd in commands) {
-				if ("alias" in commands[cmd]) {
-					for (let i = 0; i < commands[cmd].alias.length; i++) {
-						if (msgtype === commands[cmd].alias[i]) commands[cmd].func(msg, msgcmd, bot);
+				commands[msgtype].func(msg, msgcmd, bot); 
+			} else {
+				for (cmd in commands) {
+					if ("alias" in commands[cmd]) {
+						for (let i = 0; i < commands[cmd].alias.length; i++) {
+							if (msgtype === commands[cmd].alias[i]) commands[cmd].func(msg, msgcmd, bot);
+						}
 					}
 				}
 			}
-		}
+		} 
 	}
-});
-
-/* Temporary Random Disconnect Workaround 
--- Track https://github.com/hydrabolt/discord.js/issues/1233 for issue resolution.
-*/
-
-bot.on("disconnect", (ev) => {
-	if (ev.code === 1000) bot.destroy().then(() => bot.login(authData.token));
 });
 
 process.on("unhandledRejection", err => {

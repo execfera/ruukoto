@@ -14,7 +14,7 @@ module.exports = {
 		if (limit <= 100) { 
 			location.fetchMessages({limit: limit}).then(messages => {
 				messages.forEach(function(elem) { contents.push(`[${elem.createdAt.toString().split(' ')[4]}] ${elem.author.username}: ${elem.content}`); });
-				msg.channel.sendFile(Buffer.from(contents.reverse().join('\n')), `Logs_${locationName}.txt`);
+				msg.channel.send({file: {attachment: Buffer.from(contents.reverse().join('\n')), name: `Logs_${locationName}.txt`}});
 			});
 		}
 		else {
@@ -31,7 +31,7 @@ module.exports = {
 				.catch(e => console.error(e));
 			}
 			recFetch(undefined, contents).then(contents => {
-				msg.channel.sendFile(Buffer.from(contents.reverse().join('\n')), `Logs_${locationName}.txt`);
+				msg.channel.send({file: {attachment: Buffer.from(contents.reverse().join('\n')), name: `Logs_${locationName}.txt`}});
 			})
 			
 		}

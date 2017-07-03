@@ -28,10 +28,10 @@ module.exports = {
 		content += "Region: " + msg.guild.region.code() + "\n";
 		content += "Created: " + (new Date(createstamp).toUTCString() + " (" + creatediff.timeCounter() + " ago)").code() + "\n";
 		content += "User Count: " + (msg.guild.memberCount.toString() + " (" + presencearr.join(', ') + ")").code() + "\n";
-		content += "Roles (" + roles.length + "): " + roles.join(', ') + "\n";
+		content += "Roles (" + roles.length + "): " + roles.sort().join(', ') + "\n";
 		content += "Text Channels (" + txtchn.length + "): " + txtchn.join(', ') + "\n";
 		content += "Voice Channels (" + vchn.length + "): " + vchn.join(', ') + "\n";
 		content += msg.guild.iconURL;
-		msg.channel.sendMessage(content);
+		msg.channel.send(content);
 	}
 }

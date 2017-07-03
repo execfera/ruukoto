@@ -13,9 +13,9 @@ commands.help = {
 					default: return true;
 				}
 			}).map(e => e.code());
-			msg.channel.sendMessage("Available commands: " + cmdlist.sort().join(", ") + ".\n\nUse `-help COMMAND` for more information.");
+			msg.channel.send("Available commands: " + cmdlist.sort().join(", ") + ".\n\nUse `-help COMMAND` for more information.");
 		}
-		else msg.channel.sendMessage((cmd + ": " + commands[cmd].desc).codeblock());
+		else msg.channel.send((cmd + ": " + commands[cmd].desc).codeblock());
 	}
 }
 

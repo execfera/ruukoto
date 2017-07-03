@@ -3,9 +3,11 @@ module.exports = {
 	lvl: "all",
 	func (msg, cmd, bot) {
 		var userid = cmd ? cmd.mention2id() : msg.author.id;
-		bot.fetchUser(userid).then(usr => {
+		var content = "";
+		(async () => {
+    		usr = await bot.fetchUser(userid);
 			var creatediff = new Date().getTime() - usr.createdTimestamp;
-			var content = "User: `" + usr.username + "#" + usr.discriminator;
+			content += "User: `" + usr.tag;
 			if (msg.guild.members.get(userid)) {
 				var guildusr = msg.guild.members.get(userid);
 				var joinstamp = guildusr.joinedTimestamp;
@@ -13,11 +15,16 @@ module.exports = {
 				content += guildusr.nickname ? ' (' + guildusr.nickname + ')`\n' : '`\n';
 				content += "User ID: " + userid.code() +'\n';
 				content += "Account joined: " + (new Date(joinstamp).toUTCString() + " (" + joindiff.timeCounter() + " ago)").code() + "\n";
-			} else { content += "`\nUser ID: " + userid.code() + "\n"; }
+			} else content += "`\nUser ID: " + userid.code() + "\n"; 
 			content += "Account created: " + (new Date(usr.createdTimestamp).toUTCString() + " (" + creatediff.timeCounter() + " ago)").code() + "\n";
-			content += "Current status: " + usr.presence.status.code() + "\n";
-			content += usr.displayAvatarURL.replace(/\.jpg/,".png");
-			msg.channel.sendMessage(content);
-		});
+			var msgsrc = await msg.guild.search({author: usr, sortOrder: "asc"});
+			var firstmsg = msgsrc.messages[0].find(m => m.hit).createdTimestamp;
+			content += "First message: " + (new Date(firstmsg).toUTCString() + " (" + (new Date().getTime() - firstmsg).timeCounter() + " ago)").code() + "\n";
+			content += "Server messages: `" + msgsrc.totalResults + " (" + (msgsrc.totalResults*86400000/(new Date().getTime() - firstmsg)).toFixed(2) + " per day)`\n";
+			content += "Current status: " + usr.presence.status.code() + "\n";			
+			content += usr.displayAvatarURL;
+			msg.channel.send(content);
+		})();
+		
 	}
 }

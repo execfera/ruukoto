@@ -3,14 +3,14 @@ module.exports = {
 	alias: ["e"],
 	lvl: "author",
 	func (msg, cmd, bot) {
-		if (!cmd) { msg.channel.sendCode('', require('path').parse(__filename).name + ": " + this.desc);  }
+		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true});  }
 		else {
 			try { 
 				var evalres = eval(cmd); 
       			if (typeof evalres !== "string" && !(evalres instanceof Promise)) evalres = require("util").inspect(evalres, { depth: 0 });
 			}
 			catch (e) { var evalres = e; }
-			finally { msg.channel.sendMessage(clean(evalres)); }
+			finally { msg.channel.send(clean(evalres)); }
 		}
 	}
 }
