@@ -49,8 +49,20 @@ module.exports = {
 			else {
 				var msgsrc = await msg.guild.search({author: userid, sortOrder: "asc", limit: 1});
 				var firstmsg = msgsrc.totalResults ? msgsrc.messages[0].find(m => m.hit).createdTimestamp : 0;
-				content += `Server messages for ${msg.guild.members.get(userid).user.tag}: \`${msgsrc.totalResults} (${(msgsrc.totalResults*86400000/(new Date().getTime() - firstmsg)).toFixed(2)} per day since ${firstmsg ? new Date(firstmsg).toUTCString() : 'never'})\`\n`;
-				msg.channel.send(content);
+				var contenttotal = `-- Total: ${msgsrc.totalResults} (${(msgsrc.totalResults*86400000/(new Date().getTime() - firstmsg)).toFixed(2)} per day since ${firstmsg ? new Date(firstmsg).toUTCString() : 'never'})`;
+				var channelrank = [];
+				var rankname = msg.guild.members.get(userid).nickname ? `${msg.guild.members.get(userid).user.username} (${msg.guild.members.get(userid).nickname})` : msg.guild.members.get(userid).user.username;
+				var txtchn = msg.guild.channels.filterArray(e => e.type === "text" && e.permissionsFor(msg.author).has("READ_MESSAGES"));
+				for (let i = 0; i < txtchn.length; i++) {
+					msgsrc = await txtchn[i].search({author: userid, sortOrder: "asc", limit: 1});
+					firstmsg = msgsrc.totalResults ? msgsrc.messages[0].find(m => m.hit).createdTimestamp : 0;
+					if (msgsrc.totalResults) channelrank.push([txtchn[i].name, msgsrc.totalResults, (msgsrc.totalResults*86400000/(new Date().getTime() - firstmsg)).toFixed(2)]);
+				};
+				channelrank.sort(function (a,b) { return b[1] - a[1]; } );
+				for (let i = 0; i < channelrank.length; i++) {
+					content += `[${i+1}] #${channelrank[i][0]} - ${channelrank[i][1]} (${channelrank[i][2]}/day)\n`;
+				}
+				msg.channel.send(`Message info for **${rankname}**:\n${content.codeblock("css")}${contenttotal}`);
 			}
 		})();
 		
