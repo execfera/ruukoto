@@ -88,6 +88,21 @@ bot.on("message", (msg) => {
 
 });
 
+/* Spy Module
+*/
+
+bot.on("messageDelete", (msg) => {
+	if (msg.guild.id === "103851116512411648" && !msg.author.bot) {
+		require('fs').appendFileSync("./storage/cheese/delete.txt", `[${msg.createdAt.toISOString().slice(0,-8)} #${msg.channel.name}] ${msg.author.username}: ${msg.content}\n`);
+	}
+});
+
+bot.on("presenceUpdate", (oldUser, newUser) => {
+	if (oldUser.guild.id === "103851116512411648" && oldUser.presence.status !== newUser.presence.status) {
+		require('fs').appendFileSync("./storage/cheese/spy.txt", `${new Date().toISOString().slice(0,-8)} ${oldUser.user.username}: ${oldUser.presence.status} > ${newUser.presence.status}\n`);
+	}
+});
+
 /* Greet/Leave Module
 */
 

@@ -10,7 +10,7 @@ module.exports = {
 	desc: "Returns RE:RN virus data.\nUSAGE: -virus [VIRUSNAME]\nEXAMPLE: -virus CannonGuard2 EX",
 	lvl: "rern",
 	func (msg, cmd, bot) {
-		if (msg.channel.id === "208746890932649995" || msg.channel.id === "268383263599493122") {
+		if (msg.channel.id === "208746890932649995") {
 			var metool = bot.guilds.get("208498945343750144").emojis.get("278711463500316673");
 			if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 			else if (cmd.toLowerCase() in reduceVirus) {

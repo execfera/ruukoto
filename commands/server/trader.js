@@ -3,7 +3,7 @@ var d20 = require('d20');
 
 module.exports = {
 	desc: "Sacrifices a chip into the chip trader and prints out the result.\nUSAGE: -trader [BATTLECHIP]\nEXAMPLE: -trader Cannon",
-	lvl: "rern",
+	lvl: "stub",
 	func (msg, cmd, bot) {
 		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
