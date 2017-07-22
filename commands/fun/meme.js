@@ -4,7 +4,7 @@ var pastaData = require(__root + "/storage/user/pasta.json");
 module.exports = {
 	desc: "Custom command creation. Commands can either be plaintext or a native bot command.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n-[COMMAND]: Use custom command.\nALIAS: alias",
 	alias: ["alias"],
-	lvl: "author",
+	lvl: "all",
 	func (msg, cmd, bot) {
 		var msga = cmd.split(/\s/);
 		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
