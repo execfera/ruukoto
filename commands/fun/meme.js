@@ -4,9 +4,9 @@ var pastaData = require(__root + "/storage/user/pasta.json");
 module.exports = {
 	desc: "Custom command creation. Commands can either be plaintext or a native bot command.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n-[COMMAND]: Use custom command.\nALIAS: alias",
 	alias: ["alias"],
-	lvl: "all",
+	lvl: "author",
 	func (msg, cmd, bot) {
-		var msga = cmd.split(' ');
+		var msga = cmd.split(/\s/);
 		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else if (msga[0] === '-list' && msg.guild.id in pastaData) { 
 			msg.channel.send(
@@ -14,7 +14,7 @@ module.exports = {
 			); 
 		} else {
 			if (!(msg.guild.id in pastaData)) pastaData[msg.guild.id] = { "echo": "echo echo" };
-			var pastacmd = cmd.slice(cmd.indexOf(' ')+1);
+			var pastacmd = cmd.slice(cmd.search(/\s/)+1);
 			if (pastaData[msg.guild.id][msga[0]]) {
 				if (pastacmd === cmd) {
 					delete pastaData[msg.guild.id][msga[0]];
