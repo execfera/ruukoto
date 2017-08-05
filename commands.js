@@ -3,13 +3,14 @@ var autoload = require('auto-load');
 var cmdsAtr = autoload(__root + "/commands/author");
 var cmdsAdm = autoload(__root + "/commands/admin");
 var cmdsFun = autoload(__root + "/commands/fun");
+var cmdsMsc = autoload(__root + "/commands/music");
 var cmdsRef = autoload(__root + "/commands/reference");
 var cmdsSrv = autoload(__root + "/commands/server");
 var cmdsUtl = autoload(__root + "/commands/utility");
 
 var blacklist = require(__root + "/storage/blist.json");
 
-var commands = Object.assign({}, cmdsAtr, cmdsAdm, cmdsFun, cmdsRef, cmdsSrv, cmdsUtl);
+var commands = Object.assign({}, cmdsAtr, cmdsAdm, cmdsFun, cmdsMsc, cmdsRef, cmdsSrv, cmdsUtl);
 
 commands.help = {	
 	desc: "Provides help on bot commands.\nUSAGE: -help: Lists all available commands to this user.\n-help [COMMAND]: Prints information on specific command.",
@@ -20,6 +21,7 @@ commands.help = {
 			if (populateHelp(cmdsAtr, msg, bot).length > 0) helpText += "**Author**: " + populateHelp(cmdsAtr, msg, bot).sort().join(", ") + ".\n";
 			if (populateHelp(cmdsAdm, msg, bot).length > 0) helpText += "**Admin**: " + populateHelp(cmdsAdm, msg, bot).sort().join(", ") + ".\n";
 			helpText += "**Fun:** " + populateHelp(cmdsFun, msg, bot).sort().join(", ") + ".\n";
+			helpText += "**Music:** " + populateHelp(cmdsMsc, msg, bot).sort().join(", ") + ".\n";
 			helpText += "**Reference:** " + populateHelp(cmdsRef, msg, bot).sort().join(", ") + ".\n";
 			helpText += "**Utility:** " + populateHelp(cmdsUtl, msg, bot).sort().join(", ") + ".\n";
 			if (populateHelp(cmdsSrv, msg, bot).length > 0) helpText += "**Special:** " + populateHelp(cmdsSrv, msg, bot).sort().join(", ") + ".\n";

@@ -48,7 +48,11 @@ bot.on("message", (msg) => {
 					msgcmd = pastacmd.indexOf(' ') > -1 ? pastacmd.slice(pastacmd.indexOf(' ')+1) : '';
 					msgtype = pastacmd.split(' ')[0];
 					if (msgtype in commands) {
-						if (checkLevel(msgtype, msg, bot)) commands[msgtype].func(msg, msgcmd, bot);
+						if (checkLevel(msgtype, msg, bot)) { 
+							msgcmd = msgcmd.replace(/%input%/g, msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '');
+							msgcmd = msgcmd.replace(/%user%/g, msg.author);
+							commands[msgtype].func(msg, msgcmd, bot); 
+						}
 					} else {
 						for (cmd in commands) {
 							if ("alias" in commands[cmd]) {

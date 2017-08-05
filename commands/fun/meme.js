@@ -2,7 +2,7 @@ var jsonfile = require('jsonfile');
 var pastaData = require(__root + "/storage/user/pasta.json");
 
 module.exports = {
-	desc: "Custom command creation. Commands can either be plaintext or a native bot command.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n-[COMMAND]: Use custom command.\nALIAS: alias",
+	desc: "Custom command creation. Commands can either be plaintext or a native bot command.\nUSAGE:\n-meme [COMMAND] [OUTPUT]: Adds custom command.\n-meme [COMMAND]: Deletes custom command.\n-meme -list: List server commands and sends to file.\n-[COMMAND]: Use custom command.\nALIAS: alias\nNOTE: You can use %input% in native bot commands to substitute command inputs, and %user% to substitute your own name in.",
 	alias: ["alias"],
 	lvl: "all",
 	func (msg, cmd, bot) {
