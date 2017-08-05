@@ -142,5 +142,5 @@ bot.on("voiceStateUpdate", (oldUser, newUser) => {
 });
 
 function stutter(res){
-	return res[0] === '*' ? '*' + res[1] + '-' + res.slice(1) : res[0] + '-' + res;
+	return res[0] === '*' ? '' : res[0] + '-' + res;
 }

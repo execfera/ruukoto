@@ -26,15 +26,19 @@
     "gm": "^1.23.0",
     "googleapis": "^17.1.0",
     "jsonfile": "^2.4.0",
+    "libsodium-wrappers": "^0.5.2",
     "local-ip": "^1.0.1",
     "mathjs": "^3.9.3",
     "money": "^0.2.0",
+    "node-opus": "^0.2.6",
     "openweather-apis": "^3.0.2",
     "popura": "^1.2.5",
     "random-puppy": "^1.1.0",
     "request": "^2.79.0",
     "urban": "^0.3.1",
-    "uws": "^0.14.5"
+    "uws": "^0.14.5",
+    "ytdl-core": "^0.15.0",
+    "ytpl": "^0.1.6"
   },
   "devDependencies": {}
 }
