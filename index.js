@@ -112,19 +112,22 @@ bot.on("presenceUpdate", (oldUser, newUser) => {
 */
 
 bot.on("guildMemberAdd", (newUser) => {
-	if (newUser.guild.id === "103851116512411648") newUser.guild.defaultChannel.send("Welcome to the Cheesebox, " + newUser.user.username + "!");
-	if (newUser.guild.id === "206956124237332480") {
-		newUser.guild.defaultChannel.send("Welcome to Zedart, " + newUser.user.username + "!");
-		newUser.addRole('276871780352917504');
+	switch(newUser.guild.id){
+		case "103851116512411648": newUser.guild.defaultChannel.send("Welcome to the Cheesebox, " + newUser.user.username + "!"); break;
+		case "206956124237332480": { 
+			newUser.guild.defaultChannel.send("Welcome to Zedart, " + newUser.user.username + "!");
+			newUser.addRole('276871780352917504'); break; 
+		}
+		case "167209063480950785": newUser.guild.defaultChannel.send("Welcome to Eientei, " + newUser.user.username + "!"); break;
+		case "91330381625696256": newUser.addRole('210769404705636352'); break;
 	}
-	if (newUser.guild.id === "167209063480950785") newUser.guild.defaultChannel.send("Welcome to Eientei, " + newUser.user.username + "!");
-	if (newUser.guild.id === "91330381625696256") newUser.addRole('210769404705636352');
 });
 
 bot.on("guildMemberRemove", (oldUser) => {
-	if (oldUser.guild.id === "103851116512411648") oldUser.guild.defaultChannel.send(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}"));
-	if (oldUser.guild.id === "206956124237332480" || 
-	oldUser.guild.id === "167209063480950785") oldUser.guild.defaultChannel.send("Sorry to see you go, " + oldUser.user.username + ", come back soon!").then(m => m.react("\u{1f1eb}"));
+	switch (oldUser.guild.id) {
+		case "103851116512411648": oldUser.guild.defaultChannel.send(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}")); break;
+		case "206956124237332480": case "167209063480950785": oldUser.guild.defaultChannel.send("Sorry to see you go, " + oldUser.user.username + ", come back soon!").then(m => m.react("\u{1f1eb}"));
+	}
 });
 
 /* Voice Channel Tracker
@@ -132,14 +135,19 @@ bot.on("guildMemberRemove", (oldUser) => {
 */
 
 bot.on("voiceStateUpdate", (oldUser, newUser) => {
-	if (oldUser.guild.id === "103851116512411648") {
-		var cheesedebug = bot.channels.get("211941895729971200");
-		if (!(oldUser.voiceChannel) && newUser.voiceChannel) cheesedebug.send((newUser.nickname || newUser.user.username) + ' has joined ' + newUser.voiceChannel.name + ".");
-		else if (!(newUser.voiceChannel) && oldUser.voiceChannel) cheesedebug.send((oldUser.nickname || oldUser.user.username) + ' has left ' + oldUser.voiceChannel.name + ".");
-		else if (oldUser.voiceChannel.name !== newUser.voiceChannel.name) {
-			cheesedebug.send((oldUser.nickname || oldUser.user.username) + ' has moved from ' + oldUser.voiceChannel.name + " to " + newUser.voiceChannel.name + ".");
-		}
+	var debug;
+	switch (oldUser.guild.id) {
+		case "103851116512411648": debug = bot.channels.get("211941895729971200"); break;	
+		case "167209063480950785": debug = bot.channels.get("210866572951158784"); break;
+		case "206956124237332480": debug = bot.channels.get("298168730788167680"); break;
 	}
+	if (debug) {
+		if (!(oldUser.voiceChannel) && newUser.voiceChannel) debug.send((newUser.nickname || newUser.user.username) + ' has joined ' + newUser.voiceChannel.name + ".");
+		else if (!(newUser.voiceChannel) && oldUser.voiceChannel) debug.send((oldUser.nickname || oldUser.user.username) + ' has left ' + oldUser.voiceChannel.name + ".");
+		else if (oldUser.voiceChannel.name !== newUser.voiceChannel.name) {
+			debug.send((oldUser.nickname || oldUser.user.username) + ' has moved from ' + oldUser.voiceChannel.name + " to " + newUser.voiceChannel.name + ".");
+		}
+	}	
 });
 
 function stutter(res){
