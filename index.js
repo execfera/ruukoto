@@ -16,6 +16,7 @@ clever2.setNick("RUUKOTO_DISCBOT");
 clever2.create(function (err, session) {});
 
 bot.login(authData.token);
+bot.music = {};
 
 bot.on("ready", () => {
 	console.log("ruukoto online");

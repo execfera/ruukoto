@@ -20,6 +20,7 @@ clever2.create(function (err, session) {});
 var msprog;
 
 bot.login(authData.token_prog);
+bot.music = {};
 
 bot.on("ready", () => {
 	console.log("ms prog online");
@@ -139,6 +140,6 @@ bot.on("guildMemberAdd", (newUser) => {
 });
 
 function stutter(res, clrern){
-	var result = res[0] === '*' ? '*' + res[1] + '-' + res.slice(1) : res[0] + '-' + res;
+	var result = res[0] === '*' ? '' : res[0] + '-' + res;
 	return clrern ? msprog + " " + result : result;
 }

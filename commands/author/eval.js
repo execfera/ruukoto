@@ -16,9 +16,10 @@ module.exports = {
 }
 
 function clean(text) {
-    return typeof text === "string" ? text
+	let out = text === "string" ? text
     .replace(/`/g, `\`\u{200B}`)
     .replace(/@/g, `@\u{200B}`)
     .replace(/[\w\d]?[\w\d]{23}\.[\w\d]{6}\.[\w\d-_]{27}/g, "[REDACTED]")
-    : text;
+	: text;
+	return out === "" ? "null" : out;
 }
