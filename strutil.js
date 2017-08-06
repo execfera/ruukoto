@@ -4,6 +4,14 @@ String.prototype.code = function () { return "`" + this + "`"; }
 String.prototype.codeblock = function (lang="") { return "```" + lang + "\n" + this + "\n```"; }
 String.prototype.mention2id = function () { return this[2] === '!' ? this.slice(3,-1) : this.slice(2,-1); }
 String.prototype.id2mention = function () { return "<@" + this + ">"; }
+String.prototype.hms2sec = function () {
+    var arr = this.split(':'), sec = 0, multi = 1;
+    while (arr.length > 0) {
+        sec += multi * parseInt(arr.pop(), 10);
+        multi *= 60;
+    }
+    return sec;
+}
 
 Number.prototype.timeCounter = function (msecond=true) {
     var t = msecond ? Math.floor(this/1000) : this;
@@ -25,4 +33,13 @@ Number.prototype.timeCounter = function (msecond=true) {
 	if (minutes) content.push(minutes + " minute" + (minutes > 1 ? "s" : ""));
 	if (t) content.push(t + " second" + (t > 1 ? "s" : ""));
 	return content.slice(0,3).join(', ');
+}
+
+Number.prototype.sec2hms = function () {
+	let sec = Math.floor(this);
+	hrs = Math.floor(sec / 3600);
+	sec %= 3600;
+	min = Math.floor(sec / 60);
+	sec %= 60;
+	return (hrs?hrs+':':'') + (hrs?('0'+min).slice(-2):min) + ':' + ('0'+sec).slice(-2);
 }

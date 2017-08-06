@@ -1,6 +1,6 @@
 module.exports = {
-	desc: "Shuffles two or more given choices, separated by comma.\nUSAGE: -shuffle [CHOICE_A],[CHOICE_B],[...]\nALIAS: order\nEXAMPLE: -shuffle apple, banana, canteloupe",
-	alias: ["order"],
+	desc: "Randomly reorders two or more given choices, separated by comma.\nUSAGE: -order [CHOICE_A],[CHOICE_B],[...]\nALIAS: randomize\nEXAMPLE: -shuffle apple, banana, canteloupe",
+	alias: ["randomize"],
 	lvl: "all",
 	func (msg, cmd, bot) {
 		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
