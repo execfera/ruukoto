@@ -66,7 +66,9 @@ module.exports = {
 							info = await ytsr.search(cmd, {limit: 1});
 							if (!info.items.length) return msg.channel.send('No video found.');
 							else {
-								song = {type: "yt", url: info.items[0].link, title: info.items[0].title, len: info.items[0].duration, lensec: info.items[0].duration.hms2sec(), req: msg.author.username};
+								let proxy = await yt.getInfo(info.items[0].link);
+								let duration = proxy.length_seconds;
+								song = {type: "yt", url: info.items[0].link, title: info.items[0].title, len: Number(duration).sec2hms(), lensec: duration, req: msg.author.username};
 								bot.music[msg.guild.id].songs.push(song);
 								await msg.channel.send(`\u{1f3b6} Added **${song.title}** (${song.len}) to the queue.`);
 							}
