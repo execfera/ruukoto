@@ -8,41 +8,45 @@ module.exports = {
 
         var listeners = msg.guild.voiceConnection.channel.members.reduce((s,v)=>{ return (v.selfDeaf || v.serverDeaf || v.id === bot.user.id) ? s : ++s; }, 0);
 
-        if (!cmd && (msg.author.id === "91327883208843264" || 
+        if (!cmd) {
+            if (bot.music[msg.guild.id].clear.indexOf(msg.author.id) < 0) bot.music[msg.guild.id].clear.push(msg.author.id); 
+            if (msg.author.id === "91327883208843264" || 
             msg.author.id === bot.music[msg.guild.id].songs[0].reqid || 
-            ++bot.music[msg.guild.id].clear >= (listeners < 3 ? listeners : 3))) 
-            {
-            bot.music[msg.guild.id].songs.shift();
-            bot.music[msg.guild.id].clear = 0;
-            msg.channel.send(`\u{1f3b6} Cleared out the next song from the queue.`);
+            bot.user.id === bot.music[msg.guild.id].songs[0].reqid ||
+            bot.music[msg.guild.id].clear.length >= (listeners < 3 ? listeners : 3)) {
+                let clear = bot.music[msg.guild.id].songs.shift();
+                bot.music[msg.guild.id].clear = [];
+                msg.channel.send(`\u{1f3b6} Cleared out the next song from the queue: **${clear.title}** (${clear.len}) requested by: **${clear.req}**.`);
+            }
+            else msg.channel.send(`Vote to clear now at \`[${bot.music[msg.guild.id].clear.length}/${listeners < 3 ? listeners : 3}]\`. Use \`-clear\` to vote.`);
         }
-        else if (cmd === "last" && (msg.author.id === "91327883208843264" ||
+        else if (cmd === "last") {
+            if (bot.music[msg.guild.id].clearlast.indexOf(msg.author.id) < 0) bot.music[msg.guild.id].clearlast.push(msg.author.id); 
+            if (msg.author.id === "91327883208843264" ||
             msg.author.id === bot.music[msg.guild.id].songs.slice(-1)[0].reqid ||  
-            ++bot.music[msg.guild.id].clearlast >= (listeners < 3 ? listeners : 3))) {
-            bot.music[msg.guild.id].songs.pop();
-            bot.music[msg.guild.id].clearlast = 0;
-            msg.channel.send(`\u{1f3b6} Cleared out the last-added song from the queue.`);
+            bot.user.id === bot.music[msg.guild.id].songs.slice(-1)[0].reqid ||
+            bot.music[msg.guild.id].clearlast.length >= (listeners < 3 ? listeners : 3)) {
+                let clear = bot.music[msg.guild.id].songs.pop();
+                bot.music[msg.guild.id].clearlast = [];
+                msg.channel.send(`\u{1f3b6} Cleared out the last-added song from the queue: **${clear.title}** (${clear.len}) requested by: **${clear.req}**.`);
+            }
+            else msg.channel.send(`Vote to clear the last-added song now at \`[${bot.music[msg.guild.id].clearlast.length}/${listeners < 3 ? listeners : 3}]\` votes. Use \`-clear last\` to vote.`);
         }
-        else if (cmd === "all" && (msg.author.id === "91327883208843264" ||
-            ++bot.music[msg.guild.id].clearall >= (listeners < 3 ? listeners : 3))) {
-            bot.music[msg.guild.id].songs= [];
-            bot.music[msg.guild.id].clearall = 0;
-            msg.channel.send(`\u{1f3b6} Cleared out all songs from the queue.`);
+        else if (cmd === "all") {
+            if (bot.music[msg.guild.id].clearall.indexOf(msg.author.id) < 0) bot.music[msg.guild.id].clearall.push(msg.author.id);
+            if (msg.author.id === "91327883208843264" || bot.music[msg.guild.id].clearall.length >= (listeners < 3 ? listeners : 3)) {
+                bot.music[msg.guild.id].songs = [];
+                bot.music[msg.guild.id].clearall = [];
+                msg.channel.send(`\u{1f3b6} Cleared out all songs from the queue.`);
+            }
+            else msg.channel.send(`Vote to clear all songs now at \`[${bot.music[msg.guild.id].clearall.length}/${listeners < 3 ? listeners : 3}]\`. Use \`-clear all\` to vote.`);
         }
-        else if (msg.author.id === "91327883208843264" && isNaN(cmd)) {
-            msg.channel.send(`\u{1f3b6} Not a number.`);
-        }
-        else {
-            if (msg.author.id === "91327883208843264") {
+        else if (msg.author.id === "91327883208843264") {
+            if (isNaN(cmd)) msg.channel.send(`\u{1f3b6} Not a number.`);
+            else {
                 bot.music[msg.guild.id].songs = bot.music[msg.guild.id].songs.slice(Number(cmd));
                 msg.channel.send(`\u{1f3b6} Cleared out ${cmd} songs from the queue.`);
-            }
-            else {
-                if (!cmd) { msg.channel.send(`Vote to clear now at ${bot.music[msg.guild.id].clear} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-clear\` to vote.`); }
-                else if (cmd === "last") { msg.channel.send(`Vote to clear the last-added song now at ${bot.music[msg.guild.id].clearlast} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-clear last\` to vote.`); }
-                else if (cmd === "all") { msg.channel.send(`Vote to clear all songs now at ${bot.music[msg.guild.id].clearall} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-clear all\` to vote.`); }
-                else msg.channel.send(`\u{1f3b6} Invalid clear command.`);
-            }
+            }            
         }
     }
 }

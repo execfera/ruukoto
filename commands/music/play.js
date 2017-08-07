@@ -2,6 +2,7 @@ var yt = require('ytdl-core');
 var ytpl = require('ytpl');
 var ytsr = require('ytsr');
 var path = require('path');
+var playlist = require(__root + "/storage/playlist.json");
 
 module.exports = {
 	desc: "Plays/queues a YouTube link to a voice channel, or a linked/attached song. You can also use a search term to search YouTube instead and play the first result obtained.\nUSAGE: -play [YT_LINK], -play [SONG_LINK], -play [SONG_UPLOAD], -play [YT_SEARCH_TERM]\nALIAS: add\nNOTE: \n- Must be in a voice channel. Queue length will be inaccurate if the queue contains a directly linked song.\n- Only the first file will be taken from a multiple file upload.\n- Links take priority over uploaded files.",
@@ -11,10 +12,10 @@ module.exports = {
 		(async () => {
 			if (!(msg.guild.id in bot.music)) bot.music[msg.guild.id] = {
 				playing: false,
-				skip: 0,
-				clear: 0,
-				clearall: 0,
-				clearlast: 0,
+				skip: [],
+				clear: [],
+				clearall: [],
+				clearlast: [],
 				np: {},
 				songs: [],
 				dispatcher: {}
@@ -108,9 +109,10 @@ module.exports = {
 			if (!bot.music[msg.guild.id].playing) {
 				(function play(song) {
 					if (song === undefined) {
-						bot.music[msg.guild.id].playing = false;
-						bot.music[msg.guild.id].np = {};
-						return msg.guild.voiceConnection.disconnect();
+						let defsong;
+						if (msg.guild.id in playlist) defsong = playlist[msg.guild.id][Math.floor(Math.random()*playlist[msg.guild.id].length)]; 
+						else defsong = playlist.default[Math.floor(Math.random()*playlist.default.length)];
+						return play(defsong);
 					}
 					bot.music[msg.guild.id].np = song;
 					bot.music[msg.guild.id].playing = true;

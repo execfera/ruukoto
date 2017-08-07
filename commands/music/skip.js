@@ -23,16 +23,18 @@ module.exports = {
                 bot.music[msg.guild.id].songs = bot.music[msg.guild.id].songs.slice(Number(cmd)-1);
                 msg.channel.send(`\u{1f3b6} Skipping ${cmd} songs.`);
             }
-            bot.music[msg.guild.id].skip = 0;
+            bot.music[msg.guild.id].skip = [];
             bot.music[msg.guild.id].dispatcher.end();
         }
-        else if ((++bot.music[msg.guild.id].skip >= (listeners < 3 ? listeners : 3)) || bot.music[msg.guild.id].np.reqid === msg.author.id)
-        {
+        else {
+            if (bot.music[msg.guild.id].skip.indexOf(msg.author.id) < 0) bot.music[msg.guild.id].skip.push(msg.author.id);
             let np = bot.music[msg.guild.id].np;
-            msg.channel.send(`\u{1f3b6} Skipping: **${np.title}** (${np.len}) requested by: **${np.req}**.`);
-            bot.music[msg.guild.id].skip = 0;
-            bot.music[msg.guild.id].dispatcher.end();
+            if (bot.music[msg.guild.id].skip.length >= (listeners < 3 ? listeners : 3) || np.reqid === bot.user.id || np.reqid === msg.author.id) {
+                msg.channel.send(`\u{1f3b6} Skipping: **${np.title}** (${np.len}) requested by: **${np.req}**.`);
+                bot.music[msg.guild.id].skip = [];
+                bot.music[msg.guild.id].dispatcher.end();
+            }
+            else msg.channel.send(`Vote to skip now at \`[${bot.music[msg.guild.id].skip.length}/${listeners < 3 ? listeners : 3}]\` votes. Use \`-skip\` to vote.`);
         }
-        else msg.channel.send(`Vote to skip now at ${bot.music[msg.guild.id].skip} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-vote\` to vote.`);
     }
 }
