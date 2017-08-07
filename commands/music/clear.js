@@ -38,9 +38,9 @@ module.exports = {
                 msg.channel.send(`\u{1f3b6} Cleared out ${cmd} songs from the queue.`);
             }
             else {
-                if (!cmd) { msg.channel.send(`Vote to clear now at ${bot.music[msg.guild.id].clear} votes, requires ${listeners < 3 ? listeners : 3} Use \`-clear\` to vote.`); }
-                else if (cmd === "last") { msg.channel.send(`Vote to clear the last-added song now at ${bot.music[msg.guild.id].clearlast} votes, requires ${listeners < 3 ? listeners : 3} Use \`-clear last\` to vote.`); }
-                else if (cmd === "all") { msg.channel.send(`Vote to clear all songs now at ${bot.music[msg.guild.id].clearall} votes, requires ${listeners < 3 ? listeners : 3} Use \`-clear all\` to vote.`); }
+                if (!cmd) { msg.channel.send(`Vote to clear now at ${bot.music[msg.guild.id].clear} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-clear\` to vote.`); }
+                else if (cmd === "last") { msg.channel.send(`Vote to clear the last-added song now at ${bot.music[msg.guild.id].clearlast} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-clear last\` to vote.`); }
+                else if (cmd === "all") { msg.channel.send(`Vote to clear all songs now at ${bot.music[msg.guild.id].clearall} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-clear all\` to vote.`); }
                 else msg.channel.send(`\u{1f3b6} Invalid clear command.`);
             }
         }

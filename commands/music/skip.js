@@ -33,6 +33,6 @@ module.exports = {
             bot.music[msg.guild.id].skip = 0;
             bot.music[msg.guild.id].dispatcher.end();
         }
-        else msg.channel.send(`Vote to skip now at ${bot.music[msg.guild.id].skip} votes, requires ${listeners < 3 ? listeners : 3} Use \`-vote\` to vote.`);
+        else msg.channel.send(`Vote to skip now at ${bot.music[msg.guild.id].skip} votes, requires ${listeners < 3 ? listeners : 3}. Use \`-vote\` to vote.`);
     }
 }
