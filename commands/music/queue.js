@@ -12,9 +12,10 @@ module.exports = {
                 contqueue += `\`[${i<9?'0':''}${i+1}]\` **${bot.music[msg.guild.id].songs[i].title}** (${bot.music[msg.guild.id].songs[i].len}) by **${bot.music[msg.guild.id].songs[i].req}**\n`;
             }
             if (bot.music[msg.guild.id].songs.length > 10) {
-                contqueue += `\nNot shown: ${bot.music[msg.guild.id].songs.length - 10} more.`;
+                contqueue += `\nNot shown: ${bot.music[msg.guild.id].songs.length - 10} more. `;
             }
         }
-        msg.channel.send(`${content}${contqueue}`);
+        let remain = Number(bot.music[msg.guild.id].songs.reduce((s,v)=>{ return s+v.lensec; }, 0)) + Number(bot.music[msg.guild.id].np.lensec) - Math.floor(bot.music[msg.guild.id].dispatcher.time/1000);
+        msg.channel.send(`${content}${contqueue}Estimated playback time remaining: ${Number(remain).sec2hms()}`);
     }
 }

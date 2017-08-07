@@ -4,7 +4,11 @@ module.exports = {
 	func (msg, cmd, bot) {
                 if (!(msg.guild.id in bot.music)) bot.music[msg.guild.id] = {
 			playing: false,
-			np: {},
+                        np: {},
+                        skip: 0,
+                        clear: 0,
+                        clearall: 0,
+                        clearlast: 0,
 			songs: [],
 			dispatcher: {}
 		};

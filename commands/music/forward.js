@@ -1,6 +1,6 @@
 module.exports = {
 	desc: "Forwards the last song added into first place without affecting the queue.\nUSAGE: -forward",
-	lvl: "all",
+	lvl: "author",
 	func (msg, cmd, bot) {
         if (!(msg.guild.id in bot.music) || bot.music[msg.guild.id].dispatcher === {} || !bot.music[msg.guild.id].songs.length) return msg.channel.send(`\u{1f3b6} No song currently loaded.`);
 
