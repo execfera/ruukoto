@@ -132,6 +132,21 @@ module.exports = {
 							play(bot.music[msg.guild.id].songs.shift());
 						});
 					});
+					bot.on("voiceStateUpdate", (oldUser, newUser) => {
+						if (msg.guild.voiceConnection && msg.guild.voiceConnection.channel.members.size === 1) {
+							bot.music[msg.guild.id] = {
+								playing: false,
+								skip: [],
+								clear: [],
+								clearall: [],
+								clearlast: [],
+								np: {},
+								songs: [],
+								dispatcher: {}
+							};
+							msg.guild.voiceConnection.disconnect();
+						}
+					});
 				})(bot.music[msg.guild.id].songs.shift());
 			}
 		})();
