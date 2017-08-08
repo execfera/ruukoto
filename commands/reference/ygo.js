@@ -13,15 +13,17 @@ module.exports = {
                     var $ = cheerio.load(body); 
                     if ($('a.result-link').length > 0) {
                         request($('a.result-link').attr('href').replace('Card_Gallery:',''), function(err1, res1, body1) {
-                            var $$ = cheerio.load(body1);
-                            if ($$('td.cardtable-cardimage a').length > 0) content = $$('td.cardtable-cardimage a').attr('href');
-                            else if ($$('div.cardtable-main_image-wrapper img').length > 0) content = $$('div.cardtable-main_image-wrapper img').attr('src');
-                            else content = 'Not a card!';
+                            if (!err && res.statusCode == 200) {
+                                $ = cheerio.load(body1);
+                                if ($('td.cardtable-cardimage a').length > 0) content = $('td.cardtable-cardimage a').attr('href');
+                                else if ($('div.cardtable-main_image-wrapper img').length > 0) content = $('div.cardtable-main_image-wrapper img').attr('src');
+                                else content = 'Not a card!';
+                                content = content.startsWith("data:image") ? 'Card not found.' : content;
+                                require('fs').writeFileSync('./debug.txt',content);
+                                msg.channel.send(content);
+                            } else content = err;
                         });
-                    }
-                    else content = 'Card not found.';
-                    content = content.startsWith("data:image") ? 'Card not found.' : content;
-                    msg.channel.send(content);
+                    } else msg.channel.send('Card not found.');
                 }
             });    
         }        
