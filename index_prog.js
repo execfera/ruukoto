@@ -139,6 +139,20 @@ bot.on("guildMemberAdd", (newUser) => {
 	}
 });
 
+bot.on("voiceStateUpdate", (oldUser, newUser) => {
+	var debug;
+	switch (oldUser.guild.id) {
+		case "208498945343750144": debug = bot.channels.get("268383263599493122"); break;	
+	}
+	if (debug) {
+		if (!(oldUser.voiceChannel) && newUser.voiceChannel) debug.send((newUser.nickname || newUser.user.username) + ' has joined ' + newUser.voiceChannel.name + ".");
+		else if (!(newUser.voiceChannel) && oldUser.voiceChannel) debug.send((oldUser.nickname || oldUser.user.username) + ' has left ' + oldUser.voiceChannel.name + ".");
+		else if (oldUser.voiceChannel.name !== newUser.voiceChannel.name) {
+			debug.send((oldUser.nickname || oldUser.user.username) + ' has moved from ' + oldUser.voiceChannel.name + " to " + newUser.voiceChannel.name + ".");
+		}
+	}	
+});
+
 function stutter(res, clrern){
 	var result = res[0] === '*' ? '' : res[0] + '-' + res;
 	return clrern ? msprog + " " + result : result;

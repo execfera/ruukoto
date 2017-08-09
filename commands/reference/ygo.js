@@ -19,7 +19,6 @@ module.exports = {
                                 else if ($('div.cardtable-main_image-wrapper img').length > 0) content = $('div.cardtable-main_image-wrapper img').attr('src');
                                 else content = 'Not a card!';
                                 content = content.startsWith("data:image") ? 'Card not found.' : content;
-                                require('fs').writeFileSync('./debug.txt',content);
                                 msg.channel.send(content);
                             } else content = err;
                         });

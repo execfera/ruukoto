@@ -6,6 +6,7 @@ module.exports = {
             msg.channel.send(`Disconnected from ${msg.guild.voiceConnection.channel.name}.`);
             bot.music[msg.guild.id] = {
 				playing: false,
+				loop: false,
 				skip: [],
 				clear: [],
 				clearall: [],
