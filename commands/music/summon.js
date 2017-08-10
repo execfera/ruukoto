@@ -8,7 +8,9 @@ module.exports = {
                 (async () => {
                         if (!(msg.guild.id in bot.music)) bot.music[msg.guild.id] = {
                                 playing: false,
-                                loop: false,
+				loop: false,
+				loopall: false,
+				random: false,
                                 np: {},
                                 skip: [],
                                 clear: [],
@@ -37,24 +39,30 @@ module.exports = {
                                                                 msg.channel.send(`\u{1f3b6} Now ${bot.music[msg.guild.id].loop?'looping':'playing'}: **${song.title}** (${song.len}) requested by **${song.req}**.`);
                                                         });
                                                         bot.music[msg.guild.id].dispatcher.on('end', () => {
-                                                                /* Temporary Workaround for StreamDispatcher Race Condition 
+                                                        	/* Temporary Workaround for StreamDispatcher Race Condition 
                                                                 /- Track https://github.com/hydrabolt/discord.js/issues/1387 for progress.
                                                                 */
                                                                 setTimeout(()=>{ 
-								        if (bot.music[msg.guild.id].loop && bot.music[msg.guild.id].np !== {}) play(bot.music[msg.guild.id].np);
-								        else play(bot.music[msg.guild.id].songs.shift());
-							        },100);
-                                                        });
-                                                        bot.music[msg.guild.id].dispatcher.on('error', (err) => {
-                                                                return msg.channel.send('\u{1f3b6} Error: ' + err).then(() => {
-                                                                        play(bot.music[msg.guild.id].songs.shift());
-                                                                });
+                                                                        if (bot.music[msg.guild.id].loop && bot.music[msg.guild.id].np !== {}) play(bot.music[msg.guild.id].np);
+                                                                        else if (bot.music[msg.guild.id].loopall && bot.music[msg.guild.id].np !== {}) { 
+                                                                                bot.music[msg.guild.id].songs.push(bot.music[msg.guild.id].np); 
+                                                                                if (bot.music[msg.guild.id].random) {
+                                                                                        play(bot.music[msg.guild.id].songs.splice(Math.floor(Math.random()*(bot.music[msg.guild.id].songs.length-1)),1)[0]); 
+                                                                                } else play(bot.music[msg.guild.id].songs.shift());
+                                                                        }
+                                                                        else if (bot.music[msg.guild.id].random) {
+                                                                                        play(bot.music[msg.guild.id].songs.splice(Math.floor(Math.random()*(bot.music[msg.guild.id].songs.length-1)),1)[0]); 
+                                                                        }
+                                                                        else play(bot.music[msg.guild.id].songs.shift());
+                                                                },100);
                                                         });
                                                         bot.on("voiceStateUpdate", (oldUser, newUser) => {
                                                                 if (msg.guild.voiceConnection && msg.guild.voiceConnection.channel.members.size === 1) {
                                                                         bot.music[msg.guild.id] = {
                                                                                 playing: false,
                                                                                 loop: false,
+                                                                                loopall: false,
+                                                                                random: false,
                                                                                 skip: [],
                                                                                 clear: [],
                                                                                 clearall: [],

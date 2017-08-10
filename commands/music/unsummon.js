@@ -7,6 +7,8 @@ module.exports = {
             bot.music[msg.guild.id] = {
 				playing: false,
 				loop: false,
+				loopall: false,
+				random: false,
 				skip: [],
 				clear: [],
 				clearall: [],
