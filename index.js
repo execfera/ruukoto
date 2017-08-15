@@ -1,4 +1,5 @@
 ﻿var Discord = require('discord.js');
+var schedule = require('node-schedule');
 var bot = new Discord.Client();
 
 require("./strutil");
@@ -8,6 +9,7 @@ var	commands = require("./commands").commands;
 var checkLevel = require("./commands").checkLevel;
 var	authData = require("./storage/auth.json");
 var blacklist = require("./storage/blist.json");
+var birthData = require("./storage/birthdays.json");
 var pastaData = require("./storage/user/pasta.json");
 
 var cleverbot = require("cleverbot"), clever = new cleverbot({key: authData.clever_key}), cleverstate;
@@ -21,6 +23,15 @@ bot.music = {};
 bot.on("ready", () => {
 	console.log("ruukoto online");
 	bot.user.setGame("Sweeping the Hakurei Shrine");
+	for (var bserver in birthData) {
+		if (bot.guilds.has(bserver)) {
+			birthData[bserver].forEach(usr => {
+				schedule.scheduleJob(`0 1 ${usr[2]} ${usr[3]} *`, function(){
+					bot.channels.get(bserver).send(`Happy birthday, <@${usr[0]}>!`);
+				});
+			})
+		}
+	}
 });
 
 bot.on("message", (msg) => {

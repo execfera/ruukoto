@@ -1,6 +1,7 @@
 ﻿var Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
+var schedule = require('node-schedule');
 var bot = new Discord.Client();
 
 require("./strutil");
@@ -10,6 +11,7 @@ var	commands = require("./commands").commands;
 var checkLevel = require("./commands").checkLevel;
 var	authData = require("./storage/auth.json");
 var blacklist = require("./storage/blist.json");
+var birthData = require("./storage/birthdays.json");
 var pastaData = require("./storage/user/pasta.json");
 
 var cleverbot = require("cleverbot"), clever = new cleverbot({key: authData.clever_key}), cleverstate;
@@ -26,6 +28,15 @@ bot.on("ready", () => {
 	console.log("ms prog online");
 	bot.user.setGame("with Mr. Prog");
 	msprog = bot.guilds.get("208498945343750144").emojis.get("264615769285984256");
+	for (var bserver in birthData) {
+		if (bot.guilds.has(bserver)) {
+			birthData[bserver].forEach(usr => {
+				schedule.scheduleJob(`0 1 ${usr[2]} ${usr[3]} *`, function(){
+					bot.channels.get(bserver).send(`${msprog} Happy birthday, <@${usr[0]}>!`);
+				});
+			})
+		}
+	}
 });
 
 bot.on("message", (msg) => {
