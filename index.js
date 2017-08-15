@@ -23,11 +23,11 @@ bot.music = {};
 bot.on("ready", () => {
 	console.log("ruukoto online");
 	bot.user.setGame("Sweeping the Hakurei Shrine");
-	for (var bserver in birthData) {
-		if (bot.guilds.has(bserver)) {
-			birthData[bserver].forEach(usr => {
-				schedule.scheduleJob(`0 1 ${usr[2]} ${usr[3]} *`, function(){
-					bot.channels.get(bserver).send(`Happy birthday, <@${usr[0]}>!`);
+	for (var bchannel in birthData) {
+		if (bot.channels.has(bchannel)) {
+			birthData[bchannel].forEach(usr => {
+				schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
+					bot.channels.get(bchannel).send(`Happy birthday, <@${usr[0]}>!`);
 				});
 			})
 		}
