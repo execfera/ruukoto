@@ -4,7 +4,7 @@ module.exports = {
 	func (msg, cmd, bot) {
         if (!(msg.guild.id in bot.music) || bot.music[msg.guild.id].dispatcher === {}) return msg.channel.send(`\u{1f3b6} No song currently loaded.`);
         if (!msg.guild.voiceConnection) return msg.channel.send(`\u{1f3b6} Bot is not currently in a voice channel.`);
-        if (msg.member.voiceChannel.id !== msg.guild.voiceConnection.channel.id) return msg.channel.send(`\u{1f3b6} You cannot vote for a clear without being in the music bot's channel.`);
+        if (!msg.member.voiceChannel || msg.member.voiceChannel.id !== msg.guild.voiceConnection.channel.id) return msg.channel.send(`\u{1f3b6} You cannot vote for a clear without being in the music bot's channel.`);
 
         var listeners = msg.guild.voiceConnection.channel.members.reduce((s,v)=>{ return (v.selfDeaf || v.serverDeaf || v.id === bot.user.id) ? s : ++s; }, 0);
 

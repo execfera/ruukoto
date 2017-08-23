@@ -32,7 +32,7 @@ bot.on("ready", () => {
 		if (bot.channels.has(bchannel)) {
 			birthData[bchannel].forEach(usr => {
 				schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
-					bot.channels.get(bchannel).send(`${msprog} Happy birthday, <@${usr[0]}>!`);
+					if (bot.channels.get(bchannel).members.has(usr[0])) bot.channels.get(bchannel).send(`${msprog} Happy birthday, <@${usr[0]}>!`);
 				});
 			})
 		}

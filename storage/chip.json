@@ -6745,7 +6745,7 @@
 	"FireHit2": {
 		"dmg": 90,
 		"summ": "90 + Impact + Double Attack",
-		"desc": "Damage: 90 + Impact + Double Attack<br>Accuracy: A<br>Description: Throws a blazing punch from a distance, Hadoken style.<br>Duration: Up to 2 uses before the end of the turn<br>Element: Fire<br>Special: Double Attack: After spending an action to attack with this chip, you may choose to spend a second action and attack with it again before the end of the turn.<br>Note: Shot Attack.",
+		"desc": "Damage: 90 + Impact + Double Attack<br>Accuracy: A<br>Description: Throws a blazing punch from a distance, Hadoken style.<br>Duration: Up to 2 uses before the end of the turn<br>Element: Fire<br>Special: Double Attack: After spending an action to attack with this chip, you may choose to spend a second action and attack with it again before the end of the turn.",
 		"acc": "A",
 		"elem": "Fire",
 		"type": "Melee"
@@ -6753,7 +6753,7 @@
 	"FireHit3": {
 		"dmg": 120,
 		"summ": "120 + Impact + Double Attack",
-		"desc": "Damage: 120 + Impact + Double Attack<br>Accuracy: A<br>Description: Throws a blazing punch from a distance, Hadoken style.<br>Duration: Up to 2 uses before the end of the turn<br>Element: Fire<br>Special: Double Attack: After spending an action to attack with this chip, you may choose to spend a second action and attack with it again before the end of the turn.<br>Note: Shot Attack.",
+		"desc": "Damage: 120 + Impact + Double Attack<br>Accuracy: A<br>Description: Throws a blazing punch from a distance, Hadoken style.<br>Duration: Up to 2 uses before the end of the turn<br>Element: Fire<br>Special: Double Attack: After spending an action to attack with this chip, you may choose to spend a second action and attack with it again before the end of the turn.",
 		"acc": "A",
 		"elem": "Fire",
 		"type": "Melee"
