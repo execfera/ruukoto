@@ -45,7 +45,6 @@ function checkLevel (cmd, msg, bot) {
 		case "man_prm": return (msg.member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS") && msg.guild.member(bot.user).hasPermission("MANAGE_ROLES_OR_PERMISSIONS"));
 
 		case "rern": return msg.guild.id === "208498945343750144";
-		case "cheese": return msg.guild.id === "103851116512411648";
 		case "zed": return msg.guild.id === "206956124237332480";
 
 		case "author": return msg.author.id === "91327883208843264";

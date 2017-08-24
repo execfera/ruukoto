@@ -109,7 +109,6 @@ bot.on("message", (msg) => {
 
 bot.on("guildMemberAdd", (newUser) => {
 	switch(newUser.guild.id){
-		case "103851116512411648": newUser.guild.defaultChannel.send("Welcome to the Cheesebox, " + newUser.user.username + "!"); break;
 		case "206956124237332480": { 
 			newUser.guild.defaultChannel.send("Welcome to Zedart, " + newUser.user.username + "!");
 			newUser.addRole('276871780352917504'); break; 
@@ -121,7 +120,6 @@ bot.on("guildMemberAdd", (newUser) => {
 
 bot.on("guildMemberRemove", (oldUser) => {
 	switch (oldUser.guild.id) {
-		case "103851116512411648": oldUser.guild.defaultChannel.send(oldUser.user.username + " didn't fly so good. Who wants to try next?").then(m => m.react("\u{1f1eb}")); break;
 		case "206956124237332480": case "167209063480950785": oldUser.guild.defaultChannel.send("Sorry to see you go, " + oldUser.user.username + ", come back soon!").then(m => m.react("\u{1f1eb}"));
 	}
 });
@@ -132,8 +130,7 @@ bot.on("guildMemberRemove", (oldUser) => {
 
 bot.on("voiceStateUpdate", (oldUser, newUser) => {
 	var debug;
-	switch (oldUser.guild.id) {
-		case "103851116512411648": debug = bot.channels.get("211941895729971200"); break;	
+	switch (oldUser.guild.id) {	
 		case "167209063480950785": debug = bot.channels.get("210866572951158784"); break;
 		case "206956124237332480": debug = bot.channels.get("298168730788167680"); break;
 	}
