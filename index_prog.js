@@ -128,24 +128,16 @@ bot.on("message", (msg) => {
 
 });
 
-/* Bomber Autokick
--- Make bot a little nicer.
-*/
-
-bot.on("presenceUpdate", (oldUser, newUser) => {
-	if (oldUser.guild.id === "208498945343750144" && oldUser.user.username === "Bomber" && newUser.user.presence.status === "offline") {
-		newUser.kick();
-		newUser.guild.defaultChannel.send(msprog + " See you later, Bomber!");
-	}
-});
-
 /* Greet/Leave Module
 -- Don't greet Bomber, because he's a dum.
 */
 
 bot.on("guildMemberAdd", (newUser) => {
 	if (newUser.guild.id === "208498945343750144") {
-		if (newUser.user.username === "Bomber") newUser.addRole('265271322832142336');
+		if (newUser.user.username === "Bomber") {
+			newUser.guild.members.find(val => val.roles.has('265271322832142336')).kick();
+			newUser.addRole('265271322832142336');
+		} 
 		else newUser.guild.defaultChannel.send(msprog + " Welcome to the RE:RN chat, " + newUser.user.username + "!");
 	}
 });

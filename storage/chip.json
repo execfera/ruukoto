@@ -1015,9 +1015,9 @@
 		"elem": "Null",
 		"type": "Buster"
 	},
-	"PiercingStrength": {
+	"FullPowerArm": {
 		"summ": "Buster Attack +100% Null-Element Weakness",
-		"desc": "Effect: Busters do double to Non-Elemental Viruses<br>Accuracy: S<br>Description: Buster attack gets powered up. Rare<br>Duration: Until end of battle.<br>Element: Null",
+		"desc": "Effect: x2 damage to non-elementals<br>Accuracy: S<br>Description: Increases the striking force of the buster, granting it +100% Source damage against non-elemental targets. Rare<br>Duration: Until end of battle.<br>Element: Null",
 		"acc": "S",
 		"elem": "Null",
 		"type": "Buster"
@@ -1633,6 +1633,30 @@
 		"elem": "Fire",
 		"type": "Other"
 	},
+	"Asteroid1": {
+		"dmg": 40,
+		"summ": "40 x 4 + Drop Attack + Blast Zone",
+		"desc": "Damage: 40 x 4 + Drop Attack + Blast Zone<br>Accuracy: D<br>Description: The user selects a target, then flaming meteors crash down onto and around them.<br>Duration: Once<br>Element: Fire<br>Special: Drop Attack: This attack originates above the battlefield, and falls to the ground. It gains one rank of accuracy against High Altitude targets.<br>Special: Blast Zone: The area this chip can target in is the equivalent of a Blast 3 area, centered on the chosen target. It will randomly target anything within this area, including the user if they are in that area. Mass Destruction does not affect Blast Zone's size.",
+		"acc": "D",
+		"elem": "Fire",
+		"type": "Other"
+	},
+	"Asteroid2": {
+		"dmg": 40,
+		"summ": "40 x 5 + Drop Attack + Blast Zone",
+		"desc": "Damage: 40 x 5 + Drop Attack + Blast Zone<br>Accuracy: D<br>Description: The user selects a target, then flaming meteors crash down onto and around them.<br>Duration: Once<br>Element: Fire<br>Special: Drop Attack: This attack originates above the battlefield, and falls to the ground. It gains one rank of accuracy against High Altitude targets.<br>Special: Blast Zone: The area this chip can target in is the equivalent of a Blast 3 area, centered on the chosen target. It will randomly target anything within this area, including the user if they are in that area. Mass Destruction does not affect Blast Zone's size.",
+		"acc": "D",
+		"elem": "Fire",
+		"type": "Other"
+	},
+	"Asteroid3": {
+		"dmg": 40,
+		"summ": "40 x 6 + Drop Attack + Blast Zone",
+		"desc": "Damage: 40 x 6 + Drop Attack + Blast Zone<br>Accuracy: D<br>Description: The user selects a target, then flaming meteors crash down onto and around them.<br>Duration: Once<br>Element: Fire<br>Special: Drop Attack: This attack originates above the battlefield, and falls to the ground. It gains one rank of accuracy against High Altitude targets.<br>Special: Blast Zone: The area this chip can target in is the equivalent of a Blast 3 area, centered on the chosen target. It will randomly target anything within this area, including the user if they are in that area. Mass Destruction does not affect Blast Zone's size.",
+		"acc": "D",
+		"elem": "Fire",
+		"type": "Other"
+	},
 	"TwinFang1": {
 		"dmg": 70,
 		"summ": "70 x 2 targets",
@@ -2121,6 +2145,14 @@
 		"dmg": 40,
 		"summ": "40 x 3 shots x up to 3 Objects + 3-Turn",
 		"desc": "Damage: 40 x 3 shots x up to 3 Objects<br>Accuracy: A<br>Description: Causes soldiers to appear from 3 obstacles and attack with a 3-shot machinegun before disappearing. Lasts 3 turns. Rare<br>Duration: 3-turns<br>Element: Null<br>Special: This attack only targets 3 objects, maximum. The objects targeted are those closest to the user first. If there are no objects on the field at the time of execution, this chip fizzles.",
+		"acc": "A",
+		"elem": "Null",
+		"type": "Other"
+	},
+	"ColonelForce": {
+		"dmg": 30,
+		"summ": "30 x Normal/5% Shots + Variable Targeting",
+		"desc": "Damage: 30 x Normal/5% Shots + Variable Targeting<br>Accuracy: A<br>Description: Can only be activated if there are normal panels on the field. Summons a soldier that snipes an enemy. For every 5% of the field that is normal, an added soldier appears and attacks. Each soldier can be separately directed. Rare<br>Duration: Once<br>Element: Null<br>Special: Variable Targeting: Allows the user to select a target for each individual hit of an attack. This means they may strike the same target multiple times, multiple different targets, or a mix of the two as they wish.",
 		"acc": "A",
 		"elem": "Null",
 		"type": "Other"
@@ -3107,21 +3139,21 @@
 		"summ": "Damage Reduction 20 + Status 2-Turn",
 		"desc": "Protection: Damage Reduction 20<br>Accuracy: S<br>Description: Reduces the damage of all non-Impact attacks taken by 20. Impact ignores the effect and deals double damage.<br>Duration: 2 turns<br>Element: Null<br>Special: Status Guard: This chip blocks debuffs.",
 		"acc": "S",
-		"elem": "Aqua",
+		"elem": "Null",
 		"type": "Defense"
 	},
 	"UnderGuard2": {
 		"summ": "Damage Reduction 40 + Status 2-Turn",
 		"desc": "Protection: Damage Reduction 40<br>Accuracy: S<br>Description: Reduces the damage of all non-Impact attacks taken by 40. Impact ignores the effect and deals double damage.<br>Duration: 2 turns<br>Element: Null<br>Special: Status Guard: This chip blocks debuffs.",
 		"acc": "S",
-		"elem": "Aqua",
+		"elem": "Null",
 		"type": "Defense"
 	},
 	"UnderGuard3": {
 		"summ": "Damage Reduction 60 + Status 2-Turn",
 		"desc": "Protection: Damage Reduction 60<br>Accuracy: S<br>Description: Reduces the damage of all non-Impact attacks taken by 60. Impact ignores the effect and deals double damage.<br>Duration: 2 turns<br>Element: Null<br>Special: Status Guard: This chip blocks debuffs.",
 		"acc": "S",
-		"elem": "Aqua",
+		"elem": "Null",
 		"type": "Defense"
 	},
 	"IronShield1": {
@@ -6559,6 +6591,14 @@
 		"elem": "Null",
 		"type": "Melee"
 	},
+	"SuperDrill": {
+		"dmg": 90,
+		"summ": "90 + Break + Knockback + Long Attack",
+		"desc": "Damage: 90 + Break + Knockback + Long Attack<br>Accuracy: B<br>Description: A long drill is created to bore through enemies. It can hit one enemy twice, and a second enemy once. Rare<br>Duration: Once<br>Element: Null<br>Special: Knockback paired with Long Attack causes the drill to hit close ranged targets twice, instead of once. This is because it pushes the closest target through both hit zones. Knockback only triggers once.",
+		"acc": "B",
+		"elem": "Null",
+		"type": "Melee"
+	},
 	"GutPunch": {
 		"name": "GutPunch",
 		"alias": "GutsPunch",
@@ -6726,6 +6766,30 @@
 		"elem": "Elec",
 		"type": "Melee"
 	},
+	"Squall1": {
+		"dmg": 20,
+		"summ": "20 + Nova 3 + Knockback + Wind Type x 3 hits",
+		"desc": "Damage: 20 + Nova 3 + Knockback + Wind Type x 3 hits<br>Accuracy: C<br>Description: Creates a wind storm around the user, repeatedly knocking back nearby foes.<br>Duration: Once<br>Element: Null",
+		"acc": "C",
+		"elem": "Null",
+		"type": "Melee"
+	},
+	"Squall2": {
+		"dmg": 30,
+		"summ": "30 + Nova 3 + Knockback + Wind Type x 3 hits",
+		"desc": "Damage: 30 + Nova 3 + Knockback + Wind Type x 3 hits<br>Accuracy: C<br>Description: Creates a wind storm around the user, repeatedly knocking back nearby foes.<br>Duration: Once<br>Element: Null",
+		"acc": "C",
+		"elem": "Null",
+		"type": "Melee"
+	},
+	"Squall3": {
+		"dmg": 40,
+		"summ": "40 + Nova 3 + Knockback + Wind Type x 3 hits",
+		"desc": "Damage: 40 + Nova 3 + Knockback + Wind Type x 3 hits<br>Accuracy: C<br>Description: Creates a wind storm around the user, repeatedly knocking back nearby foes.<br>Duration: Once<br>Element: Null",
+		"acc": "C",
+		"elem": "Null",
+		"type": "Melee"
+	},
 	"WindRacket": {
 		"dmg": 100,
 		"summ": "100 + Northwind (On-Hit Only) + Microburst (On-Hit Only) + Gust + Wide Attack",
@@ -6758,10 +6822,26 @@
 		"elem": "Fire",
 		"type": "Melee"
 	},
+	"JumpStomp": {
+		"dmg": 120,
+		"summ": "120 + Impact",
+		"desc": "Damage: 120 + Impact<br>Accuracy: D<br>Description: The user jumps into the air, acquiring High Altitude status for one action. Then, on the next action, they land on an enemy. Rare<br>Duration: Two actions<br>Element: Null<br>Special: Attacking with this chip counts as a dodge, and quite a lot of movement.",
+		"acc": "D",
+		"elem": "Null",
+		"type": "Melee"
+	},
 	"FootStomp": {
 		"dmg": 180,
 		"summ": "180 + Impact",
 		"desc": "Damage: 180 + Impact<br>Accuracy: D<br>Description: The user jumps into the air, acquiring High Altitude status for one action. Then, on the next action, they land on an enemy. Rare<br>Duration: Two actions<br>Element: Null<br>Special: Attacking with this chip counts as a dodge, and quite a lot of movement.",
+		"acc": "D",
+		"elem": "Null",
+		"type": "Melee"
+	},
+	"BigStomp": {
+		"dmg": 240,
+		"summ": "240 + Impact",
+		"desc": "Damage: 240 + Impact<br>Accuracy: D<br>Description: The user jumps into the air, acquiring High Altitude status for one action. Then, on the next action, they land on an enemy. Rare<br>Duration: Two actions<br>Element: Null<br>Special: Attacking with this chip counts as a dodge, and quite a lot of movement.",
 		"acc": "D",
 		"elem": "Null",
 		"type": "Melee"
@@ -6970,6 +7050,30 @@
 		"dmg": 200,
 		"summ": "200 + Slashing + Fighter Range",
 		"desc": "Damage: 200 + Slashing + Fighter Range<br>Accuracy: B<br>Description: Creates a legendary sword made of solidified energy, with a highly elongated blade for long reaching slashes. Can hit up to 3 targets per slash with good RP. Rare<br>Duration: Until Overridden/Broken. Breaks automatically after 2 swings.<br>Element: Null",
+		"acc": "B",
+		"elem": "Null",
+		"type": "Sword"
+	},
+	"BreakKnife": {
+		"dmg": 80,
+		"summ": "80 + Break + Slashing",
+		"desc": "Damage: 80 + Break + Slashing<br>Accuracy: C<br>Description: Creates a sturdy but heavy blade that can cut through armor and shielding.<br>Duration: Until Overridden/Broken. Breaks automatically after 3 swings.<br>Element: Null",
+		"acc": "B",
+		"elem": "Null",
+		"type": "Sword"
+	},
+	"BreakSword": {
+		"dmg": 100,
+		"summ": "100 + Break + Slashing",
+		"desc": "Damage: 100 + Break + Slashing + Wide Attack<br>Accuracy: C<br>Description: Creates a sturdy but heavy blade that can cut through armor and shielding.<br>Duration: Until Overridden/Broken. Breaks automatically after 2 swings.<br>Element: Null",
+		"acc": "B",
+		"elem": "Null",
+		"type": "Sword"
+	},
+	"BreakBlade": {
+		"dmg": 120,
+		"summ": "120 + Break + Slashing",
+		"desc": "Damage: 120 + Break + Slashing + Long Attack<br>Accuracy: C<br>Description: Creates a sturdy but heavy blade that can cut through armor and shielding.<br>Duration: Until Overridden/Broken. Breaks automatically after 2 swings.<br>Element: Null",
 		"acc": "B",
 		"elem": "Null",
 		"type": "Sword"

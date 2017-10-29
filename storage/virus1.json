@@ -175,49 +175,49 @@
 			"name": "Quaker",
 			"hpts": 80,
 			"elem": "Null",
-			"desc": "HP: 80<br>Stage One Attack Damage/Effect: 20 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 20 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm1, RockArm1, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
+			"desc": "HP: 80<br>Attack Damage/Effect: 20 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm1, RockArm1, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
 			"rslt": ["WaveArm1", "RockArm1"],
 			"rare": [0, 0]
 		}, {
 			"name": "Quaker EX",
 			"hpts": 110,
 			"elem": "Null",
-			"desc": "HP: 110<br>Stage One Attack Damage/Effect: 30 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 30 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm1, RockArm1, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
+			"desc": "HP: 110<br>Attack Damage/Effect: 30 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm1, RockArm1, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
 			"rslt": ["WaveArm1", "RockArm1"],
 			"rare": [0, 0]
 		}, {
 			"name": "Breaker",
 			"hpts": 150,
 			"elem": "Null",
-			"desc": "HP: 150<br>Stage One Attack Damage/Effect: 50 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 50 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm2, RockArm2, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
+			"desc": "HP: 150<br>Attack Damage/Effect: 50 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm2, RockArm2, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
 			"rslt": ["WaveArm2", "RockArm2"],
 			"rare": [0, 0]
 		}, {
 			"name": "Breaker EX",
 			"hpts": 200,
 			"elem": "Null",
-			"desc": "HP: 200<br>Stage One Attack Damage/Effect: 60 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 60 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm2, RockArm2, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
+			"desc": "HP: 200<br>Attack Damage/Effect: 60 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm2, RockArm2, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.",
 			"rslt": ["WaveArm2", "RockArm2"],
 			"rare": [0, 0]
 		}, {
 			"name": "HeavyQuaker",
 			"hpts": 230,
 			"elem": "Null",
-			"desc": "HP: 230<br>Stage One Attack Damage/Effect: 80 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 80 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm3, RockArm3, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.<br>Special: Can use Area grab while falling to change landing point or angle.",
+			"desc": "HP: 230<br>Attack Damage/Effect: 80 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm3, RockArm3, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.<br>Special: Can use AreaGrab once while falling to change landing point or angle as a free action.",
 			"rslt": ["WaveArm3", "RockArm3"],
 			"rare": [0, 0]
 		}, {
 			"name": "HeavyQuaker EX",
 			"hpts": 260,
 			"elem": "Null",
-			"desc": "HP: 260<br>Stage One Attack Damage/Effect: 90 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 90 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm3, RockArm3, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.<br>Special: Can use Area grab while falling to change landing point or angle.",
+			"desc": "HP: 260<br>Attack Damage/Effect: 90 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm3, RockArm3, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.<br>Special: Can use AreaGrab once while falling to change landing point or angle as a free action.",
 			"rslt": ["WaveArm3", "RockArm3"],
 			"rare": [0, 0]
 		}, {
 			"name": "Quaker Omega",
 			"hpts": 320,
 			"elem": "Null",
-			"desc": "HP: 320<br>Stage One Attack Damage/Effect: 120 + Impact + Breaking + Air Attack<br>Stage One Attack Accuracy: B<br>Stage Two Attack Damage/Effect: 120 + EarthQuake + Piercing + Ground Attack + Chain 3<br>Stage Two Attack Accuracy: B<br>Attack Description: This virus has a two-stage attack. In stage one, the virus leaps to High-Altitude while swinging it's wrecking ball upwards, allowing it to attack targets in the sky. The following turn, the stage two attack has the virus fall out of the sky to strike the ground with the recking ball, causing the ground to shake violently and creating a homing shockwave that chain-strikes to a new target when it connects with a target.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm3, RockArm3, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: EarthQuake: Causes the ground to shake, reducing evasion for all ground-based characters by 1 rank until end of turn.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.<br>Special: Can use Area grab while falling to change landing point or angle.<br>Special: Uses Grab Revenge to prevent Navis from escaping by the same means.",
+			"desc": "HP: 320<br>Attack Damage/Effect: 120 Null + Piercing + Ground Attack + Chain(2) + Earthquake<br>Attack Accuracy: B<br>Attack Description: Jumps high into the air, then slams its wrecking ball onto the ground when it lands, making the ground shake, and forming a shock wave that zeroes in on enemies.<br>Element: None<br>Possible Rewards (Per Virus): WaveArm3, RockArm3, Zenny<br>Special: High Altitude Status while Jumping.<br>Special: If underground or in a building, it can break through ceilings or cause a rock-fall.<br>Special: Earthquake: Whenever this virus lands when using its attack, all enemies touching the ground have their evasion reduced by 1 rank until the end of the next turn. This effect does not stack with other Earthquake instances, and does not affect allies of this virus.<br>Special: Chain 3: This attack, upon striking a target, may change directions towards a new target. This may be done up to 3 times in one attack.<br>Special: Can use AreaGrab once while falling to change landing point or angle as a free action.<br>Special: Can use GrabRevenge once.",
 			"rslt": ["WaveArm3", "RockArm3"],
 			"rare": [0, 0]
 		}],
@@ -399,49 +399,49 @@
 			"name": "Powie",
 			"hpts": 60,
 			"elem": "Null",
-			"desc": "HP: 60<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 20 + Break + PanelCrack + Nova1<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake1, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 60<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (20 + Break + PanelCrack + Nova1)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake1, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake1"],
 			"rare": [0]
 		}, {
 			"name": "Powie EX",
 			"hpts": 100,
 			"elem": "Null",
-			"desc": "HP: 100<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 40 + Break + PanelCrack + Nova1<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake1, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 100<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (40 + Break + PanelCrack + Nova1)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake1, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake1"],
 			"rare": [0]
 		}, {
 			"name": "Powie2",
 			"hpts": 140,
 			"elem": "Null",
-			"desc": "HP: 140<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 60 + Break + PanelCrack + Nova2<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake2, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 140<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (60 + Break + PanelCrack + Nova2)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake2, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake2"],
 			"rare": [0]
 		}, {
 			"name": "Powie2 EX",
 			"hpts": 180,
 			"elem": "Null",
-			"desc": "HP: 180<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 80 + Break + PanelCrack + Nova2<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake2, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 180<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (80 + Break + PanelCrack + Nova2)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake2, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake2"],
 			"rare": [0]
 		}, {
 			"name": "Powie3",
 			"hpts": 220,
 			"elem": "Null",
-			"desc": "HP: 220<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 100 + Break + PanelCrack + Nova3<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake3, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 220<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (100 + Break + PanelCrack + Nova3)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake3, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake3"],
 			"rare": [0]
 		}, {
 			"name": "Powie3 EX",
 			"hpts": 260,
 			"elem": "Null",
-			"desc": "HP: 260<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 120 + Break + PanelCrack + Nova3<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake3, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 260<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (120 + Break + PanelCrack + Nova3)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake3, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake3"],
 			"rare": [0]
 		}, {
 			"name": "Powie Omega",
 			"hpts": 320,
 			"elem": "Null",
-			"desc": "HP: 320<br>Stage One Attack Damage/Effect: Knockback + Air Attack<br>Stage One Attack Accuracy: A<br>Stage One Attack Description: Powies move by jumping high into the air from solid panel to solid panel. Sometimes, they will smack into something when they do this. Powies are soft bodied viruses, and are about as harmful as getting pelted with a pillow. This is more of an accident than an attack.<br>Stage Two Attack Damage/Effect: 180 + Break + PanelCrack + Nova4<br>Stage Two Attack Accuracy: C<br>Attack Description: When the spot a Powie is jumping to is occupied by an enemy, they will change into a 10-ton press, and fall on it. The impact creates an explosion. This attack is considered a Drop Attack, and it will damage underground targets.<br>Element: None<br>Possible Rewards (Per Virus): Quake3, Zenny<br>Special: Airshoes.",
+			"desc": "HP: 320<br>Attack Damage/Effect: (Movement(High-Alt) + Knockback) Then (180 + Break + PanelCrack + Nova4)<br>Attack Accuracy: C<br>Attack Description: Leaps quickly into the air, knocking away anything it collides with, before stopping directly above an enemy. They will then immediately change into a 10-ton press and fall down. The impact of the fall creates an explosion.<br>Element: None<br>Possible Rewards (Per Virus): Quake3, Zenny<br>Special: AirShoes.<br>Special: The explosion does not trigger if the virus attacks a target on Broken/Missing terrain and misses. It will not fall into Broken/Missing terrain with its attacks unless forcefully pushed in.",
 			"rslt": ["Quake3"],
 			"rare": [0]
 		}],
@@ -2611,56 +2611,56 @@
 		"pre6": true
 	},
 	"KillerEye": {
-		"family_note": "KillerEyes do not move or dodge during battle, though they can move under their own power between battles. They can, however, turn in place. KillerEyes are a passive threat, not an active one. They direct their sensor eye in the general direction of a sensed threat, and emit a laser trip beam for the enemy to run across. If the enemy does run into the beam, they fire their Sensor Beam attack at the speed of light, which is practically guaranteed to hit. Firing a Sensor Beam requires an action only in that the KillerEye will pause to recharge after the attack, but there is no delay between tripping the laser beam and firing a sensor beam. If a Sensor Beam is fired after a KillerEye has already expended all actions for the turn, they skip the first action of the following turn to recharge. They cannot emit a new laser trip beam while recharging, and they cannot fire sensor beams consecutively as something must trigger the attack by breaking the line of a laser trip beam first. KillerEye viruses cannot maintain their laser trip beams while moving their eyes to look in a new direction, they also cannot perform a beam sweep with a sensor beam. Emitting or turning of a laser trip beam does not require an action, but taking aim at a new direction does. Laser trip beams cannot see past stationary objects, nor will stationary objects trigger a Sensor Beam attack.",
+		"family_note": "KillerEyes do not move or dodge during battle, though they can move under their own power between battles. They can, however, turn in place. KillerEyes are a passive threat, not an active one. They direct their sensor eye in the general direction of a sensed threat, and emit a laser trip beam for the enemy to run across. If the enemy does run into the beam, they fire their Sensor Beam attack at the speed of light, which is practically guaranteed to hit, before recharging for an action.",
 		"family_url": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/3/#post-51199",
 		"family_area": ["Dentech", "NAXA", "NetVegas"],
 		"virus": [{
 			"name": "KillerEye",
 			"hpts": 100,
 			"elem": "Elec",
-			"desc": "HP: 100<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The KillerEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the KillerEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 25 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor1, Zenny<br>Special: Immobile.<br>Special: KillerEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 100<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (25 + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor1, Zenny<br>Special: Immobile.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again.",
 			"rslt": ["Sensor1"],
 			"rare": [0]
 		}, {
 			"name": "KillerEye EX",
 			"hpts": 140,
 			"elem": "Elec",
-			"desc": "HP: 140<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The KillerEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the KillerEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 50 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor1, Zenny<br>Special: Immobile.<br>Special: KillerEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 140<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (50 Elec + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor1, Zenny<br>Special: Immobile.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again.",
 			"rslt": ["Sensor1"],
 			"rare": [0]
 		}, {
 			"name": "DemonEye",
 			"hpts": 180,
 			"elem": "Elec",
-			"desc": "HP: 180<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The DemonEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the DemonEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 75 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the DemonEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor2, Zenny<br>Special: Immobile. Can use Barrier on itself once.<br>Special: DemonEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 180<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (75 Elec + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor2, Zenny<br>Special: Immobile. Can use Barrier on itself once.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again.",
 			"rslt": ["Sensor2"],
 			"rare": [0]
 		}, {
 			"name": "DemonEye EX",
 			"hpts": 220,
 			"elem": "Elec",
-			"desc": "HP: 220<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The DemonEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the DemonEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 100 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the DemonEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor2, Zenny<br>Special: Immobile. Can use Barrier on itself once.<br>Special: DemonEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 220<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (100 Elec + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor2, Zenny<br>Special: Immobile. Can use Barrier on itself once.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again.",
 			"rslt": ["Sensor2"],
 			"rare": [0]
 		}, {
 			"name": "JokerEye",
 			"hpts": 260,
 			"elem": "Elec",
-			"desc": "HP: 260<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The JokerEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the JokerEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 125 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the JokerEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor3, Zenny<br>Special: Immobile. Can use Barrier100 on itself once.<br>Special: JokerEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 260<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (125 Elec + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor3, Zenny<br>Special: Immobile. Can use Barrier100 on itself once.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again.",
 			"rslt": ["Sensor3"],
 			"rare": [0]
 		}, {
 			"name": "JokerEye EX",
 			"hpts": 300,
 			"elem": "Elec",
-			"desc": "HP: 300<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The JokerEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the JokerEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 150 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the JokerEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor3, Zenny<br>Special: Immobile. Can use Barrier100 on itself once.<br>Special: JokerEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 300<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (150 Elec + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor3, Zenny<br>Special: Immobile. Can use Barrier100 on itself once.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again.",
 			"rslt": ["Sensor3"],
 			"rare": [0]
 		}, {
 			"name": "KillerEye Omega",
 			"hpts": 400,
 			"elem": "Elec",
-			"desc": "HP: 400<br>Stage One Attack Damage/Effect: Laser Trip Beam + Seeking<br>Stage One Attack Accuracy: Not Applicable, but avoidable.<br>Stage One Attack Description: The KillerEye emits a visible targeting laser beam from its eye. Any object or creature that actively moves through the beam breaks it, triggering a response from the KillerEye. The targeting laser ignores all forms of stealth, but cannot see through objects.<br>Stage Two Attack Damage/Effect: 200 Elec + Stun 1 + Beam Attack<br>Stage Two Attack Accuracy: S<br>Stage Two Attack Description: Once an object or creature has tripped the sensor beam, there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the sensor beam occupied previously. Once the beam has actually been fired, there is no avoiding it. This beam pierces every known defense with the exception of barriers and auras, and passes through objects.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor3, Zenny<br>Special: Immobile. Can use Barrier200 on itself once.<br>Special: KillerEyes cannot beam sweep with either the targeting laser or the plasma beam attack.",
+			"desc": "HP: 400<br>Attack Damage/Effect: Trap(Movement In Laser Beam's Path) + Seeking: (200 Elec + Stun 1 + Beam Attack + Recovery Time 1)<br>Attack Accuracy: S<br>Attack Description: The KillerEye emits a visible Sensor Laser beam from its eye. The Sensor Laser ignores all forms of stealth, but cannot see through or be triggered by stationary objects. Any object or creature that actively moves through the Sensor Laser breaks it, where there is a fraction of a second time delay before the KillerEye responds with a plasma beam that zaps everything along the path the Sensor Laser occupied previously. The KillerEye must recharge for an action after firing its plasma beam before creating another Sensor Laser.<br>Element: Elec<br>Possible Rewards (Per Virus): Sensor3, Zenny<br>Special: Immobile. Can use Barrier200 on itself once.<br>Special: KillerEyes cannot beam sweep with either the Sensor Laser or the plasma beam attack. Every time it is moved, whether by its own rotating to direct its beam, by outside force, or by any other means, the beam it emits deactivates until it is stationary again. ",
 			"rslt": ["Sensor3"],
 			"rare": [0]
 		}],
@@ -4576,59 +4576,59 @@
 		}],
 		"pre6": true
 	},
-	"Mettfire": {
+	"MettFire": {
 		"family_note": "",
 		"family_url": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/5/#post-54533",
 		"family_area": ["Kotobuki Town", "Netfrica", "Hades Isle", "NAXA", "NetVegas"],
 		"virus": [{
-			"name": "Mettfire",
+			"name": "MettFire",
 			"hpts": 100,
 			"elem": "Fire",
-			"desc": "HP: 100<br>Attack: 30 Fire x 3 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 3 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor9, Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking.",
-			"rslt": ["Meteor9"],
-			"rare": [0]
+			"desc": "HP: 100<br>Attack: 20 Fire + Drop Attack x 3 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 3 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor9, Asteroid1, Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It gains no effectiveness over a regular dodge.",
+			"rslt": ["Meteor9", "Asteroid1"],
+			"rare": [0, 0]
 		}, {
-			"name": "Mettfire EX",
-			"hpts": 125,
+			"name": "MettFire EX",
+			"hpts": 130,
 			"elem": "Fire",
-			"desc": "HP: 125<br>Attack: 30 Fire x 4 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 4 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor9, Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking.",
-			"rslt": ["Meteor9"],
-			"rare": [0]
+			"desc": "HP: 130<br>Attack: 25 Fire + Drop Attack x 3 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 3 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor9, Asteroid1, Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It gains no effectiveness over a regular dodge.",
+			"rslt": ["Meteor9", "Asteroid1"],
+			"rare": [0, 0]
 		}, {
-			"name": "Fullfire",
-			"hpts": 150,
+			"name": "FullFire",
+			"hpts": 170,
 			"elem": "Fire",
-			"desc": "HP: 150<br>Attack: 30 Fire x 5 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 5 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor12, Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking.",
-			"rslt": ["Meteor12"],
-			"rare": [0]
+			"desc": "HP: 170<br>Attack: 25 Fire + Drop Attack x 4 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 4 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor12, Asteroid2, Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It gains no effectiveness over a regular dodge.<br>Special: Can use PanelGrab once.",
+			"rslt": ["Meteor12", "Asteroid2"],
+			"rare": [0, 0]
 		}, {
-			"name": "Fullfire EX",
-			"hpts": 175,
-			"elem": "Fire",
-			"desc": "HP: 175<br>Attack: 30 Fire x 6 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 6 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor12, Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking.",
-			"rslt": ["Meteor12"],
-			"rare": [0]
-		}, {
-			"name": "Deathfire",
+			"name": "FullFire EX",
 			"hpts": 200,
 			"elem": "Fire",
-			"desc": "HP: 200<br>Attack: 30 Fire x 7 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 7 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor15, Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking.",
-			"rslt": ["Meteor15"],
-			"rare": [0]
+			"desc": "HP: 200<br>Attack: 30 Fire + Drop Attack x 4 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 4 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor12, Asteroid2, Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It gains no effectiveness over a regular dodge.<br>Special: Can use PanelGrab once.",
+			"rslt": ["Meteor12", "Asteroid2"],
+			"rare": [0, 0]
 		}, {
-			"name": "Deathfire EX",
-			"hpts": 225,
+			"name": "DeathFire",
+			"hpts": 240,
 			"elem": "Fire",
-			"desc": "HP: 225<br>Attack: 30 Fire x 8 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 8 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor15, Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking.",
-			"rslt": ["Meteor15"],
-			"rare": [0]
+			"desc": "HP: 240<br>Attack: 30 Fire + Drop Attack x 5 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 5 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor15, Asteroid3, Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It gains no effectiveness over a regular dodge.<br>Special: Can use PanelGrab once.<br>Special: Can use RockCube once.",
+			"rslt": ["Meteor15", "Asteroid3"],
+			"rare": [0, 0]
 		}, {
-			"name": "Mettfire Omega",
-			"hpts": 300,
+			"name": "DeathFire EX",
+			"hpts": 270,
 			"elem": "Fire",
-			"desc": "HP: 300<br>Attack: 30 Fire x 12 Meteors + Burn 5<br>Attack Accuracy: D<br>Attack Description: Drops 12 meteors on the opponent's area.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor18, Meteors (Rare), Zenny<br>Special: Attacks every other turn. High dodge rate when not attacking. Seeks cover when attacking. Capable of using Rook once.",
-			"rslt": ["Meteor18", "Meteors"],
-			"rare": [0, 1]
+			"desc": "HP: 270<br>Attack: 35 Fire + Drop Attack x 5 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 5 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor15, Asteroid3, Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It gains no effectiveness over a regular dodge.<br>Special: Can use PanelGrab once.<br>Special: Can use RockCube once.",
+			"rslt": ["Meteor15", "Asteroid3"],
+			"rare": [0, 0]
+		}, {
+			"name": "MettFire Omega",
+			"hpts": 350,
+			"elem": "Fire",
+			"desc": "HP: 350<br>Attack: 40 Fire + Drop Attack x 6 hits + Variable Targeting<br>Attack Accuracy: D<br>Attack Description: Drops 6 meteors onto enemies' heads.<br>Element: Fire<br>Possible Rewards (Per Virus): Meteor18, Asteroid3, Meteors (Rare), Zenny<br>Special: Attacks every other action. Right before it attacks, it can move behind the nearest object as a free action. If there are no objects on the field, they may instead move behind an ally.<br>Special: This virus's dodges are treated as Teleport for the purposes of movement only. It is otherwise identical to a regular dodge.<br>Special: Can use PanelGrab once.<br>Special: Can use StoneCube once.",
+			"rslt": ["Meteor18", "Asteroid3", "Meteors"],
+			"rare": [0, 0, 1]
 		}],
 		"pre6": true
 	},
@@ -5181,8 +5181,8 @@
 		"pre6": true
 	},
 	"Ratty": {
-		"family_note": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/5/#post-63545",
-		"family_url": "",
+		"family_note": "",
+		"family_url": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/5/#post-63545",
 		"family_area": ["SciLab", "Kotobuki Town"],
 		"virus": [{
 			"name": "Ratty",
@@ -6300,7 +6300,7 @@
 		}],
 		"pre6": true
 	},
-	"DrilRoll": {
+	"Drixol": {
 		"family_note": "",
 		"family_url": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/6/#post-107316",
 		"family_area": ["Electown", "Kotobuki Town", "Hades Isle"],
@@ -6308,50 +6308,50 @@
 			"name": "Drixol",
 			"hpts": 90,
 			"elem": "Null",
-			"desc": "HP: 90<br>Stage One Attack Damage/Effect: 20 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (20 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm1, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
+			"desc": "HP: 90<br>Primary Attack Damage/Effect: 20 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + (20 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm1, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
 			"rslt": ["DrillArm1"],
 			"rare": [0]
 		}, {
 			"name": "Drixol EX",
 			"hpts": 130,
 			"elem": "Null",
-			"desc": "HP: 130<br>Stage One Attack Damage/Effect: 40 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (40 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm1, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
+			"desc": "HP: 130<br>Primary Attack Damage/Effect: 40 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + 40 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm1, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
 			"rslt": ["DrillArm1"],
 			"rare": [0]
 		}, {
 			"name": "Drixor",
 			"hpts": 170,
 			"elem": "Null",
-			"desc": "HP: 170<br>Stage One Attack Damage/Effect: 60 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (60 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm2, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
+			"desc": "HP: 170<br>Primary Attack Damage/Effect: 60 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + (60 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm2, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
 			"rslt": ["DrillArm2"],
 			"rare": [0]
 		}, {
 			"name": "Drixor EX",
 			"hpts": 210,
 			"elem": "Null",
-			"desc": "HP: 210<br>[Stage One Attack Damage/Effect: 80 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (80 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm2, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
+			"desc": "HP: 210<br>Primary Attack Damage/Effect: 80 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + (80 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm2, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
 			"rslt": ["DrillArm2"],
 			"rare": [0]
 		}, {
 			"name": "Drixa",
 			"hpts": 260,
 			"elem": "Null",
-			"desc": "HP: 260<br>Stage One Attack Damage/Effect: 100 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (100 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm3, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
+			"desc": "HP: 260<br>Primary Attack Damage/Effect: 100 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + (100 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm3, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
 			"rslt": ["DrillArm3"],
 			"rare": [0]
 		}, {
 			"name": "Drixa EX",
 			"hpts": 300,
 			"elem": "Null",
-			"desc": "HP: 300<br>Stage One Attack Damage/Effect: 120 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (120 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm3, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
+			"desc": "HP: 300<br>Primary Attack Damage/Effect: 120 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + (120 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm3, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
 			"rslt": ["DrillArm3"],
 			"rare": [0]
 		}, {
-			"name": "DrilRoll Omega",
+			"name": "Drixol Omega",
 			"hpts": 400,
 			"elem": "Null",
-			"desc": "HP: 400<br>Stage One Attack Damage/Effect: 150 Null + Break + Piercing<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Stage Two Attack Damage/Effect: (Teleport) + (150 Null + Break + Piercing)<br>Stage Two Attack Accuracy: B<br>Stage Two Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm3, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus uses Teleport between the first and second attack passes.",
-			"rslt": ["DrillArm3"],
+			"desc": "HP: 400<br>Primary Attack Damage/Effect: 150 Null + Break + Piercing<br>Primary Attack Accuracy: C<br>Primary Attack Description: Flies at a line of enemies, drilling through all in its path.<br>Secondary Attack Damage/Effect: (Teleport) + (150 Null + Break + Piercing)<br>Secondary Attack Accuracy: B<br>Secondary Attack Description: After the initial flying drill attack, this virus teleports through a hole in space, and makes a second pass at the chosen enemy target from a new direction.<br>Element: Null<br>Possible Rewards (Per Virus): DrillArm3, Zenny<br>Special: Omnishoes when attacking.<br>Special: This virus will never execute its secondary attack without using its primary attack first, and always in immediate succession. Any other actions it takes must occur outside of this sequence. If anything causes an interruption between its primary attack action and secondary attack action, they revert to starting their primary attack again.",
+			"rslt": ["SuperDrill"],
 			"rare": [0]
 		}],
 		"pre6": true
@@ -6364,49 +6364,49 @@
 			"name": "Satellite",
 			"hpts": 100,
 			"elem": "Null",
-			"desc": "HP: 100<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (3 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On1, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 100<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (3 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On1, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On1"],
 			"rare": [0]
 		}, {
 			"name": "Satellite EX",
 			"hpts": 150,
 			"elem": "Null",
-			"desc": "HP: 150<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (6 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On1, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 150<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (6 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On1, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On1"],
 			"rare": [0]
 		}, {
 			"name": "Satellite2",
 			"hpts": 200,
 			"elem": "Null",
-			"desc": "HP: 200<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (9 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On2, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 200<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (9 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On2, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On2"],
 			"rare": [0]
 		}, {
 			"name": "Satellite2 EX",
 			"hpts": 250,
 			"elem": "Null",
-			"desc": "HP: 250<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (12 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On2, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 250<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (12 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On2, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On2"],
 			"rare": [0]
 		}, {
 			"name": "Satellite3",
 			"hpts": 300,
 			"elem": "Null",
-			"desc": "HP: 300<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (15 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On3, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 300<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (15 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On3, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On3"],
 			"rare": [0]
 		}, {
 			"name": "Satellite3 EX",
 			"hpts": 350,
 			"elem": "Null",
-			"desc": "HP: 350<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: C<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (18 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On3, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 350<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (18 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On3, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On3"],
 			"rare": [0]
 		}, {
 			"name": "Satellite Omega",
 			"hpts": 500,
 			"elem": "Null",
-			"desc": "HP: 500<br>Stage One Attack Damage/Effect: Lock-On + Seeking + Nullify Invis<br>Stage One Attack Accuracy: B<br>Stage One Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores deoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is acheived.<br>Stage Two Attack Attack Damage/Effect: (30 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Stage Two Attack Attack Accuracy: A<br>Stage Two Attack Attack Description: When lock-on is acheived, this virus launches into the sky and fires a barrage of 10 highly accurate shots at its chosen target.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On3, Zenny<br>Special: Immobile when not attacking. Enters high altitude status when attacking. Launching into the sky counts as a dodge. Cannot attack without a target lock.<br>Notes: Triggering invisibility or an illusion after Lock-On is acheived does not allow a target to escape Lock-On.",
+			"desc": "HP: 500<br>Primary Attack Damage/Effect: Trap(Enemy in Targeting Cursor) + Seeking: Movement (High-Alt) + Dodge + Lock-On + Nullify Invis<br>Primary Attack Accuracy: C<br>Primary Attack Description: Generates a targeting cursor that sweeps back and forth across the field, looking for a target. The cursor ignores decoys, objects, illusions, and invisibility. If the cursor intersects with an actual enemy, Lock-On is achieved, and the virus launches itself into the sky at High Altitude.<br>Secondary Attack Attack Damage/Effect: (30 Null + Seeking + Enhanced Accuracy) x 10 Shots<br>Secondary Attack Attack Accuracy: A<br>Secondary Attack Attack Description: When Lock-On is achieved, this virus fires a barrage of 10 highly accurate shots at its chosen target before landing in its original position. Accuracy debuffs on the Satellite while using this attack are reduced in severity by one rank.<br>Element: Null<br>Possible Rewards (Per Virus): Lock-On3, Zenny<br>Special: Immobile outside of its primary attack.<br>Special: This virus will repeat its primary attack until it finds a target, after which it will be able to use its secondary attack once. When it changes targets, either of its own volition or its current target's death, or uses its Secondary Attack and lands in its original position, it must repeat its primary attack until it finds a new target.<br>Notes: Triggering invisibility or an illusion, or moving the Satellite forcefully after Lock-On is achieved does not allow a target to escape Lock-On. Lock-On is a shift in the Satellite's state, not a status inflicted on its target, and thus cannot be removed.",
 			"rslt": ["Lock-On3"],
 			"rare": [0]
 		}],
@@ -8416,6 +8416,118 @@
 			"desc": "HP: 270<br>Primary Attack Damage/Effect: 125 Elec + Nova 2<br>Primary Attack Accuracy: C<br>Primary Attack Description: Emits some of its life energy as a static field.<br>Secondary Attack Damage/Effect: Damage x 2, Self-Sacrifice x 2<br>Secondary Attack Accuracy: S<br>Secondary Attack Description: Charges up energy within itself. On its next turn, all of this virus's attacks deal +100% Source Damage, and deal twice as much damage to itself. This effect does not stack with itself.<br>Element: Elec<br>Possible Rewards (Per Virus): RingZap3, BlackWeapon (Rare), Zenny<br>Special: ElecBody: This virus takes no damage from Elec elemental attacks.<br>Special: Self-Sacrifice: Every time this virus uses its Primary Attack, it loses 20 HP.<br>Special: Can use AreaGrab three times. ",
 			"rslt": ["RingZap3", "BlackWeapon"],
 			"rare": [0, 1]
+		}],
+		"pre6": true
+	},
+	"MonoSword": {
+		"family_note": "MonoSword are distant cousins of Swordy, but have evolved further in an attempt become more a threat. They attack by teleporting in front of their target, and slashing with their namesake before returning to their original position. Their blades are sturdier than most, and can cut through things regular ones cannot, such as shields. Their bulky armor also gives them above average stamina, but it weighs them down to the point where they do not move or dodge, aside from attacking. Despite it lacking any sort of defense that would bestow such a weakness, they ironically take additional damage from Break attribute attacks.",
+		"family_url": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/8/#post-10003411",
+		"family_area": ["Netopia", "Yoka", "Hades Isle"],
+		"virus": [{
+			"name": "MonoSword",
+			"hpts": 120,
+			"elem": "Null",
+			"desc": "HP: 120<br>Attack Damage/Effect: 20 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakKnife, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakKnife"],
+			"rare": [0]
+		}, {
+			"name": "MonoSword EX",
+			"hpts": 160,
+			"elem": "Null",
+			"desc": "HP: 160<br>Attack Damage/Effect: 30 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakKnife, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakKnife"],
+			"rare": [0]
+		}, {
+			"name": "MonoSwordin",
+			"hpts": 210,
+			"elem": "Null",
+			"desc": "HP: 210<br>Attack Damage/Effect: 50 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakSword, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakSword"],
+			"rare": [0]
+		}, {
+			"name": "MonoSwordin EX",
+			"hpts": 250,
+			"elem": "Null",
+			"desc": "HP: 250<br>Attack Damage/Effect: 60 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakSword, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakSword"],
+			"rare": [0]
+		}, {
+			"name": "MonoSwordil",
+			"hpts": 300,
+			"elem": "Null",
+			"desc": "HP: 300<br>Attack Damage/Effect: 80 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakBlade, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakBlade"],
+			"rare": [0]
+		}, {
+			"name": "MonoSwordil EX",
+			"hpts": 340,
+			"elem": "Null",
+			"desc": "HP: 340<br>Attack Damage/Effect: 90 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakBlade, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakBlade"],
+			"rare": [0]
+		}, {
+			"name": "MonoSword SP",
+			"hpts": 440,
+			"elem": "Null",
+			"desc": "HP: 440<br>Attack Damage/Effect: 120 Null + Break + Slashing + Wide Attack<br>Attack Accuracy: C<br>Attack Description: Delivers an armor cutting slash.<br>Element: Null<br>Possible Rewards (Per Virus): BreakBlade, Zenny<br>Special: Break Weakness: Attacks with the Break attribute deal +100% Source damage to this virus, as though hitting an elemental weakness.<br>Special: Moves by teleporting. This is not treated as a formal Teleport, and does not confer any bonuses.",
+			"rslt": ["BreakBlade"],
+			"rare": [0]
+		}],
+		"pre6": true
+	},	
+	"Storm": {
+		"family_note": "This virus is normally no more or less aggressive than most viruses, but if the enemy is using exclusively/near exclusively Shot or Thrown type attacks, it will attack more frequently, knowing that its attack will help protect it from them.",
+		"family_url": "http://s10.zetaboards.com/RockmanChaosNetwork/topic/781761/8/#post-10003412",
+		"family_area": ["Dentech", "Yumland", "NAXA"],
+		"virus": [{
+			"name": "Storm",
+			"hpts": 70,
+			"elem": "Null",
+			"desc": "HP: 70<br>Attack Damage/Effect: 5 Null + Nova 3 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall1"],
+			"rare": [0]
+		}, {
+			"name": "Storm EX",
+			"hpts": 110,
+			"elem": "Null",
+			"desc": "HP: 110<br>Attack Damage/Effect: 10 Null + Nova 3 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall1"],
+			"rare": [0]
+		}, {
+			"name": "Monsoon",
+			"hpts": 150,
+			"elem": "Null",
+			"desc": "HP: 150<br>Attack Damage/Effect: 15 Null + Nova 3 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall2"],
+			"rare": [0]
+		}, {
+			"name": "Monsoon EX",
+			"hpts": 190,
+			"elem": "Null",
+			"desc": "HP: 190<br>Attack Damage/Effect: 20 Null + Nova 3 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall2"],
+			"rare": [0]
+		}, {
+			"name": "Tempest",
+			"hpts": 230,
+			"elem": "Null",
+			"desc": "HP: 230<br>Attack Damage/Effect: 25 Null + Nova 3 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall3"],
+			"rare": [0]
+		}, {
+			"name": "Tempest EX",
+			"hpts": 270,
+			"elem": "Null",
+			"desc": "HP: 270<br>Attack Damage/Effect: 30 Null + Nova 3 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall3"],
+			"rare": [0]
+		}, {
+			"name": "Storm Omega",
+			"hpts": 350,
+			"elem": "Null",
+			"desc": "HP: 350<br>Attack Damage/Effect: 30 Null + Nova 4 + Knockback + Wind Attack x 3 hits<br>Attack Accuracy: C<br>Attack Description: Creates a wind storm around itself, knocking enemies backward.<br>Element: Null<br>Possible Rewards (Per Virus): Squall1, Zenny<br>Special: High Turbulence: The accuracy of Shot and Thrown-type attacks is reduced by 3 ranks against this virus while it is attacking.<br>Special: FloatShoes, ShadowShoes",
+			"rslt": ["Squall3"],
+			"rare": [0]
 		}],
 		"pre6": true
 	}

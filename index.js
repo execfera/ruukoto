@@ -40,7 +40,7 @@ bot.on("message", (msg) => {
 	if (msg.author.id !== bot.user.id) {
 		/* Main Command Parser
 		*/
-		if (msgc[0] === '-' || (msgc[0] === '.' && msg.guild.id === "103851116512411648")) {
+		if (msgc[0] === '-') {
 			var msgcmd = msgc.indexOf(' ') > -1 ? msgc.slice(msgc.indexOf(' ')+1) : '';
 			var msgtype = msgc.split(' ')[0].slice(1);
 			if (msgtype in commands) {
