@@ -1,6 +1,7 @@
 var fs = require('fs');
 var gm = require('gm');
 var request = require('request');
+var math = require('mathjs');
 var authData = require(__root + "/storage/auth.json");
 
 module.exports = {
@@ -10,6 +11,8 @@ module.exports = {
 		if (!cmd) { msg.channel.send(require('path').parse(__filename).name + ": " + this.desc, {code: true}); }
 		else {
             var args = cmd.split(' ');
+            args[1] = math.eval(args[1]);            
+            args[2] = math.eval(args[2]);
             var color = ["283c7d", "46712d", "512d71", "4b3024"]; // Eternalis, Terra, Scourge, Slice
             var nrarray = args[1].toString().split('').map(x => __root + '/storage/sig/number' + x + '.png').reverse();
             var gms = gm(nrarray[0]);
