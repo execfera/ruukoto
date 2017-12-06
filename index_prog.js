@@ -28,15 +28,11 @@ bot.on("ready", () => {
 	console.log("ms prog online");
 	bot.user.setGame("with Mr. Prog");
 	msprog = bot.guilds.get("208498945343750144").emojis.get("264615769285984256");
-	for (var bchannel in birthData) {
-		if (bot.channels.has(bchannel)) {
-			birthData[bchannel].forEach(usr => {
-				schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
-					if (bot.channels.get(bchannel).members.has(usr[0])) bot.channels.get(bchannel).send(`${msprog} Happy birthday, <@${usr[0]}>!`);
-				});
-			})
-		}
-	}
+	birthData['208498945343750144'].forEach(usr => {
+		schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
+			if (bot.channels.get('208498945343750144').members.has(usr[0])) bot.channels.get('208498945343750144').send(`${msprog} Happy birthday, <@${usr[0]}>!`);
+		});
+	});
 });
 
 bot.on("message", (msg) => {
