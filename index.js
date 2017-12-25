@@ -19,17 +19,19 @@ clever2.create(function (err, session) {});
 
 bot.login(authData.token);
 bot.music = {};
+bot.schedules = {};
 
 bot.on("ready", () => {
 	console.log("ruukoto online");
 	bot.user.setGame("Sweeping the Hakurei Shrine");
 	for (var bchannel in birthData) {
-		if (bot.channels.has(bchannel)) {
+		if (bot.channels.has(bchannel) && !(bchannel in bot.schedules)) {
+			bot.schedules[bchannel] = {};
 			birthData[bchannel].forEach(usr => {
-				schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
+				bot.schedules[bchannel][usr[0]] = schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
 					if (bot.channels.get(bchannel).members.has(usr[0])) bot.channels.get(bchannel).send(`Happy birthday, <@${usr[0]}>!`);
 				});
-			})
+			});
 		}
 	}
 });

@@ -23,13 +23,15 @@ var msprog;
 
 bot.login(authData.token_prog);
 bot.music = {};
+bot.schedules = {'208498945343750144': {}};
 
 bot.on("ready", () => {
 	console.log("ms prog online");
 	bot.user.setGame("with Mr. Prog");
 	msprog = bot.guilds.get("208498945343750144").emojis.get("264615769285984256");
 	birthData['208498945343750144'].forEach(usr => {
-		schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
+		if (bot.schedules['208498945343750144'][usr[0]]) bot.schedules['208498945343750144'][usr[0]].cancel();
+		bot.schedules['208498945343750144'][usr[0]] = schedule.scheduleJob({ hour: 0, minute: 5, month: usr[2]-1, date: usr[3]}, function(){
 			if (bot.channels.get('208498945343750144').members.has(usr[0])) bot.channels.get('208498945343750144').send(`${msprog} Happy birthday, <@${usr[0]}>!`);
 		});
 	});
